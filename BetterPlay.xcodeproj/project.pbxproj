@@ -18,6 +18,10 @@
 		33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A633299545C900FFAB37 /* UserCoins.swift */; };
 		33F6A6362995461700FFAB37 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6352995461700FFAB37 /* Searcher.swift */; };
 		33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A64329954E1500FFAB37 /* NetworkHelper.swift */; };
+		33F6A68C2995641700FFAB37 /* RecoverPasswordCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A68B2995641700FFAB37 /* RecoverPasswordCodeView.swift */; };
+		33F6A68E2995649D00FFAB37 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A68D2995649D00FFAB37 /* NewPasswordView.swift */; };
+		33F6A690299564C300FFAB37 /* RecoverPassEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A68F299564C300FFAB37 /* RecoverPassEmailView.swift */; };
+		33F6A6922995650800FFAB37 /* RecoverPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6912995650800FFAB37 /* RecoverPassViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		33F6A633299545C900FFAB37 /* UserCoins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoins.swift; sourceTree = "<group>"; };
 		33F6A6352995461700FFAB37 /* Searcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searcher.swift; sourceTree = "<group>"; };
 		33F6A64329954E1500FFAB37 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		33F6A68B2995641700FFAB37 /* RecoverPasswordCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordCodeView.swift; sourceTree = "<group>"; };
+		33F6A68D2995649D00FFAB37 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
+		33F6A68F299564C300FFAB37 /* RecoverPassEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPassEmailView.swift; sourceTree = "<group>"; };
+		33F6A6912995650800FFAB37 /* RecoverPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPassViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A688299563E200FFAB37 /* RecoverPassword */,
 				33F6A6242995439200FFAB37 /* Components */,
 			);
 			path = Presentation;
@@ -126,6 +135,33 @@
 				33F6A62F2995457C00FFAB37 /* ContentView.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		33F6A688299563E200FFAB37 /* RecoverPassword */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A68A299563F400FFAB37 /* ViewModel */,
+				33F6A689299563EB00FFAB37 /* View */,
+			);
+			path = RecoverPassword;
+			sourceTree = "<group>";
+		};
+		33F6A689299563EB00FFAB37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A68B2995641700FFAB37 /* RecoverPasswordCodeView.swift */,
+				33F6A68D2995649D00FFAB37 /* NewPasswordView.swift */,
+				33F6A68F299564C300FFAB37 /* RecoverPassEmailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33F6A68A299563F400FFAB37 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A6912995650800FFAB37 /* RecoverPassViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,13 +234,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F6A68E2995649D00FFAB37 /* NewPasswordView.swift in Sources */,
 				33F6A632299545AD00FFAB37 /* CustomNavBar.swift in Sources */,
+				33F6A68C2995641700FFAB37 /* RecoverPasswordCodeView.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */,
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* ResponseModel.swift in Sources */,
+				33F6A690299564C300FFAB37 /* RecoverPassEmailView.swift in Sources */,
+				33F6A6922995650800FFAB37 /* RecoverPassViewModel.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
 				3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */,
 			);
