@@ -91,6 +91,7 @@
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A67629955C4400FFAB37 /* BetDetail */,
 				33F6A6242995439200FFAB37 /* Components */,
 			);
 			path = Presentation;
@@ -99,7 +100,6 @@
 		33F6A6202995437A00FFAB37 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				33F6A67629955C4400FFAB37 /* BetDetail */,
 				33F6A6212995437F00FFAB37 /* Model */,
 				33F6A64329954E1500FFAB37 /* NetworkHelper.swift */,
 			);
