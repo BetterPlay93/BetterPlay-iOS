@@ -25,6 +25,6 @@ struct UserCoins: View {
 
 struct UserCoins_Previews: PreviewProvider {
     static var previews: some View {
-        UserCoins()
+        UserCoins(coins: "4000")
     }
 }

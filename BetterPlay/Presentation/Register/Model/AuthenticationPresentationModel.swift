@@ -7,6 +7,18 @@
 
 import Foundation
 
-class AuthenticationResponseModel {
+class AuthenticationPresentationModel {
+    var status: String = ""
+    var code: Int = 0
+    var message: [String] = [""]
+    var data: String = ""
     
+    init(status: String, code: Int, message: [String], data: String){
+        self.status = status
+        self.code = code
+        self.message = message
+        self.data = data
+    }
+    
+    init(){}
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomNavBar: View {
-@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var color: String
     
     var body: some View {
@@ -40,6 +40,6 @@ struct CustomNavBar: View {
 
 struct CustomNavBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomNavBar()
+        CustomNavBar(color: "Green")
     }
 }
