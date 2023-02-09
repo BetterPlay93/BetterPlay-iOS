@@ -27,6 +27,8 @@
 		33F6A68E2995649D00FFAB37 /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A68D2995649D00FFAB37 /* NewPasswordView.swift */; };
 		33F6A690299564C300FFAB37 /* RecoverPassEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A68F299564C300FFAB37 /* RecoverPassEmailView.swift */; };
 		33F6A6922995650800FFAB37 /* RecoverPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6912995650800FFAB37 /* RecoverPassViewModel.swift */; };
+		33F6A662299555C300FFAB37 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A661299555C300FFAB37 /* EditProfileView.swift */; };
+		33F6A664299555EE00FFAB37 /* EditProfileView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A663299555EE00FFAB37 /* EditProfileView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		33F6A68D2995649D00FFAB37 /* NewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordView.swift; sourceTree = "<group>"; };
 		33F6A68F299564C300FFAB37 /* RecoverPassEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPassEmailView.swift; sourceTree = "<group>"; };
 		33F6A6912995650800FFAB37 /* RecoverPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPassViewModel.swift; sourceTree = "<group>"; };
+		33F6A661299555C300FFAB37 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		33F6A663299555EE00FFAB37 /* EditProfileView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditProfileView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				33F6A64529954F5200FFAB37 /* Register */,
 				33F6A6802995609600FFAB37 /* Login */,
 				33F6A688299563E200FFAB37 /* RecoverPassword */,
+				33F6A6602995559D00FFAB37 /* EditProfile */,
 				33F6A6242995439200FFAB37 /* Components */,
 			);
 			path = Presentation;
@@ -203,6 +208,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		33F6A6602995559D00FFAB37 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A661299555C300FFAB37 /* EditProfileView.swift */,
+				33F6A663299555EE00FFAB37 /* EditProfileView-ViewModel.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,11 +290,13 @@
 				33F6A64929954F6700FFAB37 /* RegisterView.swift in Sources */,
 				33F6A684299560B500FFAB37 /* LoginView-ViewModel.swift in Sources */,
 				33F6A68E2995649D00FFAB37 /* NewPasswordView.swift in Sources */,
+				33F6A662299555C300FFAB37 /* EditProfileView.swift in Sources */,
 				33F6A632299545AD00FFAB37 /* CustomNavBar.swift in Sources */,
 				33F6A68C2995641700FFAB37 /* RecoverPasswordCodeView.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
 				33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */,
+				33F6A664299555EE00FFAB37 /* EditProfileView-ViewModel.swift in Sources */,
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
