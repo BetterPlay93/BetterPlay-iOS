@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State var userImage: String = "pepe"
+    @State var userImage: String = "Men-1"
     @State var userName: String = "Jose Ramón"
     @State var userEmail: String = "joseramon@gmail.com"
     @State var totalCoins: Int = 4000
     @State var inGameCoins: Int = 1200
     @State var totalFriends: Int = 150
-    @State var soccerProgres: Float = 50
+    @State var soccerProgres: Int = 50
     var body: some View {
         ZStack(){
             VStack(){
@@ -56,7 +56,6 @@ struct ProfileView: View {
                 HStack{
                     Image(userImage)
                         .resizable()
-                        .scaledToFit()
                         .frame(width: 70, height: 70, alignment: .leading)
                         .cornerRadius(50)
                         .padding(.leading,50)
@@ -74,7 +73,7 @@ struct ProfileView: View {
                                 .scaledToFit()
                                 .frame(width: 20, height: 20, alignment: .leading)
                         }
-                    }.padding(.trailing, 100)
+                    }.padding(.trailing, 55)
                 }.padding(.top,30)
                 VStack(){
                     HStack(){
@@ -89,7 +88,7 @@ struct ProfileView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 30, height: 30, alignment: .leading)
-                            .padding(.trailing, 125)
+                            .padding(.trailing, 115)
                     }
                     HStack(){
                         Text("BetterCoins en juego")
@@ -105,7 +104,7 @@ struct ProfileView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 30, height: 30, alignment: .leading)
-                            .padding(.trailing, 125)
+                            .padding(.trailing, 115)
                     }
                     HStack(){
                         Text("Racha")
@@ -131,7 +130,7 @@ struct ProfileView: View {
                             .scaledToFit()
                             .frame(width: 40, height: 40, alignment: .leading)
                             .padding(.leading,2)
-                        CustomProgressView(progressColor: "DarkOrange",progressBackgroundColor: "White", value: 70)
+                        CustomProgressView(progressColor: "Orange",progressBackgroundColor: "White", value: 70)
                         Text("70%")
                             .font(.system(size: 25))
                             .bold()
