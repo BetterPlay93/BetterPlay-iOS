@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "retrato-de-la-moda-presentaci-n-hombres-joven-atractiva-del-modelo-hombre-feliz-y-para-c-mara-elegante-atractivo-en-su-s-que-150242154.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "retrato-de-la-moda-presentaci-n-hombres-joven-atractiva-del-modelo-hombre-feliz-y-para-c-mara-elegante-atractivo-en-su-s-que-150242155.jpeg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "retrato-de-la-moda-presentaci-n-hombres-joven-atractiva-del-modelo-hombre-feliz-y-para-c-mara-elegante-atractivo-en-su-s-que-150242156.jpeg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
