@@ -23,7 +23,6 @@
 		33F6A64C29954FAD00FFAB37 /* AuthenticationPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A64B29954FAD00FFAB37 /* AuthenticationPresentationModel.swift */; };
 		33F6A682299560A500FFAB37 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A681299560A500FFAB37 /* LoginView.swift */; };
 		33F6A684299560B500FFAB37 /* LoginView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A683299560B500FFAB37 /* LoginView-ViewModel.swift */; };
-		33F6A6872995619700FFAB37 /* AuthenticationPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6862995619700FFAB37 /* AuthenticationPresentationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +43,6 @@
 		33F6A64B29954FAD00FFAB37 /* AuthenticationPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresentationModel.swift; sourceTree = "<group>"; };
 		33F6A681299560A500FFAB37 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		33F6A683299560B500FFAB37 /* LoginView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView-ViewModel.swift"; sourceTree = "<group>"; };
-		33F6A6862995619700FFAB37 /* AuthenticationPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresentationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,19 +161,10 @@
 		33F6A6802995609600FFAB37 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				33F6A6852995618800FFAB37 /* Model */,
 				33F6A681299560A500FFAB37 /* LoginView.swift */,
 				33F6A683299560B500FFAB37 /* LoginView-ViewModel.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		33F6A6852995618800FFAB37 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				33F6A6862995619700FFAB37 /* AuthenticationPresentationModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +250,6 @@
 				33F6A64C29954FAD00FFAB37 /* AuthenticationPresentationModel.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
-				33F6A6872995619700FFAB37 /* AuthenticationPresentationModel.swift in Sources */,
 				33F6A682299560A500FFAB37 /* LoginView.swift in Sources */,
 				3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */,
 			);
