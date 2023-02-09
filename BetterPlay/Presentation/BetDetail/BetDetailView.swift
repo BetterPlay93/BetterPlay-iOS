@@ -40,6 +40,7 @@ struct BetDetailView: View {
         
     }
     
+    //MARK: - Accessory Views
     var oddsFrame: some View {
         VStack(spacing: 15){
             HStack(){
