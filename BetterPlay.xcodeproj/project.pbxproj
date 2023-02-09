@@ -37,6 +37,9 @@
 		33F6A6712995589E00FFAB37 /* TennisCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6702995589E00FFAB37 /* TennisCardView.swift */; };
 		33F6A673299558AC00FFAB37 /* BetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A672299558AC00FFAB37 /* BetsView.swift */; };
 		33F6A675299558B700FFAB37 /* BetsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */; };
+		33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67829955C5800FFAB37 /* BetDetailView.swift */; };
+		33F6A67D29955C7400FFAB37 /* BetDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67C29955C7400FFAB37 /* BetDetailView-ViewModel.swift */; };
+		33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67E29955CEA00FFAB37 /* BetPresentationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,9 @@
 		33F6A6702995589E00FFAB37 /* TennisCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisCardView.swift; sourceTree = "<group>"; };
 		33F6A672299558AC00FFAB37 /* BetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsView.swift; sourceTree = "<group>"; };
 		33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetsView-ViewModel.swift"; sourceTree = "<group>"; };
+		33F6A67829955C5800FFAB37 /* BetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetDetailView.swift; sourceTree = "<group>"; };
+		33F6A67C29955C7400FFAB37 /* BetDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetDetailView-ViewModel.swift"; sourceTree = "<group>"; };
+		33F6A67E29955CEA00FFAB37 /* BetPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetPresentationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 		33F6A6202995437A00FFAB37 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A67629955C4400FFAB37 /* BetDetail */,
 				33F6A6212995437F00FFAB37 /* Model */,
 				33F6A64329954E1500FFAB37 /* NetworkHelper.swift */,
 			);
@@ -265,6 +272,24 @@
 			path = Cards;
 			sourceTree = "<group>";
 		};
+		33F6A67629955C4400FFAB37 /* BetDetail */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A67729955C4D00FFAB37 /* Model */,
+				33F6A67829955C5800FFAB37 /* BetDetailView.swift */,
+				33F6A67C29955C7400FFAB37 /* BetDetailView-ViewModel.swift */,
+			);
+			path = BetDetail;
+			sourceTree = "<group>";
+		};
+		33F6A67729955C4D00FFAB37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A67E29955CEA00FFAB37 /* BetPresentationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,11 +367,13 @@
 				33F6A632299545AD00FFAB37 /* CustomNavBar.swift in Sources */,
 				33F6A68C2995641700FFAB37 /* RecoverPasswordCodeView.swift in Sources */,
 				33F6A6712995589E00FFAB37 /* TennisCardView.swift in Sources */,
+				33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
 				33F6A6672995578600FFAB37 /* ProfileView.swift in Sources */,
 				33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */,
 				33F6A664299555EE00FFAB37 /* EditProfileView-ViewModel.swift in Sources */,
+				33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */,
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
 				33F6A6692995579100FFAB37 /* ProfileView-ViewModel.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
@@ -366,6 +393,7 @@
 				33F6A682299560A500FFAB37 /* LoginView.swift in Sources */,
 				3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */,
 				33F6A675299558B700FFAB37 /* BetsView-ViewModel.swift in Sources */,
+				33F6A67D29955C7400FFAB37 /* BetDetailView-ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
