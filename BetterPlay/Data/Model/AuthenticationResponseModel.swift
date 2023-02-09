@@ -7,14 +7,10 @@
 
 import Foundation
 
-class AuthenticationResponseModel {
-    class AuthenticationResponseModel: Decodable {
-        
-        var status: String?
-        var code: Int?
-        var message: [String]
-        var data: String?
-        
-    }
-
+class AuthenticationResponseModel: Decodable {
+    var status: String?
+    var code: Int?
+    var message: [String]
+    var data: String?
+    
 }

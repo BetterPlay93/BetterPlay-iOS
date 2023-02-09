@@ -29,9 +29,9 @@ struct LoginView: View {
                 
                 navigateToRegister
                 
-//                NavigationLink(destination: EmptyView(), isActive: $viewModel.shouldNavigateToHome) {
-//                    EmptyView()
-//                }
+                NavigationLink(destination: EmptyView(), isActive: $viewModel.shouldNavigateToHome) {
+                    EmptyView()
+                }
             }
             .ignoresSafeArea()
             .background(Color("Background"))
@@ -79,7 +79,7 @@ struct LoginView: View {
     var signIn: some View {
         Button {
             //Petición web
-//            viewModel.login(username: username, password: password)
+            viewModel.login(username: username, password: password)
         } label: {
             Text("Sign in")
                 .font(.headline)
@@ -89,17 +89,17 @@ struct LoginView: View {
                 .cornerRadius(10)
                 .padding()
         }
-//        .alert("Error en el login", isPresented: $viewModel.shouldShowAlert, actions: {
-//            Button {
-//
-//            } label: {
-//                Text("Ok")
-//            }
-//        }) {
-//            ForEach(viewModel.response.message, id:\.self){ message in
-//                Text("\(message)")
-//            }
-//        }
+        .alert("Error en el login", isPresented: $viewModel.shouldShowAlert, actions: {
+            Button {
+
+            } label: {
+                Text("Ok")
+            }
+        }) {
+            ForEach(viewModel.response.message, id:\.self){ message in
+                Text("\(message)")
+            }
+        }
     }
 
     var navigateToRegister: some View {
