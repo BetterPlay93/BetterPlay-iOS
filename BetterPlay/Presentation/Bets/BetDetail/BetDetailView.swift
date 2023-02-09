@@ -146,7 +146,7 @@ struct BetDetailView: View {
             .frame(width: 98, height: 100)
             
                 
-        }.frame(width: 390, height: 228)
+        }.frame(width: UIScreen.main.bounds.width, height: 228)
             .background(Color("Light\(bet.color)"))
     }
     

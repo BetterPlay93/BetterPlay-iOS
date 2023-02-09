@@ -23,7 +23,6 @@ extension RegisterView {
                 if let error = error {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data, let response = response as? HTTPURLResponse {
-                    print(response.statusCode)
                     self.onSuccess(data: data)
                 }
             }
@@ -38,6 +37,7 @@ extension RegisterView {
                 if(self.response.code != 200){
                     self.onError(error: self.response.message)
                 }else{
+                    print(self.response.code)
                     showLogin = true
                 }
                

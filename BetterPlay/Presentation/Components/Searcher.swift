@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Searcher: View {
+    @State private var text: String = ""
+    
     var body: some View {
        ZStack {
            HStack(alignment: .center, spacing: 10){
@@ -17,8 +19,8 @@ struct Searcher: View {
                    .frame(width: 15.63, height: 15.78)
                    .foregroundColor(.white)
                
-               Text("Buscar")
-                   .foregroundColor(.white)
+               TextField("Buscar", text: $text)
+                   .foregroundColor(Color.white)
            }
            .frame(maxWidth: .infinity, alignment: .leading)
            .padding()

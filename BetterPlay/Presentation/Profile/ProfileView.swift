@@ -17,7 +17,7 @@ struct ProfileView: View {
     @State var soccerProgres: Int = 50
     var body: some View {
         ZStack(){
-            VStack(){
+            VStack(spacing: 15){
                 ZStack(){
                     Rectangle()
                         .fill(Color("Gray")).frame(maxWidth: .infinity, maxHeight: 50)
@@ -35,7 +35,8 @@ struct ProfileView: View {
                             .foregroundColor(Color.white)
                             .padding(.trailing, 20)
                     }
-                }
+                }.padding(.top, 50)
+                
                 HStack(spacing: 0){
                     VStack(){
                         Text("Perfil")
@@ -59,7 +60,7 @@ struct ProfileView: View {
                         .frame(width: 70, height: 70, alignment: .leading)
                         .cornerRadius(50)
                         .padding(.leading,50)
-                    Spacer()
+                    
                     VStack(alignment: .leading){
                         Text(userEmail)
                             .font(.system(size: 15))
@@ -73,8 +74,11 @@ struct ProfileView: View {
                                 .scaledToFit()
                                 .frame(width: 20, height: 20, alignment: .leading)
                         }
-                    }.padding(.trailing, 55)
-                }.padding(.top,30)
+                    }.padding(.leading, 45)
+                    
+                    Spacer()
+                }.padding(.top,20)
+                
                 VStack(){
                     HStack(){
                         Text("BetterCoins")
@@ -83,12 +87,11 @@ struct ProfileView: View {
                             .font(.system(size: 20))
                             .bold()
                             .padding(.leading, 30)
-                        Spacer()
                         Image("Coins")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 30, height: 30, alignment: .leading)
-                            .padding(.trailing, 115)
+                        Spacer()
                     }
                     HStack(){
                         Text("BetterCoins en juego")
@@ -98,13 +101,12 @@ struct ProfileView: View {
                         Text("\(inGameCoins)")
                             .font(.system(size: 20))
                             .bold()
-                            .padding(.leading, 30)
-                        Spacer()
+                            .padding(.leading, 32)
                         Image("Coins")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 30, height: 30, alignment: .leading)
-                            .padding(.trailing, 115)
+                        Spacer()
                     }
                     HStack(){
                         Text("Racha")
@@ -182,10 +184,11 @@ struct ProfileView: View {
                                 .font(.system(size: 20))
                         }
                     }
-                }
+                }.padding(.top, 20)
                 Spacer()
             }
         }.background(Color("Background2"))
+            .ignoresSafeArea()
     }
 }
 

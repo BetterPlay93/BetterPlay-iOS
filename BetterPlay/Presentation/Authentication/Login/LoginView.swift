@@ -29,9 +29,10 @@ struct LoginView: View {
                 
                 navigateToRegister
                 
-                NavigationLink(destination: EmptyView(), isActive: $viewModel.shouldNavigateToHome) {
+                NavigationLink(destination: ContentView().navigationBarHidden(true).navigationBarBackButtonHidden(true), isActive: $viewModel.shouldNavigateToHome) {
                     EmptyView()
                 }
+                
             }
             .ignoresSafeArea()
             .background(Color("Background"))
@@ -104,7 +105,7 @@ struct LoginView: View {
 
     var navigateToRegister: some View {
         NavigationLink {
-//            RegisterView().navigationBarHidden(true)
+            RegisterView().navigationBarHidden(true)
         } label: {
             HStack {
                 Text("Don't have an account?")

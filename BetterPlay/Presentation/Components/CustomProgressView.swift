@@ -24,6 +24,6 @@ struct CustomProgressView: View {
 
 struct CustomProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomProgressView(progressColor: "Green", progressBackgroundColor: "White", value: 30)
+        CustomProgressView(progressColor: "Green", progressBackgroundColor: "Orange", value: 30)
     }
 }

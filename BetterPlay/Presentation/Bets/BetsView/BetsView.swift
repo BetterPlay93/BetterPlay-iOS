@@ -17,7 +17,7 @@ struct BetsView: View {
                 
                 filterButtons
                 
-                Rectangle().fill(Color("Gray")).frame(width: .infinity, height: 2, alignment: .center)
+                Rectangle().fill(Color("Gray")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
                 
                 
             }
@@ -42,7 +42,7 @@ struct BetsView: View {
             .padding(.top, 20)
             .background(Color("Background2"))
             
-            CustomTabBar(selectedTab: .constant(.Bet))
+            
         }
         .ignoresSafeArea()
     }

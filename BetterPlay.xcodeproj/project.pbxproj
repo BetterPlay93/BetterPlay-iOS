@@ -158,7 +158,6 @@
 		33F6A6242995439200FFAB37 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				33F6A62C2995451500FFAB37 /* CustomTabBar */,
 				33F6A626299543DC00FFAB37 /* CustomTextField.swift */,
 				33F6A631299545AD00FFAB37 /* CustomNavBar.swift */,
 				33F6A633299545C900FFAB37 /* UserCoins.swift */,
@@ -253,6 +252,7 @@
 		33F6A6802995609600FFAB37 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A62C2995451500FFAB37 /* CustomTabBar */,
 				33F6A681299560A500FFAB37 /* LoginView.swift */,
 				33F6A683299560B500FFAB37 /* LoginView-ViewModel.swift */,
 			);
