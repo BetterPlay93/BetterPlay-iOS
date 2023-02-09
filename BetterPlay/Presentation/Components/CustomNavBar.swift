@@ -40,6 +40,6 @@ struct CustomNavBar: View {
 
 struct CustomNavBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomNavBar()
+        CustomNavBar(color: "Green")
     }
 }

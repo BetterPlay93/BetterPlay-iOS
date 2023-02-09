@@ -10,7 +10,7 @@
 		3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */; };
 		3359FA5729883F4C00641FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5629883F4C00641FD7 /* Assets.xcassets */; };
 		3359FA5A29883F4C00641FD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */; };
-		33F6A6232995438B00FFAB37 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6222995438B00FFAB37 /* ResponseModel.swift */; };
+		33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */; };
 		33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A626299543DC00FFAB37 /* CustomTextField.swift */; };
 		33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A62A299544E700FFAB37 /* CustomTabBar.swift */; };
 		33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A62F2995457C00FFAB37 /* ContentView.swift */; };
@@ -18,6 +18,9 @@
 		33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A633299545C900FFAB37 /* UserCoins.swift */; };
 		33F6A6362995461700FFAB37 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6352995461700FFAB37 /* Searcher.swift */; };
 		33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A64329954E1500FFAB37 /* NetworkHelper.swift */; };
+		33F6A682299560A500FFAB37 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A681299560A500FFAB37 /* LoginView.swift */; };
+		33F6A684299560B500FFAB37 /* LoginView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A683299560B500FFAB37 /* LoginView-ViewModel.swift */; };
+		33F6A6872995619700FFAB37 /* AuthenticationPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6862995619700FFAB37 /* AuthenticationPresentationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +28,7 @@
 		3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterPlayApp.swift; sourceTree = "<group>"; };
 		3359FA5629883F4C00641FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		33F6A6222995438B00FFAB37 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponseModel.swift; sourceTree = "<group>"; };
 		33F6A626299543DC00FFAB37 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		33F6A62A299544E700FFAB37 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		33F6A62F2995457C00FFAB37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +36,9 @@
 		33F6A633299545C900FFAB37 /* UserCoins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoins.swift; sourceTree = "<group>"; };
 		33F6A6352995461700FFAB37 /* Searcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searcher.swift; sourceTree = "<group>"; };
 		33F6A64329954E1500FFAB37 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		33F6A681299560A500FFAB37 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		33F6A683299560B500FFAB37 /* LoginView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView-ViewModel.swift"; sourceTree = "<group>"; };
+		33F6A6862995619700FFAB37 /* AuthenticationPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresentationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A6802995609600FFAB37 /* Login */,
 				33F6A6242995439200FFAB37 /* Components */,
 			);
 			path = Presentation;
@@ -102,7 +109,7 @@
 		33F6A6212995437F00FFAB37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				33F6A6222995438B00FFAB37 /* ResponseModel.swift */,
+				33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +133,24 @@
 				33F6A62F2995457C00FFAB37 /* ContentView.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		33F6A6802995609600FFAB37 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A6852995618800FFAB37 /* Model */,
+				33F6A681299560A500FFAB37 /* LoginView.swift */,
+				33F6A683299560B500FFAB37 /* LoginView-ViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		33F6A6852995618800FFAB37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A6862995619700FFAB37 /* AuthenticationPresentationModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,14 +223,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F6A684299560B500FFAB37 /* LoginView-ViewModel.swift in Sources */,
 				33F6A632299545AD00FFAB37 /* CustomNavBar.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */,
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
-				33F6A6232995438B00FFAB37 /* ResponseModel.swift in Sources */,
+				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
+				33F6A6872995619700FFAB37 /* AuthenticationPresentationModel.swift in Sources */,
+				33F6A682299560A500FFAB37 /* LoginView.swift in Sources */,
 				3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
