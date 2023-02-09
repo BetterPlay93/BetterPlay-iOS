@@ -35,31 +35,31 @@ struct RegisterView: View {
             }
             .ignoresSafeArea()
             .background(Color("Background"))
-//            .alert("Error en el registro", isPresented: $viewModel.shouldShowAlert, actions: {
-//                Button {
-//                    
-//                } label: {
-//                    Text("Ok")
-//                }
-//            }) {
-//                ForEach(viewModel.response.message, id:\.self){ message in
-//                    Text("\(message)")
-//                }
-//            }
-//            .alert("Error en el registro", isPresented: $showPasswordAlert, actions: {
-//                Button {
-//                    
-//                } label: {
-//                    Text("Ok")
-//                }
-//            }) {
-//                Text("Las contraseñas no son iguales")
-//            }
-//            .onReceive(viewModel.$showLogin) { newValue in
-//                if newValue {
-//                    presentationMode.wrappedValue.dismiss()
-//                }
-//            }
+            .alert("Error en el registro", isPresented: $viewModel.shouldShowAlert, actions: {
+                Button {
+                    
+                } label: {
+                    Text("Ok")
+                }
+            }) {
+                ForEach(viewModel.response.message, id:\.self){ message in
+                    Text("\(message)")
+                }
+            }
+            .alert("Error en el registro", isPresented: $showPasswordAlert, actions: {
+                Button {
+                    
+                } label: {
+                    Text("Ok")
+                }
+            }) {
+                Text("Las contraseñas no son iguales")
+            }
+            .onReceive(viewModel.$showLogin) { newValue in
+                if newValue {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            }
         }
     }
 
@@ -95,14 +95,14 @@ struct RegisterView: View {
     var signUp: some View {
         Button {
             //Petición web
-//            if password == repeatPassword {
-//                viewModel.register(username: username, email: email, password: password)
-//                
-//
-//                    presentationMode.wrappedValue.dismiss()
-//            }else{
-//                showPasswordAlert.toggle()
-//            }
+            if password == repeatPassword {
+                viewModel.register(username: username, email: email, password: password)
+                
+
+                    presentationMode.wrappedValue.dismiss()
+            }else{
+                showPasswordAlert.toggle()
+            }
         } label: {
             Text("Sign Up")
                 .font(.headline)
