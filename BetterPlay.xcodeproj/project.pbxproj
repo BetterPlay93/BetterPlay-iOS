@@ -18,6 +18,8 @@
 		33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A633299545C900FFAB37 /* UserCoins.swift */; };
 		33F6A6362995461700FFAB37 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6352995461700FFAB37 /* Searcher.swift */; };
 		33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A64329954E1500FFAB37 /* NetworkHelper.swift */; };
+		33F6A6672995578600FFAB37 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6662995578600FFAB37 /* ProfileView.swift */; };
+		33F6A6692995579100FFAB37 /* ProfileView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6682995579100FFAB37 /* ProfileView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		33F6A633299545C900FFAB37 /* UserCoins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoins.swift; sourceTree = "<group>"; };
 		33F6A6352995461700FFAB37 /* Searcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searcher.swift; sourceTree = "<group>"; };
 		33F6A64329954E1500FFAB37 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		33F6A6662995578600FFAB37 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		33F6A6682995579100FFAB37 /* ProfileView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A6652995575500FFAB37 /* Profile */,
 				33F6A6242995439200FFAB37 /* Components */,
 			);
 			path = Presentation;
@@ -126,6 +131,15 @@
 				33F6A62F2995457C00FFAB37 /* ContentView.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		33F6A6652995575500FFAB37 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A6662995578600FFAB37 /* ProfileView.swift */,
+				33F6A6682995579100FFAB37 /* ProfileView-ViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +214,10 @@
 			files = (
 				33F6A632299545AD00FFAB37 /* CustomNavBar.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
+				33F6A6672995578600FFAB37 /* ProfileView.swift in Sources */,
 				33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */,
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
+				33F6A6692995579100FFAB37 /* ProfileView-ViewModel.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* ResponseModel.swift in Sources */,
