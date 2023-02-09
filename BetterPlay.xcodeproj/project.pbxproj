@@ -32,6 +32,11 @@
 		33F6A690299564C300FFAB37 /* RecoverPassEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A68F299564C300FFAB37 /* RecoverPassEmailView.swift */; };
 		33F6A6922995650800FFAB37 /* RecoverPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6912995650800FFAB37 /* RecoverPassViewModel.swift */; };
 		33F6A696299566FB00FFAB37 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A695299566FB00FFAB37 /* CustomProgressView.swift */; };
+		33F6A66D2995588C00FFAB37 /* SoccerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A66C2995588C00FFAB37 /* SoccerCardView.swift */; };
+		33F6A66F2995589700FFAB37 /* BasketballCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A66E2995589700FFAB37 /* BasketballCardView.swift */; };
+		33F6A6712995589E00FFAB37 /* TennisCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6702995589E00FFAB37 /* TennisCardView.swift */; };
+		33F6A673299558AC00FFAB37 /* BetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A672299558AC00FFAB37 /* BetsView.swift */; };
+		33F6A675299558B700FFAB37 /* BetsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +66,11 @@
 		33F6A68F299564C300FFAB37 /* RecoverPassEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPassEmailView.swift; sourceTree = "<group>"; };
 		33F6A6912995650800FFAB37 /* RecoverPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPassViewModel.swift; sourceTree = "<group>"; };
 		33F6A695299566FB00FFAB37 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		33F6A66C2995588C00FFAB37 /* SoccerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerCardView.swift; sourceTree = "<group>"; };
+		33F6A66E2995589700FFAB37 /* BasketballCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballCardView.swift; sourceTree = "<group>"; };
+		33F6A6702995589E00FFAB37 /* TennisCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisCardView.swift; sourceTree = "<group>"; };
+		33F6A672299558AC00FFAB37 /* BetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsView.swift; sourceTree = "<group>"; };
+		33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetsView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +128,8 @@
 				33F6A688299563E200FFAB37 /* RecoverPassword */,
 				33F6A6602995559D00FFAB37 /* EditProfile */,
 				33F6A6652995575500FFAB37 /* Profile */,
+				33F6A66B2995588000FFAB37 /* Cards */,
+				33F6A66A2995587A00FFAB37 /* BetsView */,
 				33F6A6242995439200FFAB37 /* Components */,
 			);
 			path = Presentation;
@@ -234,6 +246,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		33F6A66A2995587A00FFAB37 /* BetsView */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A672299558AC00FFAB37 /* BetsView.swift */,
+				33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */,
+			);
+			path = BetsView;
+			sourceTree = "<group>";
+		};
+		33F6A66B2995588000FFAB37 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				33F6A66C2995588C00FFAB37 /* SoccerCardView.swift */,
+				33F6A66E2995589700FFAB37 /* BasketballCardView.swift */,
+				33F6A6702995589E00FFAB37 /* TennisCardView.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,6 +341,7 @@
 				33F6A662299555C300FFAB37 /* EditProfileView.swift in Sources */,
 				33F6A632299545AD00FFAB37 /* CustomNavBar.swift in Sources */,
 				33F6A68C2995641700FFAB37 /* RecoverPasswordCodeView.swift in Sources */,
+				33F6A6712995589E00FFAB37 /* TennisCardView.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
 				33F6A6672995578600FFAB37 /* ProfileView.swift in Sources */,
@@ -318,6 +350,7 @@
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
 				33F6A6692995579100FFAB37 /* ProfileView-ViewModel.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
+				33F6A66D2995588C00FFAB37 /* SoccerCardView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
 				33F6A64C29954FAD00FFAB37 /* AuthenticationPresentationModel.swift in Sources */,
@@ -326,9 +359,13 @@
 				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
 				33F6A690299564C300FFAB37 /* RecoverPassEmailView.swift in Sources */,
 				33F6A6922995650800FFAB37 /* RecoverPassViewModel.swift in Sources */,
+				33F6A673299558AC00FFAB37 /* BetsView.swift in Sources */,
+				33F6A6232995438B00FFAB37 /* ResponseModel.swift in Sources */,
+				33F6A66F2995589700FFAB37 /* BasketballCardView.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
 				33F6A682299560A500FFAB37 /* LoginView.swift in Sources */,
 				3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */,
+				33F6A675299558B700FFAB37 /* BetsView-ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
