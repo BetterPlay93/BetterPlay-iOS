@@ -10,6 +10,7 @@
 		3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */; };
 		3359FA5729883F4C00641FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5629883F4C00641FD7 /* Assets.xcassets */; };
 		3359FA5A29883F4C00641FD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */; };
+		33C98B352996CBA200AF4672 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C98B342996CBA200AF4672 /* ImagePicker.swift */; };
 		33F6A6232995438B00FFAB37 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6222995438B00FFAB37 /* ResponseModel.swift */; };
 		33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A626299543DC00FFAB37 /* CustomTextField.swift */; };
 		33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A62A299544E700FFAB37 /* CustomTabBar.swift */; };
@@ -27,6 +28,7 @@
 		3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterPlayApp.swift; sourceTree = "<group>"; };
 		3359FA5629883F4C00641FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		33C98B342996CBA200AF4672 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		33F6A6222995438B00FFAB37 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		33F6A626299543DC00FFAB37 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		33F6A62A299544E700FFAB37 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		3359FA5129883F4B00641FD7 /* BetterPlay */ = {
 			isa = PBXGroup;
 			children = (
+				33C98B332996CB5200AF4672 /* Domain */,
 				33F6A61F2995437200FFAB37 /* Presentation */,
 				33F6A6202995437A00FFAB37 /* Data */,
 				3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */,
@@ -84,6 +87,22 @@
 				3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		33C98B332996CB5200AF4672 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				33C98B362996CBC900AF4672 /* Library */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		33C98B362996CBC900AF4672 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				33C98B342996CBA200AF4672 /* ImagePicker.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
@@ -221,6 +240,7 @@
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* ResponseModel.swift in Sources */,
+				33C98B352996CBA200AF4672 /* ImagePicker.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
 				3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */,
 			);

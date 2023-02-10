@@ -11,22 +11,32 @@ struct EditProfileView: View {
     @State private var username = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State var image: UIImage?
+    @State var isPickerPresented: Bool = false
+    
+    @ObservedObject var viewmodel : ViewModel = ViewModel()
     
     var body: some View {
         VStack {
             Spacer()
-            ZStack {
-                Image(systemName: "person.crop.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 180, height: 146)
-                
+            ZStack(alignment: .bottomTrailing) {
+                if let image = image {
+                    Image(uiImage: image)
+                        .customImageSize()
+                } else {
+                    Image(systemName: "person.crop.circle.fill")
+                        .customImageSize()
+                }
+
                 Image(systemName: "photo.circle.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 59, height: 59)
-                    .frame(maxWidth: 160, alignment: .trailing)
-                    .padding(.top, 100)
+                    .overlay(Circle().stroke(Color.white))
+                    .background(Circle().fill(Color.white))
+                    .onTapGesture {
+                        isPickerPresented = true
+                    }
             }
             
             CustomTextField(imageName: "person", placeholderText: "Username", text: $username)
@@ -44,10 +54,20 @@ struct EditProfileView: View {
             CustomTabBar(selectedTab: .constant(.Profile))
         }
         .ignoresSafeArea()
+        .sheet(isPresented: $isPickerPresented) {
+            ImagePicker(selectedImage: $image)
+        }
     }
+    
+    // MARK: - Accessory Views
     
     var saveChangesButton: some View{
         Button {
+            if(password == confirmPassword){
+                viewmodel.edit(username: username, password: password)
+            }else{
+                //mostrar alert
+            }
             
         } label: {
             Text("Guardar Cambios")
@@ -57,8 +77,25 @@ struct EditProfileView: View {
                 .background(Color("DarkGray"))
                 .cornerRadius(10)
                 .padding(40)
-        }
+            //navegar a perfil
+        }.background(
+            NavigationLink(destination: EmptyView(), isActive: $viewmodel.goToProfile) {
+                EmptyView()
+            }
+        )
     }
+}
+
+// MARK: - Private Image extension
+internal extension Image {
+    func customImageSize() -> some View {
+        self
+            .resizable()
+            .scaledToFill()
+            .frame(width: 180, height: 146)
+            .clipShape(Circle())
+            
+   }
 }
 
 struct EditProfileView_Previews: PreviewProvider {
