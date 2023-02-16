@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct BetsView: View {
+    
+    @ObservedObject private var viewModel = ViewModel()
+    
     var body: some View {
         VStack(spacing: 0){
             VStack(spacing: 20) {
@@ -17,7 +20,7 @@ struct BetsView: View {
                 
                 filterButtons
                 
-                Rectangle().fill(Color("Gray")).frame(width: .infinity, height: 2, alignment: .center)
+                Rectangle().fill(Color("Gray")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
                 
                 
             }
@@ -27,15 +30,15 @@ struct BetsView: View {
             VStack {
                 ScrollView {
                     LazyVStack {
-                        SoccerCardView()
-                        
-                        BasketballCardView()
-                        
-                        TennisCardView()
-                        
-                        SoccerCardView()
-                        
-                        BasketballCardView()
+                        ForEach(viewModel.bets){ bet in
+                            if bet.sport == "soccer" {
+                                SoccerCardView(bet: bet)
+                            } else if bet.sport == "basketball" {
+                                BasketballCardView(bet: bet)
+                            } else if bet.sport == "basketball" {
+                                TennisCardView(bet: bet)
+                            }
+                        }
                     }
                 }
             }
@@ -45,6 +48,9 @@ struct BetsView: View {
             CustomTabBar(selectedTab: .constant(.Bet))
         }
         .ignoresSafeArea()
+        .onAppear() {
+            viewModel.getAllBets()
+        }
     }
     
     

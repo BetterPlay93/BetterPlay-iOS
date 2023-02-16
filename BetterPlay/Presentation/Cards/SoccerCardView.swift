@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct SoccerCardView: View {
-    @State private var homeTeam = "FC.Barcelona"
-    @State private var awayTeam = "Real Madrid"
-   
+    var bet: BetPresentationModel
+    
     var body: some View {
         HStack(spacing: 10){
             Image("SoccerCard")
@@ -67,11 +66,11 @@ struct SoccerCardView: View {
             }
             
             VStack(alignment: .leading){
-                Text("\(homeTeam)")
+                Text("\(bet.home_team.name)")
                     .foregroundColor(Color("Green"))
                     .bold()
                 
-                Text("\(awayTeam)")
+                Text("\(bet.away_team.name)")
                     .foregroundColor(Color("Green"))
                     .bold()
             }
@@ -85,7 +84,7 @@ struct SoccerCardView: View {
                 .scaledToFit()
                 .frame(width: 18, height: 18)
                
-            Text("17-2-23")
+            Text(convertTimestampToDate(date: bet.date))
                 .font(.system(size: 13))
                 .foregroundColor(Color("Gray"))
                 .bold()
@@ -96,7 +95,7 @@ struct SoccerCardView: View {
                 .foregroundColor(Color("DarkGreen"))
                 .frame(width: 18, height: 18)
                
-            Text("20:00")
+            Text(convertTimestampToHour(date: bet.date))
                 .font(.system(size: 13))
                 .foregroundColor(Color("Gray"))
                 .bold()
@@ -119,6 +118,22 @@ struct SoccerCardView: View {
 
 struct SoccerCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SoccerCardView()
+        SoccerCardView(bet: BetPresentationModel(home_result: 0, away_result: 0, home_odd: 0.0, away_odd: 0.0, tie_odd: 0.0, date: 0, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: ""), away_team: TeamPresentationModel(name: "Real Madrid", logo: "")))
     }
+}
+
+func convertTimestampToDate(date: Int) -> String {
+    let date = Date(timeIntervalSince1970: TimeInterval(date))
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd/MM/yy"
+    let strDate = dateFormatter.string(from: date)
+    return strDate
+}
+
+func convertTimestampToHour(date: Int) -> String {
+    let date = Date(timeIntervalSince1970: TimeInterval(date))
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    let strDate = dateFormatter.string(from: date)
+    return strDate
 }
