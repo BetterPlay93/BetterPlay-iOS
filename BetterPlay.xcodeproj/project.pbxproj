@@ -20,7 +20,7 @@
 		33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A64329954E1500FFAB37 /* NetworkHelper.swift */; };
 		33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67829955C5800FFAB37 /* BetDetailView.swift */; };
 		33F6A67D29955C7400FFAB37 /* BetDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67C29955C7400FFAB37 /* BetDetailView-ViewModel.swift */; };
-		33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67E29955CEA00FFAB37 /* BetPresentationModel.swift */; };
+		33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67E29955CEA00FFAB37 /* BetDetailPresentationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,7 @@
 		33F6A64329954E1500FFAB37 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		33F6A67829955C5800FFAB37 /* BetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetDetailView.swift; sourceTree = "<group>"; };
 		33F6A67C29955C7400FFAB37 /* BetDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetDetailView-ViewModel.swift"; sourceTree = "<group>"; };
-		33F6A67E29955CEA00FFAB37 /* BetPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetPresentationModel.swift; sourceTree = "<group>"; };
+		33F6A67E29955CEA00FFAB37 /* BetDetailPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetDetailPresentationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 		33F6A67729955C4D00FFAB37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				33F6A67E29955CEA00FFAB37 /* BetPresentationModel.swift */,
+				33F6A67E29955CEA00FFAB37 /* BetDetailPresentationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F6A632299545AD00FFAB37 /* CustomNavBar.swift in Sources */,
-				33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */,
+				33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */,
 				33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */,

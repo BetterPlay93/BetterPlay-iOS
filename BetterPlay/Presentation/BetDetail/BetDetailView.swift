@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BetDetailView: View {
-    var bet: BetPresentationModel
+    var betDetail: BetDetailPresentationModel
         
     var body: some View {
         ZStack {
@@ -17,7 +17,7 @@ struct BetDetailView: View {
                 VStack {
                     CustomNavBar(color: "DarkGreen")
                     
-                    Rectangle().fill(Color(bet.color)).frame(width: UIScreen.main.bounds.width, height: 3, alignment: .center)
+                    Rectangle().fill(Color(betDetail.color)).frame(width: UIScreen.main.bounds.width, height: 3, alignment: .center)
                 }.padding(.bottom, 40)
                 
                 
@@ -59,14 +59,14 @@ struct BetDetailView: View {
                     .padding(.trailing, 38)
             }
             
-            odd(homeTeam: bet.home, odd: "\(bet.home_odd)")
-            if(bet.sport == "soccer"){
-                odd(homeTeam: "Empate", odd: "\(bet.tie_odd)")
+            odd(homeTeam: betDetail.bet.home_team.name, odd: "\(betDetail.bet.home_odd)")
+            if(betDetail.bet.sport == "soccer"){
+                odd(homeTeam: "Empate", odd: "\(betDetail.bet.tie_odd)")
             }
-            odd(homeTeam: bet.away, odd: "\(bet.away_odd)")
+            odd(homeTeam: betDetail.bet.away_team.name, odd: "\(betDetail.bet.away_odd)")
             
         }
-        .frame(width: 365, height: bet.sport == "soccer" ? 193 : 154)
+        .frame(width: 365, height: betDetail.bet.sport == "soccer" ? 193 : 154)
         .background(.white)
         .cornerRadius(10)
     }
@@ -110,12 +110,12 @@ struct BetDetailView: View {
         .frame(width: 365, height: 200)
         .background(.white)
         .cornerRadius(10)
-        .padding(.top, bet.sport == "soccer" ? 70 : 109)
+        .padding(.top, betDetail.bet.sport == "soccer" ? 70 : 109)
     }
     
     var teamsview: some View {
         HStack(spacing: 30){
-            AsyncImage(url: URL(string: bet.homeLogo)) {image in
+            AsyncImage(url: URL(string: betDetail.bet.home_team.logo)) {image in
                 image.resizable()
             }placeholder: {
                 ProgressView()
@@ -128,18 +128,18 @@ struct BetDetailView: View {
                     .bold()
                     .foregroundColor(.white)
                 
-                Text(convertTimestampToDate(date: bet.date))
+                Text(convertTimestampToDate(date: betDetail.bet.date))
                     .font(.system(size: 12))
                     .bold()
                     .foregroundColor(.white)
                 
-                Text(convertTimestampToHour(date:bet.date))
+                Text(convertTimestampToHour(date: betDetail.bet.date))
                     .font(.system(size: 12))
                     .bold()
                     .foregroundColor(.white)
             }
             
-            AsyncImage(url: URL(string: bet.awayLogo)) {image in
+            AsyncImage(url: URL(string: betDetail.bet.away_team.logo)) {image in
                 image.resizable()
             }placeholder: {
                 ProgressView()
@@ -147,8 +147,8 @@ struct BetDetailView: View {
             .frame(width: 98, height: 100)
             
                 
-        }.frame(width: 390, height: 228)
-            .background(Color("Light\(bet.color)"))
+        }.frame(width: UIScreen.main.bounds.width, height: 228)
+            .background(Color("Light\(betDetail.color)"))
     }
     
     func odd(homeTeam: String, odd: String) -> some View {
@@ -162,14 +162,14 @@ struct BetDetailView: View {
             Spacer()
             
             Button {
-                
+                //Mostrar participar en apuesta
             } label: {
                 Text(odd)
                     .font(.system(size: 14))
                     .foregroundColor(.white)
                     .bold()
                     .frame(width: 57, height: 28)
-                    .background(Color(bet.color))
+                    .background(Color(betDetail.color))
                     .cornerRadius(5)
                     .padding(.trailing, 30)
             }
@@ -208,7 +208,7 @@ struct BetDetailView: View {
 
 struct BetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BetDetailView(bet: BetPresentationModel(home: "FC.Barcelona", away: "Real Madrid", homeLogo: "https://media-1.api-sports.io/football/teams/529.png", awayLogo: "https://media-2.api-sports.io/football/teams/541.png", sport: "soccer", date: 1675962094, home_odd: 1.75, tie_odd: 2.00, away_odd: 2.15))
+        BetDetailView(betDetail: BetDetailPresentationModel(bet: BetPresentationModel(home_result: 0, away_result: 0, home_odd: 1.0, away_odd: 3.0, tie_odd: 1.5, date: 1676658884, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: "https://media-1.api-sports.io/football/teams/529.png"), away_team: TeamPresentationModel(name: "Real Madrid", logo: "https://media-2.api-sports.io/football/teams/541.png")), color: "Green"))
     }
 }
 
