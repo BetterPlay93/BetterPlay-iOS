@@ -12,7 +12,8 @@ extension EditProfileView {
     class ViewModel: ObservableObject {
         @Published var goToProfile: Bool = false
         @Published var shouldShowAlert: Bool = false
-        @Published var response: EditPresentationModel = EditPresentationModel()
+        @Published var userProfile: EditPresentationModel = .init()
+        
         func edit(username: String, password: String, photo: Data	) {
             //Falta obtener el token del userdeafaults lo hacemos mientras natao a mano
             
@@ -22,7 +23,6 @@ extension EditProfileView {
                 "username" : username,
                 "password" : password,
                 "photo" : photo
-                
             ]
             
             NetworkHelper.shared.requestProvider(url: url, token: logedToken, type: .POST, params: dictionary) { data, response, error in
@@ -30,25 +30,26 @@ extension EditProfileView {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data, let response = response as? HTTPURLResponse{
                     print(response.statusCode)
-                    self.onSuccess(data: data)
+                    self.onSuccess(data: data, response: response)
                 }
             }
         }
-        //
-        func onSuccess(data: Data) {
+        
+        func onSuccess(data: Data, response: HTTPURLResponse) {
             do{
                 let data = try JSONDecoder().decode(EditUserResponseModel?.self, from: data)
-                response = EditPresentationModel(status: data?.status ?? "", code: data?.code ?? 0, message: data?.message ?? [""] , data: data?.data ?? UserResponseModel(username: "", email: "", coins: 0, followers: 0, code: "", photo: Data()))
-                if response.code != 200 {
-                    self.onError(error: response.message)
+                userProfile = .init(dataModel: data)
+                
+                if response.statusCode != 200 {
+                    self.onError(error: data?.message ?? [])
                 }else{
                     //UserDefaults.standard.set(response.data, forKey: "token")
                     goToProfile = true
-                    print(response.data)
                 }
             } catch {
                 self.onError(error: [error.localizedDescription])
             }
+            
             goToProfile = true
         }
         

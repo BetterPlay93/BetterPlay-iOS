@@ -14,9 +14,9 @@ class UserResponseModel: Decodable{
     var coins: Int?
     var followers: Int?
     var code: String?
-    var photo: Data?
+    var photo: String?
     
-    init(username: String, email: String, coins: Int, followers: Int, code: String, photo: Data){
+    init(username: String, email: String, coins: Int, followers: Int, code: String, photo: String){
         self.username = username
         self.email = email
         self.coins = coins

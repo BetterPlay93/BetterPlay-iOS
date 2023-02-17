@@ -7,11 +7,13 @@
 
 import Foundation
 
-class EditUserResponseModel: Decodable {
-        
+class EditUserResponseModel: BaseResponseModel {
+    var data: UserResponseModel?
+}
+
+
+class BaseResponseModel: Decodable {
     var status: String?
     var code: Int?
     var message: [String]?
-    var data: UserResponseModel?
-    
 }

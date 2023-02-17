@@ -7,18 +7,21 @@
 
 import Foundation
 
-class EditPresentationModel {
-    var status: String = ""
-    var code: Int =  0
-    var message: [String] = [""]
-    var data: UserResponseModel = UserResponseModel(username: "", email: "", coins: 0, followers: 0, code: "", photo: Data())
+class EditPresentationModel {    
+    var username: String
+    var email: String
+    var photo: String
     
-    init(status: String, code:Int, message: [String], data: UserResponseModel){
-        self.status = status
-        self.code = code
-        self.message = message
-        self.data = data
+    init(){
+        self.username =  ""
+        self.email = ""
+        self.photo = ""
     }
-    init(){}
+
+    init(dataModel: EditUserResponseModel?){
+        self.username = dataModel?.data?.username ?? ""
+        self.email = dataModel?.data?.email ?? ""
+        self.photo = dataModel?.data?.photo ?? ""
+    }
     
 }
