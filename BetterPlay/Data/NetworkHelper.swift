@@ -28,9 +28,11 @@ class NetworkHelper {
         
         task.resume()
     }
-    
+    func requestUploadImage(data:){
+        
+    }
     //MARK: - Public Methods
-    func requestProvider(url: String, type: RequestType = .POST, params: [String: Any]? = nil, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> Void {
+    func requestProvider(url: String, token: String? = nil, type: RequestType = .POST, params: [String: Any]? = nil, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> Void {
         
         let url = URL(string: url)
         
@@ -38,7 +40,11 @@ class NetworkHelper {
         
         var request = URLRequest(url: urlNotNil)
         
+        request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        
         request.httpMethod = type.rawValue
+        
+        
         
         if let dictionary = params {
             let data = try! JSONSerialization.data(withJSONObject: dictionary, options: [])

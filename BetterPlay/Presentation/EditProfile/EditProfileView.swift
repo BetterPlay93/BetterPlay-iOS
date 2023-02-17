@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EditProfileView: View {
+    // MARK: - Variables
+    
     @State private var username = ""
     @State private var password = ""
     @State private var confirmPassword = ""
@@ -15,36 +17,16 @@ struct EditProfileView: View {
     @State var isPickerPresented: Bool = false
     
     @ObservedObject var viewmodel : ViewModel = ViewModel()
-    
+    // MARK: - Body
     var body: some View {
         VStack {
-            Spacer()
-            ZStack(alignment: .bottomTrailing) {
-                if let image = image {
-                    Image(uiImage: image)
-                        .customImageSize()
-                } else {
-                    Image(systemName: "person.crop.circle.fill")
-                        .customImageSize()
-                }
-
-                Image(systemName: "photo.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 59, height: 59)
-                    .overlay(Circle().stroke(Color.white))
-                    .background(Circle().fill(Color.white))
-                    .onTapGesture {
-                        isPickerPresented = true
-                    }
-            }
-            
-            CustomTextField(imageName: "person", placeholderText: "Username", text: $username)
+            CustomBackButton(buttonColor: "DarkGray")
+            imageSelection
+            CustomTextField(imageName: "person", placeholderText: "Username", isSecureField: false,  text: $username)
                 .padding()
-            CustomTextField(imageName: "lock", placeholderText: "Password", text: $username)
+            CustomTextField(imageName: "lock", placeholderText: "Password", isSecureField: true, text: $password)
                 .padding()
-
-            CustomTextField(imageName: "lock", placeholderText: "Confirm Password", text: $username)
+            CustomTextField(imageName: "lock", placeholderText: "Confirm Password", isSecureField: true, text: $confirmPassword)
                 .padding()
             
             saveChangesButton
@@ -59,16 +41,37 @@ struct EditProfileView: View {
         }
     }
     
-    // MARK: - Accessory Views
+// MARK: - Accessory Views
     
+    var imageSelection: some View {
+        ZStack(alignment: .bottomTrailing) {
+            if let image = image {
+                Image(uiImage: image)
+                    .customImageSize()
+            } else {
+                Image(systemName: "person.crop.circle.fill")
+                    .customImageSize()
+            }
+            Image(systemName: "photo.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 59, height: 59)
+                .overlay(Circle().stroke(Color.white))
+                .background(Circle().fill(Color.white))
+                .onTapGesture {
+                    isPickerPresented = true
+                }
+        }
+    }
+    // MARK: - Save Changes Button
     var saveChangesButton: some View{
         Button {
             if(password == confirmPassword){
-                viewmodel.edit(username: username, password: password)
+                let dataImage = image?.jpegData(compressionQuality: 0.5)
+                viewmodel.edit(username: username, password: password, photo: dataImage ?? Data())
             }else{
-                //mostrar alert
+                viewmodel.shouldShowAlert = true
             }
-            
         } label: {
             Text("Guardar Cambios")
                 .font(.headline)
@@ -97,9 +100,24 @@ internal extension Image {
             
    }
 }
-
+// MARK: - PreView
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
         EditProfileView()
+    }
+}
+// MARK: - Transform Image into Base64
+extension UIImage {
+    var base64: String? {
+        self.jpegData(compressionQuality: 0.5)?.base64EncodedString()
+    }
+}
+// MARK: - Transform Base64 into Image Data
+extension String {
+    var imageFromBase64: UIImage? {
+        guard let imageData = Data(base64Encoded: self, options: .ignoreUnknownCharacters) else {
+            return nil
+        }
+        return UIImage(data: imageData)
     }
 }
