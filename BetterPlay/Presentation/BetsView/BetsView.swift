@@ -10,13 +10,18 @@ import SwiftUI
 struct BetsView: View {
     
     @ObservedObject private var viewModel = ViewModel()
+    @State var text: String = ""
+    @State var allSelected: Bool = true
+    @State var soccerSelected: Bool = false
+    @State var basketSelected: Bool = false
+    @State var tennisSelected: Bool = false
     
     var body: some View {
         VStack(spacing: 0){
             VStack(spacing: 20) {
                 logo
                 
-                Searcher()
+                Searcher(text: $text)
                 
                 filterButtons
                 
@@ -30,14 +35,18 @@ struct BetsView: View {
             VStack {
                 ScrollView {
                     LazyVStack {
-                        ForEach(viewModel.bets){ bet in
-                            if bet.sport == "soccer" {
-                                SoccerCardView(bet: bet)
-                            } else if bet.sport == "basketball" {
-                                BasketballCardView(bet: bet)
-                            } else if bet.sport == "basketball" {
-                                TennisCardView(bet: bet)
-                            }
+                        ForEach(viewModel.bets.filter({
+                            $0.home_team.name.contains(text) || $0.away_team.name.contains(text) 
+                        })){ bet in
+                            //NavigationLink(destination: DetailView(bet: bet)) {
+                                if bet.sport == "soccer" {
+                                    SoccerCardView(bet: bet)
+                                } else if bet.sport == "basketball" {
+                                    BasketballCardView(bet: bet)
+                                } else if bet.sport == "basketball" {
+                                    TennisCardView(bet: bet)
+                                }
+                            //}
                         }
                     }
                 }
@@ -64,7 +73,10 @@ struct BetsView: View {
     var filterButtons: some View {
         HStack {
             Button {
-                //Petición web
+                allSelected = true
+                soccerSelected = false
+                basketSelected = false
+                tennisSelected = false
             }label: {
                 Text("Todo")
                     .foregroundColor(.white)
@@ -72,11 +84,14 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("Gray"))
+            .background(allSelected ? Color("Gray") : Color("LightGray"))
             .cornerRadius(35)
             
             Button {
-                //Partidos de fútbol
+                allSelected = false
+                soccerSelected = true
+                basketSelected = false
+                tennisSelected = false
             }label: {
                 Text("Fútbol")
                     .foregroundColor(.white)
@@ -84,11 +99,14 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("GreenButton"))
+            .background(soccerSelected ? Color("Green") : Color("GreenButton"))
             .cornerRadius(35)
             
             Button {
-                //Partidos de baloncesto
+                allSelected = false
+                soccerSelected = false
+                basketSelected = true
+                tennisSelected = false
             }label: {
                 Text("Baloncesto")
                     .foregroundColor(.white)
@@ -96,11 +114,14 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("OrangeButton"))
+            .background(basketSelected ? Color("Orange") : Color("OrangeButton"))
             .cornerRadius(35)
             
             Button {
-                //partidos de tenis
+                allSelected = false
+                soccerSelected = false
+                basketSelected = false
+                tennisSelected = true
             }label: {
                 Text("Tenis")
                     .foregroundColor(.white)
@@ -108,7 +129,7 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("YellowButton"))
+            .background(tennisSelected ? Color("Yellow") : Color("YellowButton"))
             .cornerRadius(35)
         }
     }
