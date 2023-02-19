@@ -8,29 +8,48 @@
 import SwiftUI
 
 struct Searcher: View {
+    
+    @Binding var text: String
+    @State private var isEditing = false
+
     var body: some View {
-       ZStack {
-           HStack(alignment: .center, spacing: 10){
+      HStack {
+          TextField("Buscar", text: $text)
+              .padding(7)
+              .padding(.horizontal, 25)
+              .foregroundColor(.white)
+              .background(Color("LightGray"))
+              .cornerRadius(8)
+              .padding(.horizontal, 10)
+              .textInputAutocapitalization(.never)
+              .onTapGesture {
+                  self.isEditing = true
+              }
+      }.overlay(
+           HStack {
                Image(systemName: "magnifyingglass")
-                   .resizable()
-                   .scaledToFit()
-                   .frame(width: 15.63, height: 15.78)
                    .foregroundColor(.white)
-               
-               Text("Buscar")
-                   .foregroundColor(.white)
+                   .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                   .padding(.leading, 18)
+        
+               if isEditing || text != ""{
+                   Button(action: {
+                       self.isEditing = false
+                       self.text = ""
+                   }) {
+                       Image(systemName: "multiply.circle.fill")
+                           .foregroundColor(.gray)
+                           .padding(.trailing, 20)
+                   }
+               }
            }
-           .frame(maxWidth: .infinity, alignment: .leading)
-           .padding()
-       }
-       .frame(width: 334, height: 35)
-       .background(Color("LightGray"))
-       .cornerRadius(10)
-   }
+       )
+      .padding(.horizontal, 30)
+    }
 }
 
 struct Searcher_Previews: PreviewProvider {
     static var previews: some View {
-        Searcher()
+        Searcher(text: .constant(""))
     }
 }

@@ -13,7 +13,7 @@ struct BetsView: View {
             VStack(spacing: 20) {
                 logo
                 
-                Searcher()
+                //Searcher()
                 
                 filterButtons
                 
