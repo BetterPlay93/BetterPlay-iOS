@@ -9,48 +9,25 @@ import SwiftUI
 
 struct UserSearcherView: View {
     
+    @State private var searcherText: String = ""
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     
     
     var body: some View {
         ZStack(){
             VStack {
-                ZStack {
-                    Rectangle()
-                        .fill(Color("Gray")).frame(maxWidth: .infinity, maxHeight: 50)
-                    HStack(){
-                        
-                        Button {
-                            presentationMode.wrappedValue.dismiss()
-                        }label: {
-                            Image(systemName: "arrow.left")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 35, height: 35, alignment: .leading)
-                                .foregroundColor(Color.white)
-                                .padding(.leading, 10)
-                        }
-                        Spacer()
-                            
-                        Text("Usuarios")
-                            .foregroundColor(Color.white)
-                            .font(.system(size: 25))
-                            .bold()
-                            .padding(.trailing, 40)
-                        
-                        
-                        Spacer()
-                        
-                    }
-                }
+                header
                 
-                Searcher()
+                Searcher(text: $searcherText)
                     .padding()
                 
                 ScrollView {
                     LazyVStack {
-                        ForEach(0...10, id: \.self) {   _ in
-                            UserCard().padding(10)
+                        ForEach(viewModel.users.filter({ user in
+                            searcherText.isEmpty ? true : user.username.contains(searcherText)
+                        })) { user in
+                            UserCard(user: user).padding(10)
                         }
                         
                     }
@@ -58,6 +35,41 @@ struct UserSearcherView: View {
             }
             
         }.background(Color("Background"))
+        .onAppear {
+            viewModel.getAllUsers()
+        }
+    }
+    
+    var header: some View {
+        ZStack {
+            Rectangle()
+                .fill(Color("Gray")).frame(maxWidth: .infinity, maxHeight: 50)
+            HStack(){
+                
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                }label: {
+                    Image(systemName: "arrow.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 35, height: 35, alignment: .leading)
+                        .foregroundColor(Color.white)
+                        .padding(.leading, 10)
+                }
+                
+                Spacer()
+                    
+                Text("Usuarios")
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 25))
+                    .bold()
+                    .padding(.trailing, 40)
+                
+                
+                Spacer()
+                
+            }
+        }
     }
 }
 

@@ -9,16 +9,20 @@ import SwiftUI
 
 struct UserCard: View {
     
+    var user: UserPresentationModel
+    
     var body: some View {
         HStack {
-            Image("Women")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 50, height: 50)
-                .cornerRadius(30)
-                .padding(.leading)
+            AsyncImage(url: URL(string: user.photo)) {image in
+                image.resizable()
+            }placeholder: {
+                ProgressView()
+            }
+            .frame(width: 50, height: 50)
+            .cornerRadius(30)
+            .padding(.leading)
             
-            Text("Saraaa_cd")
+            Text(user.username)
                 .foregroundColor(.black)
                 .bold()
                 .padding(.horizontal, 10)
@@ -45,6 +49,6 @@ struct UserCard: View {
 
 struct UserCard_Previews: PreviewProvider {
     static var previews: some View {
-        UserCard().previewLayout(.sizeThatFits)
+        UserCard(user: UserPresentationModel(username: "", email: "", coins: 0, followers: 0, code: "", photo: "")).previewLayout(.sizeThatFits)
     }
 }

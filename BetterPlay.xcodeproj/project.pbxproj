@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104FEEF729A285400091EAFC /* UserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEEF629A285400091EAFC /* UserResponseModel.swift */; };
+		104FEEF929A285670091EAFC /* UserSearcherResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEEF829A285670091EAFC /* UserSearcherResponseModel.swift */; };
+		104FEEFC29A2885D0091EAFC /* UserPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEEFB29A2885D0091EAFC /* UserPresentationModel.swift */; };
 		3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */; };
 		3359FA5729883F4C00641FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5629883F4C00641FD7 /* Assets.xcassets */; };
 		3359FA5A29883F4C00641FD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */; };
@@ -46,6 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		104FEEF629A285400091EAFC /* UserResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseModel.swift; sourceTree = "<group>"; };
+		104FEEF829A285670091EAFC /* UserSearcherResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearcherResponseModel.swift; sourceTree = "<group>"; };
+		104FEEFB29A2885D0091EAFC /* UserPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresentationModel.swift; sourceTree = "<group>"; };
 		3359FA4F29883F4B00641FD7 /* BetterPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterPlayApp.swift; sourceTree = "<group>"; };
 		3359FA5629883F4C00641FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		104FEEFA29A2883B0091EAFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				104FEEFB29A2885D0091EAFC /* UserPresentationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3359FA4629883F4B00641FD7 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +149,7 @@
 		339305032996C7550070C1CE /* UserSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				104FEEFA29A2883B0091EAFC /* Model */,
 				339305042996C7650070C1CE /* UserSearcherView.swift */,
 				339305062996C7720070C1CE /* UserSearcherView-ViewModel.swift */,
 			);
@@ -167,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */,
+				104FEEF629A285400091EAFC /* UserResponseModel.swift */,
+				104FEEF829A285670091EAFC /* UserSearcherResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,12 +421,14 @@
 				33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
+				104FEEF929A285670091EAFC /* UserSearcherResponseModel.swift in Sources */,
 				33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */,
 				339305092996C7F80070C1CE /* UserCard.swift in Sources */,
 				33F6A69829956A7E00FFAB37 /* ProfileView.swift in Sources */,
 				33F6A664299555EE00FFAB37 /* EditProfileView-ViewModel.swift in Sources */,
 				33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */,
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
+				104FEEFC29A2885D0091EAFC /* UserPresentationModel.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				33F6A66D2995588C00FFAB37 /* SoccerCardView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
@@ -424,6 +443,7 @@
 				33F6A6922995650800FFAB37 /* RecoverPassViewModel.swift in Sources */,
 				33F6A673299558AC00FFAB37 /* BetsView.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
+				104FEEF729A285400091EAFC /* UserResponseModel.swift in Sources */,
 				33F6A66F2995589700FFAB37 /* BasketballCardView.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
 				33F6A682299560A500FFAB37 /* LoginView.swift in Sources */,
