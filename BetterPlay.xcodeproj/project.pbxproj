@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104FEEFE29A2BBA30091EAFC /* NotificationListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEEFD29A2BBA30091EAFC /* NotificationListResponseModel.swift */; };
+		104FEF0029A2BBAE0091EAFC /* NotificationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEEFF29A2BBAE0091EAFC /* NotificationResponseModel.swift */; };
+		104FEF0329A2BE3F0091EAFC /* NotificationPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */; };
 		3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */; };
 		3359FA5729883F4C00641FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5629883F4C00641FD7 /* Assets.xcassets */; };
 		3359FA5A29883F4C00641FD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */; };
@@ -45,6 +48,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		104FEEFD29A2BBA30091EAFC /* NotificationListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListResponseModel.swift; sourceTree = "<group>"; };
+		104FEEFF29A2BBAE0091EAFC /* NotificationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResponseModel.swift; sourceTree = "<group>"; };
+		104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresentationModel.swift; sourceTree = "<group>"; };
 		3359FA4F29883F4B00641FD7 /* BetterPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterPlayApp.swift; sourceTree = "<group>"; };
 		3359FA5629883F4C00641FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		104FEF0129A2BE1B0091EAFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3359FA4629883F4B00641FD7 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +147,7 @@
 		3393050A2996D0E40070C1CE /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				104FEF0129A2BE1B0091EAFC /* Model */,
 				3393050B2996D0FE0070C1CE /* NotificationsView.swift */,
 				3393050D2996D10B0070C1CE /* NotificationsView-ViewModel.swift */,
 			);
@@ -165,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */,
+				104FEEFD29A2BBA30091EAFC /* NotificationListResponseModel.swift */,
+				104FEEFF29A2BBAE0091EAFC /* NotificationResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,12 +410,14 @@
 				33F6A64929954F6700FFAB37 /* RegisterView.swift in Sources */,
 				33F6A684299560B500FFAB37 /* LoginView-ViewModel.swift in Sources */,
 				3393050E2996D10B0070C1CE /* NotificationsView-ViewModel.swift in Sources */,
+				104FEF0029A2BBAE0091EAFC /* NotificationResponseModel.swift in Sources */,
 				33F6A68E2995649D00FFAB37 /* NewPasswordView.swift in Sources */,
 				33F6A662299555C300FFAB37 /* EditProfileView.swift in Sources */,
 				33F6A632299545AD00FFAB37 /* CustomNavBar.swift in Sources */,
 				33F6A68C2995641700FFAB37 /* RecoverPasswordCodeView.swift in Sources */,
 				3393050C2996D0FE0070C1CE /* NotificationsView.swift in Sources */,
 				33F6A6712995589E00FFAB37 /* TennisCardView.swift in Sources */,
+				104FEEFE29A2BBA30091EAFC /* NotificationListResponseModel.swift in Sources */,
 				33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
@@ -417,6 +436,7 @@
 				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
 				33F6A69A29956A8700FFAB37 /* ProfileView-ViewModel.swift in Sources */,
 				33F6A690299564C300FFAB37 /* RecoverPassEmailView.swift in Sources */,
+				104FEF0329A2BE3F0091EAFC /* NotificationPresentationModel.swift in Sources */,
 				33F6A6922995650800FFAB37 /* RecoverPassViewModel.swift in Sources */,
 				33F6A673299558AC00FFAB37 /* BetsView.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,

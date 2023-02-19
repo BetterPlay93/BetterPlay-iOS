@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    
+    @ObservedObject var viewModel: ViewModel = ViewModel()
+    
     var body: some View {
         VStack {
             ZStack {
@@ -23,10 +26,9 @@ struct NotificationsView: View {
             
             ScrollView {
                 LazyVStack {
-                    notification(type: .Friend, message: "Ana te siguió")
-                    notification(type: .Participation, message: "Participaste en el barcelona-madrid")
-                    notification(type: .Failed, message: "Perdiste 2500 monedas en el Villarreal-Betis")
-                    notification(type: .Victory, message: "Ganaste 500 monedas en el At.Madrid - Sevilla")
+                    ForEach(viewModel.notifications) { notification in
+                        notification(type: notification.type, message: notification.text)
+                    }
                 }
             }
             
@@ -45,8 +47,7 @@ struct NotificationsView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 50, height: 50)
-                
-                .cornerRadius(30)
+                    .cornerRadius(30)
                     .padding(.trailing, 20)
             }else{
                 Image(type.rawValue)
