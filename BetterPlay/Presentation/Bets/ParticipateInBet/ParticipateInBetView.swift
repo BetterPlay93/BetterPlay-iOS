@@ -17,7 +17,7 @@ struct ParticipateInBetView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 17){
-            Text(bet.home)
+            Text(bet.home_team.name)
                 .foregroundColor(Color("LightGreen"))
                 .bold()
                 .font(.system(size: 20))
@@ -89,7 +89,7 @@ struct ParticipateInBetView: View {
         HStack {
             Button {
                 //El eventId se obtiene con la petición de todos los eventos y gracias al detalle y el winner se obtiene también del detalle
-                viewModel.participateInBet(eventId: 1, money: Int(sliderValue), winner: bet.home)
+                viewModel.participateInBet(eventId: 1, money: Int(sliderValue), winner: bet.home_team.name)
             }label: {
                 Text("Jugar")
                     .foregroundColor(.white)
@@ -132,7 +132,7 @@ struct ParticipateInBetView: View {
 
 struct ParticipateInBetView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipateInBetView(bet: BetPresentationModel(home: "FC.Barcelona", away: "Real Madrid", homeLogo: "https://media-1.api-sports.io/football/teams/529.png", awayLogo: "https://media-2.api-sports.io/football/teams/541.png", sport: "soccer", date: 1675962094, home_odd: 1.75, tie_odd: 2.00, away_odd: 2.15), userCoins: 4000)
+        ParticipateInBetView(bet: BetPresentationModel(home_result: 0, away_result: 0, home_odd: 1.0, away_odd: 3.0, tie_odd: 1.5, date: 1676658884, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: "https://media-1.api-sports.io/football/teams/529.png"), away_team: TeamPresentationModel(name: "Real Madrid", logo: "https://media-2.api-sports.io/football/teams/541.png")), userCoins: 4000)
     }
 }
 
