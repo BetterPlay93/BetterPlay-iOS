@@ -122,18 +122,3 @@ struct SoccerCardView_Previews: PreviewProvider {
     }
 }
 
-func convertTimestampToDate(date: Int) -> String {
-    let date = Date(timeIntervalSince1970: TimeInterval(date))
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd/MM/yy"
-    let strDate = dateFormatter.string(from: date)
-    return strDate
-}
-
-func convertTimestampToHour(date: Int) -> String {
-    let date = Date(timeIntervalSince1970: TimeInterval(date))
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "HH:mm"
-    let strDate = dateFormatter.string(from: date)
-    return strDate
-}

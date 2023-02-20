@@ -60,13 +60,13 @@ struct BetDetailView: View {
             }
             
             odd(homeTeam: betDetail.bet.home_team.name, odd: "\(betDetail.bet.home_odd)")
-            if(betDetail.bet.sport == "soccer"){
+            if(betDetail.bet.sport == .soccer){
                 odd(homeTeam: "Empate", odd: "\(betDetail.bet.tie_odd)")
             }
             odd(homeTeam: betDetail.bet.away_team.name, odd: "\(betDetail.bet.away_odd)")
             
         }
-        .frame(width: 365, height: betDetail.bet.sport == "soccer" ? 193 : 154)
+        .frame(width: 365, height: betDetail.bet.sport == .soccer ? 193 : 154)
         .background(.white)
         .cornerRadius(10)
     }
@@ -110,7 +110,7 @@ struct BetDetailView: View {
         .frame(width: 365, height: 200)
         .background(.white)
         .cornerRadius(10)
-        .padding(.top, betDetail.bet.sport == "soccer" ? 70 : 109)
+        .padding(.top, betDetail.bet.sport == .soccer ? 70 : 109)
     }
     
     var teamsview: some View {
@@ -215,7 +215,7 @@ struct BetDetailView_Previews: PreviewProvider {
 func convertTimestampToDate(date: Int) -> String {
     let date = Date(timeIntervalSince1970: TimeInterval(date))
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd"
+    dateFormatter.dateFormat = "dd/MM/yy"
     let strDate = dateFormatter.string(from: date)
     return strDate
 }

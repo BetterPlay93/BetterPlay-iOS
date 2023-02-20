@@ -21,13 +21,13 @@ struct ContentView: View {
                     BetsView()
                         .tag(Tab.Bet)
                     
-                    Color.red
+                    NotificationsView()
                         .tag(Tab.Notification)
                     
                     Color.black
                         .tag(Tab.Pool)
                     
-                    Color.green
+                    ProfileView()
                         .tag(Tab.Profile)
                 }
             }

@@ -18,19 +18,19 @@
 		3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */; };
 		3359FA5729883F4C00641FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5629883F4C00641FD7 /* Assets.xcassets */; };
 		3359FA5A29883F4C00641FD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */; };
+		33686370299E7E74008140E2 /* BetResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368636F299E7E74008140E2 /* BetResponseModel.swift */; };
+		33769FCB29A3C19300169FC5 /* DailyStreakView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33769FCA29A3C19300169FC5 /* DailyStreakView-ViewModel.swift */; };
 		339305052996C7650070C1CE /* UserSearcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305042996C7650070C1CE /* UserSearcherView.swift */; };
 		339305072996C7720070C1CE /* UserSearcherView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305062996C7720070C1CE /* UserSearcherView-ViewModel.swift */; };
 		339305092996C7F80070C1CE /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305082996C7F80070C1CE /* UserCard.swift */; };
 		3393050C2996D0FE0070C1CE /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3393050B2996D0FE0070C1CE /* NotificationsView.swift */; };
 		3393050E2996D10B0070C1CE /* NotificationsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3393050D2996D10B0070C1CE /* NotificationsView-ViewModel.swift */; };
-		33A92E6929A3E83200F9D885 /* OtherUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A92E6829A3E83200F9D885 /* OtherUserProfileView.swift */; };
-		33769FCB29A3C19300169FC5 /* DailyStreakView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33769FCA29A3C19300169FC5 /* DailyStreakView-ViewModel.swift */; };
-		33CE1817299FEAC500CFFD13 /* DailyStreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE1816299FEAC500CFFD13 /* DailyStreakView.swift */; };
 		33A92E5E29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A92E5D29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift */; };
 		33A92E6029A3CCC000F9D885 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A92E5F29A3CCC000F9D885 /* BaseResponseModel.swift */; };
-		33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */; };
-		33686370299E7E74008140E2 /* BetResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368636F299E7E74008140E2 /* BetResponseModel.swift */; };
-		33686373299E883D008140E2 /* BetPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33686372299E883D008140E2 /* BetPresentationModel.swift */; };
+		33A92E6929A3E83200F9D885 /* OtherUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A92E6829A3E83200F9D885 /* OtherUserProfileView.swift */; };
+		33A92E6D29A409D900F9D885 /* BetPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A92E6C29A409D900F9D885 /* BetPresentationModel.swift */; };
+		33A92E7029A40AF600F9D885 /* AuthenticationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A92E6F29A40AF600F9D885 /* AuthenticationResponseModel.swift */; };
+		33CE1817299FEAC500CFFD13 /* DailyStreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE1816299FEAC500CFFD13 /* DailyStreakView.swift */; };
 		33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6222995438B00FFAB37 /* BetListResponseModel.swift */; };
 		33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A626299543DC00FFAB37 /* CustomTextField.swift */; };
 		33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A62A299544E700FFAB37 /* CustomTabBar.swift */; };
@@ -51,7 +51,7 @@
 		33F6A675299558B700FFAB37 /* BetsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */; };
 		33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67829955C5800FFAB37 /* BetDetailView.swift */; };
 		33F6A67D29955C7400FFAB37 /* BetDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67C29955C7400FFAB37 /* BetDetailView-ViewModel.swift */; };
-		33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67E29955CEA00FFAB37 /* BetPresentationModel.swift */; };
+		33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67E29955CEA00FFAB37 /* BetDetailPresentationModel.swift */; };
 		33F6A682299560A500FFAB37 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A681299560A500FFAB37 /* LoginView.swift */; };
 		33F6A684299560B500FFAB37 /* LoginView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A683299560B500FFAB37 /* LoginView-ViewModel.swift */; };
 		33F6A68C2995641700FFAB37 /* RecoverPasswordCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A68B2995641700FFAB37 /* RecoverPasswordCodeView.swift */; };
@@ -61,7 +61,6 @@
 		33F6A696299566FB00FFAB37 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A695299566FB00FFAB37 /* CustomProgressView.swift */; };
 		33F6A69829956A7E00FFAB37 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A69729956A7D00FFAB37 /* ProfileView.swift */; };
 		33F6A69A29956A8700FFAB37 /* ProfileView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A69929956A8700FFAB37 /* ProfileView-ViewModel.swift */; };
-		33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67E29955CEA00FFAB37 /* BetDetailPresentationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,19 +76,19 @@
 		3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterPlayApp.swift; sourceTree = "<group>"; };
 		3359FA5629883F4C00641FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3368636F299E7E74008140E2 /* BetResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetResponseModel.swift; sourceTree = "<group>"; };
+		33769FCA29A3C19300169FC5 /* DailyStreakView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyStreakView-ViewModel.swift"; sourceTree = "<group>"; };
 		339305042996C7650070C1CE /* UserSearcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearcherView.swift; sourceTree = "<group>"; };
 		339305062996C7720070C1CE /* UserSearcherView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSearcherView-ViewModel.swift"; sourceTree = "<group>"; };
 		339305082996C7F80070C1CE /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
 		3393050B2996D0FE0070C1CE /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		3393050D2996D10B0070C1CE /* NotificationsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationsView-ViewModel.swift"; sourceTree = "<group>"; };
-		33A92E6829A3E83200F9D885 /* OtherUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileView.swift; sourceTree = "<group>"; };
-		33769FCA29A3C19300169FC5 /* DailyStreakView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyStreakView-ViewModel.swift"; sourceTree = "<group>"; };
-		33CE1816299FEAC500CFFD13 /* DailyStreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStreakView.swift; sourceTree = "<group>"; };
 		33A92E5D29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateInBetResponseModel.swift; sourceTree = "<group>"; };
 		33A92E5F29A3CCC000F9D885 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
-		33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponseModel.swift; sourceTree = "<group>"; };
-		3368636F299E7E74008140E2 /* BetResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetResponseModel.swift; sourceTree = "<group>"; };
-		33686372299E883D008140E2 /* BetPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetPresentationModel.swift; sourceTree = "<group>"; };
+		33A92E6829A3E83200F9D885 /* OtherUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserProfileView.swift; sourceTree = "<group>"; };
+		33A92E6C29A409D900F9D885 /* BetPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetPresentationModel.swift; path = BetterPlay/Presentation/Bets/BetsView/Model/BetPresentationModel.swift; sourceTree = SOURCE_ROOT; };
+		33A92E6F29A40AF600F9D885 /* AuthenticationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponseModel.swift; sourceTree = "<group>"; };
+		33CE1816299FEAC500CFFD13 /* DailyStreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStreakView.swift; sourceTree = "<group>"; };
 		33F6A6222995438B00FFAB37 /* BetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetListResponseModel.swift; sourceTree = "<group>"; };
 		33F6A626299543DC00FFAB37 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		33F6A62A299544E700FFAB37 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -110,7 +109,7 @@
 		33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetsView-ViewModel.swift"; sourceTree = "<group>"; };
 		33F6A67829955C5800FFAB37 /* BetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetDetailView.swift; sourceTree = "<group>"; };
 		33F6A67C29955C7400FFAB37 /* BetDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetDetailView-ViewModel.swift"; sourceTree = "<group>"; };
-		33F6A67E29955CEA00FFAB37 /* BetPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetPresentationModel.swift; sourceTree = "<group>"; };
+		33F6A67E29955CEA00FFAB37 /* BetDetailPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetDetailPresentationModel.swift; sourceTree = "<group>"; };
 		33F6A681299560A500FFAB37 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		33F6A683299560B500FFAB37 /* LoginView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView-ViewModel.swift"; sourceTree = "<group>"; };
 		33F6A68B2995641700FFAB37 /* RecoverPasswordCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordCodeView.swift; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 		33F6A695299566FB00FFAB37 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		33F6A69729956A7D00FFAB37 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		33F6A69929956A8700FFAB37 /* ProfileView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProfileView-ViewModel.swift"; sourceTree = "<group>"; };
-		33F6A67E29955CEA00FFAB37 /* BetDetailPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetDetailPresentationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +221,14 @@
 			path = OtherUserProfile;
 			sourceTree = "<group>";
 		};
+		33A92E6E29A409E400F9D885 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33A92E6C29A409D900F9D885 /* BetPresentationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		33CE1815299FEA2600CFFD13 /* DailyStreak */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,14 +236,6 @@
 				33769FCA29A3C19300169FC5 /* DailyStreakView-ViewModel.swift */,
 			);
 			path = DailyStreak;
-			sourceTree = "<group>";
-		};
-		33686371299E8831008140E2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				33686372299E883D008140E2 /* BetPresentationModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
@@ -269,7 +267,6 @@
 		33F6A6212995437F00FFAB37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */,
 				104FEEF629A285400091EAFC /* UserResponseModel.swift */,
 				104FEEF829A285670091EAFC /* UserSearcherResponseModel.swift */,
 				104FEEFD29A2BBA30091EAFC /* NotificationListResponseModel.swift */,
@@ -278,6 +275,7 @@
 				33A92E5F29A3CCC000F9D885 /* BaseResponseModel.swift */,
 				33F6A6222995438B00FFAB37 /* BetListResponseModel.swift */,
 				3368636F299E7E74008140E2 /* BetResponseModel.swift */,
+				33A92E6F29A40AF600F9D885 /* AuthenticationResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,7 +342,7 @@
 		33F6A66A2995587A00FFAB37 /* BetsView */ = {
 			isa = PBXGroup;
 			children = (
-				33686371299E8831008140E2 /* Model */,
+				33A92E6E29A409E400F9D885 /* Model */,
 				33F6A672299558AC00FFAB37 /* BetsView.swift */,
 				33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */,
 			);
@@ -429,7 +427,6 @@
 			isa = PBXGroup;
 			children = (
 				106A518F29A37C5E00208BF7 /* ParticipateInBet */,
-				33F6A67629955C4400FFAB37 /* BetDetail */,
 				33F6A66A2995587A00FFAB37 /* BetsView */,
 				33F6A66B2995588000FFAB37 /* Cards */,
 			);
@@ -520,9 +517,10 @@
 				104FEEFE29A2BBA30091EAFC /* NotificationListResponseModel.swift in Sources */,
 				33A92E6929A3E83200F9D885 /* OtherUserProfileView.swift in Sources */,
 				106A519329A3806800208BF7 /* ParticipateInBetView-ViewModel.swift in Sources */,
-				33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */,
+				33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */,
 				33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */,
 				33686370299E7E74008140E2 /* BetResponseModel.swift in Sources */,
+				33A92E7029A40AF600F9D885 /* AuthenticationResponseModel.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33A92E6029A3CCC000F9D885 /* BaseResponseModel.swift in Sources */,
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
@@ -539,25 +537,25 @@
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				33F6A66D2995588C00FFAB37 /* SoccerCardView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
-				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
+				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
 				33F6A64C29954FAD00FFAB37 /* AuthenticationPresentationModel.swift in Sources */,
-				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
+				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
 				339305052996C7650070C1CE /* UserSearcherView.swift in Sources */,
 				33F6A696299566FB00FFAB37 /* CustomProgressView.swift in Sources */,
 				33769FCB29A3C19300169FC5 /* DailyStreakView-ViewModel.swift in Sources */,
-				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
+				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
 				33F6A69A29956A8700FFAB37 /* ProfileView-ViewModel.swift in Sources */,
 				33F6A690299564C300FFAB37 /* RecoverPassEmailView.swift in Sources */,
 				104FEF0329A2BE3F0091EAFC /* NotificationPresentationModel.swift in Sources */,
 				33F6A6922995650800FFAB37 /* RecoverPassViewModel.swift in Sources */,
 				33F6A673299558AC00FFAB37 /* BetsView.swift in Sources */,
-				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
+				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
 				104FEEF729A285400091EAFC /* UserResponseModel.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
 				33F6A66F2995589700FFAB37 /* BasketballCardView.swift in Sources */,
+				33A92E6D29A409D900F9D885 /* BetPresentationModel.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
 				33F6A682299560A500FFAB37 /* LoginView.swift in Sources */,
-				33686373299E883D008140E2 /* BetPresentationModel.swift in Sources */,
 				3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */,
 				33F6A675299558B700FFAB37 /* BetsView-ViewModel.swift in Sources */,
 				106A519529A3808E00208BF7 /* ParticipateInBetView.swift in Sources */,

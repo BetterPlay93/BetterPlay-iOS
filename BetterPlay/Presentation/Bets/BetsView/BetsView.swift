@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct BetsView: View {
+    @ObservedObject private var viewModel = ViewModel()
+    @State var text: String = ""
+    @State var sportSelected: Sport = .all
+    
     var body: some View {
-        VStack(spacing: 0){
+        VStack(spacing: 0) {
             VStack(spacing: 20) {
                 logo
                 
-                //Searcher()
+                Searcher(text: $text)
                 
                 filterButtons
                 
-                Rectangle().fill(Color("Gray")).frame(width: .infinity, height: 2, alignment: .center)
+                Rectangle().fill(Color("Gray")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
                 
                 
             }
@@ -27,15 +31,17 @@ struct BetsView: View {
             VStack {
                 ScrollView {
                     LazyVStack {
-                        SoccerCardView()
-                        
-                        BasketballCardView()
-                        
-                        TennisCardView()
-                        
-                        SoccerCardView()
-                        
-                        BasketballCardView()
+                        ForEach(viewModel.filteredBets(by: text, and: sportSelected)) { bet in
+                            //NavigationLink(destination: DetailView(bet: bet)) {
+                            if bet.sport == .soccer{
+                                SoccerCardView(bet: bet)
+                            } else if bet.sport == .basketball {
+                                BasketballCardView(bet: bet)
+                            } else if bet.sport == .tennis {
+                                TennisCardView(bet: bet)
+                            }
+                            //}
+                        }
                     }
                 }
             }
@@ -45,6 +51,9 @@ struct BetsView: View {
             CustomTabBar(selectedTab: .constant(.Bet))
         }
         .ignoresSafeArea()
+        .onAppear() {
+            //viewModel.getAllBets()
+        }
     }
     
     
@@ -58,7 +67,7 @@ struct BetsView: View {
     var filterButtons: some View {
         HStack {
             Button {
-                //Petición web
+                sportSelected = .all
             }label: {
                 Text("Todo")
                     .foregroundColor(.white)
@@ -66,11 +75,11 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("Gray"))
+            .background(sportSelected == .all ? Color("Gray") : Color("LightGray"))
             .cornerRadius(35)
             
             Button {
-                //Partidos de fútbol
+                sportSelected = .soccer
             }label: {
                 Text("Fútbol")
                     .foregroundColor(.white)
@@ -78,11 +87,11 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("GreenButton"))
+            .background(sportSelected == .soccer ? Color("Green") : Color("GreenButton"))
             .cornerRadius(35)
             
             Button {
-                //Partidos de baloncesto
+                sportSelected = .basketball
             }label: {
                 Text("Baloncesto")
                     .foregroundColor(.white)
@@ -90,11 +99,11 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("OrangeButton"))
+            .background(sportSelected == .basketball ? Color("Orange") : Color("OrangeButton"))
             .cornerRadius(35)
             
             Button {
-                //partidos de tenis
+                sportSelected = .tennis
             }label: {
                 Text("Tenis")
                     .foregroundColor(.white)
@@ -102,7 +111,7 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("YellowButton"))
+            .background(sportSelected == .tennis ? Color("Yellow") : Color("YellowButton"))
             .cornerRadius(35)
         }
     }

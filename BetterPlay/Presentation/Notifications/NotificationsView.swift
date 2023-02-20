@@ -27,6 +27,7 @@ struct NotificationsView: View {
             Spacer()
         }
         .background(Color("Background"))
+        .ignoresSafeArea()
         .onAppear{
             viewModel.getNotifications()
         }
@@ -70,7 +71,7 @@ struct NotificationsView: View {
                 .frame(maxWidth: 250, alignment: .leading)
             Spacer()
         }.padding(10)
-            .padding(.top, 10)
+        .padding(.top, 10)
     }
 }
 
