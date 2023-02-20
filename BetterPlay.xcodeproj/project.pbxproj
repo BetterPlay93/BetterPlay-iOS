@@ -13,6 +13,8 @@
 		104FEEFE29A2BBA30091EAFC /* NotificationListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEEFD29A2BBA30091EAFC /* NotificationListResponseModel.swift */; };
 		104FEF0029A2BBAE0091EAFC /* NotificationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEEFF29A2BBAE0091EAFC /* NotificationResponseModel.swift */; };
 		104FEF0329A2BE3F0091EAFC /* NotificationPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */; };
+		106A519329A3806800208BF7 /* ParticipateInBetView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106A519229A3806800208BF7 /* ParticipateInBetView-ViewModel.swift */; };
+		106A519529A3808E00208BF7 /* ParticipateInBetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106A519429A3808E00208BF7 /* ParticipateInBetView.swift */; };
 		3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */; };
 		3359FA5729883F4C00641FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5629883F4C00641FD7 /* Assets.xcassets */; };
 		3359FA5A29883F4C00641FD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		104FEEFD29A2BBA30091EAFC /* NotificationListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListResponseModel.swift; sourceTree = "<group>"; };
 		104FEEFF29A2BBAE0091EAFC /* NotificationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResponseModel.swift; sourceTree = "<group>"; };
 		104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresentationModel.swift; sourceTree = "<group>"; };
+		106A519229A3806800208BF7 /* ParticipateInBetView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParticipateInBetView-ViewModel.swift"; sourceTree = "<group>"; };
+		106A519429A3808E00208BF7 /* ParticipateInBetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateInBetView.swift; sourceTree = "<group>"; };
 		3359FA4F29883F4B00641FD7 /* BetterPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterPlayApp.swift; sourceTree = "<group>"; };
 		3359FA5629883F4C00641FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +130,15 @@
 				104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		106A518F29A37C5E00208BF7 /* ParticipateInBet */ = {
+			isa = PBXGroup;
+			children = (
+				106A519229A3806800208BF7 /* ParticipateInBetView-ViewModel.swift */,
+				106A519429A3808E00208BF7 /* ParticipateInBetView.swift */,
+			);
+			path = ParticipateInBet;
 			sourceTree = "<group>";
 		};
 		3359FA4629883F4B00641FD7 = {
@@ -364,6 +377,7 @@
 		33F6A69C29956AB100FFAB37 /* Bets */ = {
 			isa = PBXGroup;
 			children = (
+				106A518F29A37C5E00208BF7 /* ParticipateInBet */,
 				33F6A67629955C4400FFAB37 /* BetDetail */,
 				33F6A66A2995587A00FFAB37 /* BetsView */,
 				33F6A66B2995588000FFAB37 /* Cards */,
@@ -453,6 +467,7 @@
 				3393050C2996D0FE0070C1CE /* NotificationsView.swift in Sources */,
 				33F6A6712995589E00FFAB37 /* TennisCardView.swift in Sources */,
 				104FEEFE29A2BBA30091EAFC /* NotificationListResponseModel.swift in Sources */,
+				106A519329A3806800208BF7 /* ParticipateInBetView-ViewModel.swift in Sources */,
 				33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
@@ -485,6 +500,7 @@
 				33F6A682299560A500FFAB37 /* LoginView.swift in Sources */,
 				3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */,
 				33F6A675299558B700FFAB37 /* BetsView-ViewModel.swift in Sources */,
+				106A519529A3808E00208BF7 /* ParticipateInBetView.swift in Sources */,
 				33F6A67D29955C7400FFAB37 /* BetDetailView-ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
