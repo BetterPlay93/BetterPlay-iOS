@@ -13,6 +13,7 @@ struct DailyStreakView: View {
     @State var thirdDay: Bool = false
     @State var forthDay: Bool = false
     @State var fifthDay: Bool = false
+    @State var percentage: Int = 50
     var body: some View {
         ZStack(){
             Rectangle()
@@ -20,39 +21,47 @@ struct DailyStreakView: View {
                 .frame(width: .infinity, height: 230)
                 .cornerRadius(20)
             VStack(spacing: 20){
-                HStack(spacing: 25){
-                    customRectangle(isCompleted: firstDay, coins: 500)
-                    customRectangle(isCompleted: secondDay, coins: 1000)
-                    customRectangle(isCompleted: thirdDay, coins: 1500)
-                    customRectangle(isCompleted: forthDay, coins: 2000)
-                    customRectangle(isCompleted: fifthDay, coins: 3000)
-                }.frame(alignment: .top)
-                ZStack(alignment: .leading){
-                    CustomProgressView(progressColor: "DarkGray",progressBackgroundColor: "White", value:25)
-                        .frame(width: 310)
-                    HStack(spacing: 55){
-                        Circle()
-                            .foregroundColor(Color("DarkGray"))
-                            .frame(width: 20, height: 20)
-                        Circle()
-                            .foregroundColor(Color("DarkGray"))
-                            .frame(width: 20, height: 20)
-                        Circle()
-                            .foregroundColor(Color("DarkGray"))
-                            .frame(width: 20, height: 20)
-                        Circle()
-                            .foregroundColor(Color("DarkGray"))
-                            .frame(width: 20, height: 20)
-                        Circle()
-                            .foregroundColor(Color("DarkGray"))
-                            .frame(width: 20, height: 20)
-
-                    }
-                }
+                Rectangles
+                progressBarView(percentage: percentage)
                 dayTexts
             }
-            
         }
+    }
+    var Rectangles: some View{
+        HStack(spacing: 25){
+            customRectangle(isCompleted: firstDay, coins: 500)
+            customRectangle(isCompleted: secondDay, coins: 1000)
+            customRectangle(isCompleted: thirdDay, coins: 1500)
+            customRectangle(isCompleted: forthDay, coins: 2000)
+            customRectangle(isCompleted: fifthDay, coins: 3000)
+        }.frame(alignment: .top)
+    }
+    func progressBarView(percentage: Int)-> some View{
+        ZStack(alignment: .leading){
+            CustomProgressView(progressColor: "DarkGray",progressBackgroundColor: "White", value:percentage)
+                .frame(width: 310)
+            barCircles
+        }
+    }
+    	
+    var barCircles: some View{
+        HStack(spacing: 55){
+                Circle()
+                    .foregroundColor(Color("DarkGray"))
+                    .frame(width: 20, height: 20)
+                Circle()
+                    .foregroundColor(Color("DarkGray"))
+                    .frame(width: 20, height: 20)
+                Circle()
+                    .foregroundColor(Color("DarkGray"))
+                    .frame(width: 20, height: 20)
+                Circle()
+                    .foregroundColor(Color("DarkGray"))
+                    .frame(width: 20, height: 20)
+                Circle()
+                    .foregroundColor(Color("DarkGray"))
+                    .frame(width: 20, height: 20)
+            }
     }
     func customRectangle(isCompleted: Bool, coins: Int)-> some View{
         ZStack(){
@@ -92,7 +101,7 @@ struct DailyStreakView: View {
         }
     }
     var dayTexts: some View{
-        HStack(spacing: 20){
+        HStack(spacing: 35){
             Text("Day 1")
                 .font(.system(size: 15))
                 .bold()
