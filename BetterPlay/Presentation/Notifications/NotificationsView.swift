@@ -13,21 +13,13 @@ struct NotificationsView: View {
     
     var body: some View {
         VStack {
-            ZStack {
-                Rectangle()
-                    .fill(Color("Gray")).frame(maxWidth: .infinity, maxHeight: 50)
-                    
-                Text("Notificaciones")
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 25))
-                    .bold()
-            }.padding(.top, 40)
             
+            header
             
             ScrollView {
                 LazyVStack {
-                    ForEach(viewModel.notifications) { notification in
-                        notification(type: notification.type, message: notification.text)
+                    ForEach(viewModel.notifications) { notifications in
+                        notification(type: NotificationType(rawValue: notifications.type) ?? .friendRequest, message: notifications.text)
                     }
                 }
             }
@@ -35,14 +27,28 @@ struct NotificationsView: View {
             Spacer()
         }
         .background(Color("Background"))
-            .ignoresSafeArea()
+        .onAppear{
+            viewModel.getNotifications()
+        }
         
+    }
+    
+    var header: some View {
+        ZStack {
+            Rectangle()
+                .fill(Color("Gray")).frame(maxWidth: .infinity, maxHeight: 50)
+                
+            Text("Notificaciones")
+                .foregroundColor(Color.white)
+                .font(.system(size: 25))
+                .bold()
+        }.padding(.top, 40)
     }
     
     func notification(type: NotificationType, message: String) -> some View{
         HStack(){
             Spacer()
-            if(type == .Friend){
+            if(type == .friendRequest){
                 Image(type.rawValue)
                     .resizable()
                     .scaledToFit()
@@ -75,8 +81,8 @@ struct NotificationsView_Previews: PreviewProvider {
 }
 
 enum NotificationType: String {
-    case Friend = "Women"
-    case Victory = "Victory"
-    case Participation = "Participate"
-    case Failed = "Lost"
+    case friendRequest = "Women"
+    case victory = "Victory"
+    case participation = "Participate"
+    case lose = "Lost"
 }
