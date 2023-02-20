@@ -11,6 +11,7 @@ struct ProfileNavBar: View {
     
     var username: String
     @State var selection: Int = 0
+    var isCurrentUser: Bool = false
     
     var body: some View {
         VStack{

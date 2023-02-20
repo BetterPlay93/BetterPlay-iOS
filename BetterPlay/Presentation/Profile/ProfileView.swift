@@ -11,7 +11,7 @@ struct ProfileView: View {
     @State var userImage: String = "Men"
     @State var userName: String = "Jose Ramón"
     @State var userEmail: String = "joseramon@gmail.com"
-    @State var totalCoins: Int = 4000
+    @State var totalCoins: Int = 4000000
     @State var inGameCoins: Int = 1200
     @State var totalFriends: Int = 150
     @State var soccerProgres: Int = 50
@@ -47,6 +47,7 @@ struct ProfileView: View {
                 Text(userEmail)
                     .font(.system(size: 15))
                     .bold()
+                    .frame(maxWidth: 250, alignment: .leading)
                 HStack(){
                     Text("\(totalFriends)")
                         .font(.system(size: 20))
@@ -56,7 +57,7 @@ struct ProfileView: View {
                         .scaledToFit()
                         .frame(width: 20, height: 20, alignment: .leading)
                 }
-            }.padding(.trailing, 100)
+            }
         }
     }
     
@@ -65,17 +66,17 @@ struct ProfileView: View {
             HStack(){
                 Text("BetterCoins")
                     .font(.system(size: 20))
+                    .frame(maxWidth: 105, alignment: .leading)
                 Text("\(totalCoins)")
                     .font(.system(size: 20))
                     .bold()
                     .padding(.leading, 30)
-                Spacer()
                 Image("Coins")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30, height: 30, alignment: .leading)
-                    .padding(.trailing, 125)
-            }
+                Spacer()
+            }.frame(maxWidth: UIScreen.main.bounds.width)
             
             
             HStack(){
@@ -83,17 +84,18 @@ struct ProfileView: View {
                     .font(.system(size: 20))
                     .lineLimit(2)
                     .frame(maxWidth: 105)
+                
                 Text("\(inGameCoins)")
                     .font(.system(size: 20))
                     .bold()
                     .padding(.leading, 30)
-                Spacer()
+                
                 Image("Coins")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30, height: 30, alignment: .leading)
-                    .padding(.trailing, 125)
-            }
+                Spacer()
+            }.frame(maxWidth: UIScreen.main.bounds.width)
             
             
             HStack(){
