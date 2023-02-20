@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct DailyStreakView: View {
-    @State var firstDay: Bool = true
-    @State var secondDay: Bool = false
-    @State var thirdDay: Bool = false
-    @State var forthDay: Bool = false
-    @State var fifthDay: Bool = false
-    @State var percentage: Int = 50
+    //Falta recibir la racha de la petición del login y pasarsela a la función showStreak
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     var body: some View {
         ZStack(){
             Rectangle()
@@ -22,18 +18,20 @@ struct DailyStreakView: View {
                 .cornerRadius(20)
             VStack(spacing: 20){
                 Rectangles
-                progressBarView(percentage: percentage)
+                progressBarView(percentage: viewModel.percentage)
                 dayTexts
             }
+        }.onAppear{
+            viewModel.showStreak(streak: 4)
         }
     }
     var Rectangles: some View{
         HStack(spacing: 25){
-            customRectangle(isCompleted: firstDay, coins: 500)
-            customRectangle(isCompleted: secondDay, coins: 1000)
-            customRectangle(isCompleted: thirdDay, coins: 1500)
-            customRectangle(isCompleted: forthDay, coins: 2000)
-            customRectangle(isCompleted: fifthDay, coins: 3000)
+            customRectangle(isCompleted: viewModel.firstDay, coins: 500)
+            customRectangle(isCompleted: viewModel.secondDay, coins: 1000)
+            customRectangle(isCompleted: viewModel.thirdDay, coins: 1500)
+            customRectangle(isCompleted: viewModel.forthDay, coins: 2000)
+            customRectangle(isCompleted: viewModel.fifthDay, coins: 3000)
         }.frame(alignment: .top)
     }
     func progressBarView(percentage: Int)-> some View{

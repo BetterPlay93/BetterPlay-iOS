@@ -38,12 +38,10 @@ extension LoginView {
                     self.onError(error: response.message)
                 }else{
                     UserDefaults.standard.set(response.data, forKey: "token")
+                    //Peticion de la racha
                     shouldNavigateToHome = true
                     print(response.data)
-//                    if let token = UserDefaults.standard.string(forKey: "token") as String?
-//                    {
-//                        print(token)
-//                    }
+
                 }
                 
             } catch {
@@ -55,5 +53,6 @@ extension LoginView {
             shouldShowAlert = true
             print(error)
         }
+        
     }
 }
