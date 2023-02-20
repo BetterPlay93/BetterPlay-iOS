@@ -39,6 +39,7 @@ class NetworkHelper {
         var request = URLRequest(url: urlNotNil)
         
         request.httpMethod = type.rawValue
+        request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
         
         if(token != nil) {
             request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")

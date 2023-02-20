@@ -29,6 +29,9 @@
 		33A92E5E29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A92E5D29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift */; };
 		33A92E6029A3CCC000F9D885 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A92E5F29A3CCC000F9D885 /* BaseResponseModel.swift */; };
 		33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */; };
+		33686370299E7E74008140E2 /* BetResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368636F299E7E74008140E2 /* BetResponseModel.swift */; };
+		33686373299E883D008140E2 /* BetPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33686372299E883D008140E2 /* BetPresentationModel.swift */; };
+		33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6222995438B00FFAB37 /* BetListResponseModel.swift */; };
 		33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A626299543DC00FFAB37 /* CustomTextField.swift */; };
 		33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A62A299544E700FFAB37 /* CustomTabBar.swift */; };
 		33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A62F2995457C00FFAB37 /* ContentView.swift */; };
@@ -85,6 +88,9 @@
 		33A92E5D29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateInBetResponseModel.swift; sourceTree = "<group>"; };
 		33A92E5F29A3CCC000F9D885 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
 		33F6A6222995438B00FFAB37 /* AuthenticationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponseModel.swift; sourceTree = "<group>"; };
+		3368636F299E7E74008140E2 /* BetResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetResponseModel.swift; sourceTree = "<group>"; };
+		33686372299E883D008140E2 /* BetPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetPresentationModel.swift; sourceTree = "<group>"; };
+		33F6A6222995438B00FFAB37 /* BetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetListResponseModel.swift; sourceTree = "<group>"; };
 		33F6A626299543DC00FFAB37 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		33F6A62A299544E700FFAB37 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		33F6A62F2995457C00FFAB37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -226,6 +232,14 @@
 			path = DailyStreak;
 			sourceTree = "<group>";
 		};
+		33686371299E8831008140E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33686372299E883D008140E2 /* BetPresentationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +276,8 @@
 				104FEEFF29A2BBAE0091EAFC /* NotificationResponseModel.swift */,
 				33A92E5D29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift */,
 				33A92E5F29A3CCC000F9D885 /* BaseResponseModel.swift */,
+				33F6A6222995438B00FFAB37 /* BetListResponseModel.swift */,
+				3368636F299E7E74008140E2 /* BetResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,6 +344,7 @@
 		33F6A66A2995587A00FFAB37 /* BetsView */ = {
 			isa = PBXGroup;
 			children = (
+				33686371299E8831008140E2 /* Model */,
 				33F6A672299558AC00FFAB37 /* BetsView.swift */,
 				33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */,
 			);
@@ -505,6 +522,7 @@
 				106A519329A3806800208BF7 /* ParticipateInBetView-ViewModel.swift in Sources */,
 				33F6A67F29955CEA00FFAB37 /* BetPresentationModel.swift in Sources */,
 				33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */,
+				33686370299E7E74008140E2 /* BetResponseModel.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33A92E6029A3CCC000F9D885 /* BaseResponseModel.swift in Sources */,
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
@@ -535,9 +553,11 @@
 				33F6A673299558AC00FFAB37 /* BetsView.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* AuthenticationResponseModel.swift in Sources */,
 				104FEEF729A285400091EAFC /* UserResponseModel.swift in Sources */,
+				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
 				33F6A66F2995589700FFAB37 /* BasketballCardView.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
 				33F6A682299560A500FFAB37 /* LoginView.swift in Sources */,
+				33686373299E883D008140E2 /* BetPresentationModel.swift in Sources */,
 				3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */,
 				33F6A675299558B700FFAB37 /* BetsView-ViewModel.swift in Sources */,
 				106A519529A3808E00208BF7 /* ParticipateInBetView.swift in Sources */,

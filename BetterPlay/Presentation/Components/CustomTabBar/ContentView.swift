@@ -18,7 +18,7 @@ struct ContentView: View {
         ZStack {
             VStack {
                 TabView(selection: $selectedTab) {
-                    Color.blue
+                    BetsView()
                         .tag(Tab.Bet)
                     
                     Color.red

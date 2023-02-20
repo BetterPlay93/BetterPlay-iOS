@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct BasketballCardView: View {
-    @State private var homeTeam = "Golden State Warriors"
-    @State private var awayTeam = "Portland Trail Blazers"
+    var bet: BetPresentationModel
    
     var body: some View {
         HStack(spacing: 10){
@@ -66,11 +65,11 @@ struct BasketballCardView: View {
             }
             
             VStack(alignment: .leading){
-                Text("\(homeTeam)")
+                Text("\(bet.home_team.name)")
                     .foregroundColor(Color("Orange"))
                     .bold()
                 
-                Text("\(awayTeam)")
+                Text("\(bet.away_team.name)")
                     .foregroundColor(Color("Orange"))
                     .bold()
             }
@@ -84,7 +83,7 @@ struct BasketballCardView: View {
                 .scaledToFit()
                 .frame(width: 18, height: 18)
                
-            Text("17-2-23")
+            Text(convertTimestampToDate(date: bet.date))
                 .font(.system(size: 13))
                 .foregroundColor(Color("Gray"))
                 .bold()
@@ -95,7 +94,7 @@ struct BasketballCardView: View {
                 .foregroundColor(Color("Orange"))
                 .frame(width: 18, height: 18)
                
-            Text("20:00")
+            Text(convertTimestampToHour(date: bet.date))
                 .font(.system(size: 13))
                 .foregroundColor(Color("Gray"))
                 .bold()
@@ -118,6 +117,6 @@ struct BasketballCardView: View {
 
 struct BasketballCardView_Previews: PreviewProvider {
     static var previews: some View {
-        BasketballCardView()
+        BasketballCardView(bet: BetPresentationModel(home_result: 0, away_result: 0, home_odd: 0.0, away_odd: 0.0, tie_odd: 0.0, date: 0, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: ""), away_team: TeamPresentationModel(name: "Real Madrid", logo: "")))
     }
 }
