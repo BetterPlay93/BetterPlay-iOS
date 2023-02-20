@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum Sport: String {
+    case all
+    case soccer
+    case basketball
+    case tennis
+}
+
 class BetPresentationModel: Identifiable{
     let id = UUID()
     var home_result: Int = 0
@@ -15,11 +22,11 @@ class BetPresentationModel: Identifiable{
     var away_odd: Float = 0.0
     var tie_odd: Float = 0.0
     var date: Int = 0
-    var sport: String = ""
+    var sport: Sport
     var home_team: TeamPresentationModel = TeamPresentationModel()
     var away_team: TeamPresentationModel = TeamPresentationModel()
     
-    init(home_result: Int, away_result: Int, home_odd: Float, away_odd: Float, tie_odd: Float, date: Int, sport: String, home_team: TeamPresentationModel, away_team: TeamPresentationModel){
+    init(home_result: Int, away_result: Int, home_odd: Float, away_odd: Float, tie_odd: Float, date: Int, sport: String, home_team: TeamPresentationModel, away_team: TeamPresentationModel) {
         
         self.home_result = home_result
         self.away_result = away_result
@@ -27,13 +34,11 @@ class BetPresentationModel: Identifiable{
         self.away_odd = away_odd
         self.tie_odd = tie_odd
         self.date = date
-        self.sport = sport
+        self.sport = Sport(rawValue: sport) ?? .all
         self.home_team = home_team
         self.away_team = away_team
         
     }
-    
-    init(){}
     
 }
 

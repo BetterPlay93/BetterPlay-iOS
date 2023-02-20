@@ -11,7 +11,18 @@ import UIKit
 extension BetsView {
     class ViewModel: ObservableObject {
         
-        @Published var bets: [BetPresentationModel] = []
+        @Published var bets: [BetPresentationModel] = [BetPresentationModel(home_result: 0, away_result: 0, home_odd: 1.0, away_odd: 3.0, tie_odd: 1.5, date: 1676658884, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: "https://media-1.api-sports.io/football/teams/529.png"), away_team: TeamPresentationModel(name: "Real Madrid", logo: "https://media-2.api-sports.io/football/teams/541.png")), BetPresentationModel(home_result: 0, away_result: 0, home_odd: 1.0, away_odd: 3.0, tie_odd: 1.5, date: 1676658884, sport: "basketball", home_team: TeamPresentationModel(name: "Barcelona", logo: "https://media-1.api-sports.io/football/teams/529.png"), away_team: TeamPresentationModel(name: "Real Madrid", logo: "https://media-2.api-sports.io/football/teams/541.png"))]
+        
+        
+        func filteredBets(by text: String, and sport: Sport) -> [BetPresentationModel] {
+            return bets.filter({
+                guard !text.isEmpty else {
+                    return $0.sport == sport || sport == .all
+                }
+                
+                return ($0.home_team.name.contains(text) || $0.away_team.name.contains(text)) && ($0.sport == sport || sport == .all)
+            })
+        }
         
         func getAllBets() {
             //Usamos un token predeterminado hasta que estén hechas todas las conexiones que ya usaremos el token del user defaults
