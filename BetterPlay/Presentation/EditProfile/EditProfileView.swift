@@ -13,7 +13,8 @@ struct EditProfileView: View {
     @State private var username = ""
     @State private var password = ""
     @State private var confirmPassword = ""
-    @State var image: UIImage?
+    @State private var showChangePassword = false
+    @State var profileUIImage: UIImage?
     @State var isPickerPresented: Bool = false
     
     @ObservedObject var viewmodel : ViewModel = ViewModel()
@@ -24,11 +25,11 @@ struct EditProfileView: View {
             imageSelection
             CustomTextField(imageName: "person", placeholderText: "Username", isSecureField: false,  text: $username)
                 .padding()
-            CustomTextField(imageName: "lock", placeholderText: "Password", isSecureField: true, text: $password)
-                .padding()
-            CustomTextField(imageName: "lock", placeholderText: "Confirm Password", isSecureField: true, text: $confirmPassword)
-                .padding()
-            
+            if showChangePassword {
+                changePasswordTexfields
+            } else {
+                changePasswordButton
+            }
             saveChangesButton
             
             Spacer()
@@ -37,15 +38,22 @@ struct EditProfileView: View {
         }
         .ignoresSafeArea()
         .sheet(isPresented: $isPickerPresented) {
-            ImagePicker(selectedImage: $image)
+            ImagePicker(selectedImage: $profileUIImage)
+        }
+        .onAppear(){
+            UserDefaults.standard.set(username, forKey: "username")
+            viewmodel.getUserImage { image in
+                if let imageBase64 = image {
+                    profileUIImage = imageBase64.imageFromBase64
+                }
+            }
         }
     }
     
 // MARK: - Accessory Views
-    
     var imageSelection: some View {
         ZStack(alignment: .bottomTrailing) {
-            if let image = image {
+            if let image = profileUIImage {
                 Image(uiImage: image)
                     .customImageSize()
             } else {
@@ -63,12 +71,27 @@ struct EditProfileView: View {
                 }
         }
     }
-    // MARK: - Save Changes Button
+    // MARK: - Change Password Items
+    var changePasswordTexfields: some View {
+        VStack{
+            CustomTextField(imageName: "lock", placeholderText: "Password", isSecureField: true, text: $password)
+                .padding()
+            CustomTextField(imageName: "lock", placeholderText: "Confirm Password", isSecureField: true, text: $confirmPassword)
+                .padding()
+        }
+    }
+    var changePasswordButton: some View {
+        Button {
+            showChangePassword.toggle()
+        } label: {
+            Text("Cambiar contraseña")
+        }.padding()
+    }
+// MARK: - Save Changes Button
     var saveChangesButton: some View{
         Button {
             if(password == confirmPassword){
-                let dataImage = image?.jpegData(compressionQuality: 0.5)
-                viewmodel.edit(username: username, password: password, photo: dataImage ?? Data())
+                viewmodel.edit(username: username, password: password, photo: profileUIImage?.base64 ?? "")
             }else{
                 viewmodel.shouldShowAlert = true
             }
@@ -109,7 +132,7 @@ struct EditProfileView_Previews: PreviewProvider {
 // MARK: - Transform Image into Base64
 extension UIImage {
     var base64: String? {
-        self.jpegData(compressionQuality: 0.5)?.base64EncodedString()
+        self.jpegData(compressionQuality: 1.0)?.base64EncodedString()
     }
 }
 // MARK: - Transform Base64 into Image Data

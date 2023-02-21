@@ -30,7 +30,7 @@ class NetworkHelper {
     }
     
     //MARK: - Public Methods
-    func requestProvider(url: String, token: String? = nil, type: RequestType = .POST, params: [String: Any]? = nil, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> Void {
+    func requestProvider(url: String, token: String? = nil, type: RequestType = .POST, params: [String: Any]? = nil, containsImage: Bool = false, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> Void {
         
         let url = URL(string: url)
         
@@ -39,6 +39,11 @@ class NetworkHelper {
         var request = URLRequest(url: urlNotNil)
         
         request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        
+        if containsImage {
+            let boundary = UUID().uuidString
+            request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        }
         
         request.httpMethod = type.rawValue
         
@@ -68,7 +73,6 @@ class NetworkHelper {
         request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
         
         request.httpMethod = type.rawValue
-        
         
         
         if let dictionary = params {

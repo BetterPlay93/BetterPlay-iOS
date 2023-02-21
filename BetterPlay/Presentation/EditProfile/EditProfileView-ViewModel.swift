@@ -14,7 +14,41 @@ extension EditProfileView {
         @Published var shouldShowAlert: Bool = false
         @Published var userProfile: EditPresentationModel = .init()
         
-        func edit(username: String, password: String, photo: Data	) {
+        func getUserImage(completion: @escaping (_ image: String?) -> ()) {
+            let url = "https://betterplay-backend-production.up.railway.app/api/users/getCurrentUserPhoto"
+            let logedToken =  "t3xGMM0zVtLJFPjSdI3pIF8sgQZpVMXB9xI6uGLn"
+            
+            NetworkHelper.shared.requestProvider(url: url, token: logedToken, type: .GET) { data, response, error in
+                if let error = error {
+                    self.onErrorImage(error: [error.localizedDescription])
+                } else if let data = data, let response = response as? HTTPURLResponse {
+                    print(response.statusCode)
+                    self.onSuccessImage(data: data, response: response, completion: { image in
+                        completion(image)
+                    })
+                }
+            }
+        }
+        func onSuccessImage(data: Data, response: HTTPURLResponse, completion: (_ image: String?) -> ()) {
+            do{
+                let imageResponse = try JSONDecoder().decode(ImageResponseModel?.self, from: data)
+                
+                if response.statusCode == 200 {
+                    completion(imageResponse?.data)
+                }else{
+                    self.onError(error: imageResponse?.message ?? [])
+                }
+            } catch {
+                self.onError(error: [error.localizedDescription])
+            }
+        }
+        
+        func onErrorImage(error: [String]) {
+            shouldShowAlert = true
+            print(error)
+        }
+        
+        func edit(username: String, password: String, photo: String	) {
             //Falta obtener el token del userdeafaults lo hacemos mientras natao a mano
             
             let url = "https://betterplay-backend-production.up.railway.app/api/users/edit"
