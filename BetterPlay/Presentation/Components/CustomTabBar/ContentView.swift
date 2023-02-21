@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: Tab = .Bet
+    @State private var selectedTab: Tab = .Profile
             
     init() {
         UITabBar.appearance().isHidden = true
@@ -27,7 +27,7 @@ struct ContentView: View {
                     Color.black
                         .tag(Tab.Pool)
                     
-                    ProfileView()
+                    ProfileNavBar(username: "Juan Ramón")
                         .tag(Tab.Profile)
                 }
             }
