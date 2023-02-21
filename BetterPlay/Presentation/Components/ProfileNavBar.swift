@@ -18,14 +18,15 @@ struct ProfileNavBar: View {
             navBar
             
             filter
-        }.background(Color("Background2"))
+        }
+        .background(Color("Background2"))
     }
     
     // MARK: - Accesory View
     var navBar: some View {
         ZStack(){
             Rectangle()
-                .fill(Color("Gray")).frame(maxWidth: .infinity, maxHeight: 50)
+                .fill(Color("Gray")).frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 50)
             HStack{
                 Text(username)
                     .foregroundColor(Color.white)
@@ -66,9 +67,6 @@ struct ProfileNavBar: View {
                 FriendProfileView()
             }
         }
-        
-        
-        
     }
 }
 

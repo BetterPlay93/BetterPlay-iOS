@@ -32,15 +32,9 @@ struct BetsView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(viewModel.filteredBets(by: text, and: sportSelected)) { bet in
-                            //NavigationLink(destination: DetailView(bet: bet)) {
-                            if bet.sport == .soccer{
-                                SoccerCardView(bet: bet)
-                            } else if bet.sport == .basketball {
-                                BasketballCardView(bet: bet)
-                            } else if bet.sport == .tennis {
-                                TennisCardView(bet: bet)
-                            }
-                            //}
+                            
+                            SportCard(bet: bet)
+                            
                         }
                     }
                 }

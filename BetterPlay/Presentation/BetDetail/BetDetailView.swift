@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct BetDetailView: View {
+    
     var betDetail: BetDetailPresentationModel
+    @State private var goToParticipation: Bool = false
         
     var body: some View {
         ZStack {
             VStack(spacing: -40) {
                 
                 VStack {
-                    CustomNavBar(color: "DarkGreen")
+                    CustomNavBar(color: "Dark\(betDetail.color)")
                     
-                    Rectangle().fill(Color(betDetail.color)).frame(width: UIScreen.main.bounds.width, height: 3, alignment: .center)
+                    Rectangle().fill(Color("Dark\(betDetail.color)")).frame(width: UIScreen.main.bounds.width, height: 3, alignment: .center)
                 }.padding(.bottom, 40)
                 
                 
@@ -162,7 +164,7 @@ struct BetDetailView: View {
             Spacer()
             
             Button {
-                //Mostrar participar en apuesta
+                goToParticipation = true
             } label: {
                 Text(odd)
                     .font(.system(size: 14))
@@ -173,6 +175,10 @@ struct BetDetailView: View {
                     .cornerRadius(5)
                     .padding(.trailing, 30)
             }
+            .sheet(isPresented: $goToParticipation,
+            onDismiss: { goToParticipation = false }, content: {
+                ParticipateInBetView(bet: betDetail.bet, userCoins: 4000)
+            })
         }
     }
     

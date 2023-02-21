@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: Tab = .Profile
+    @State private var selectedTab: Tab = .Bet
             
     init() {
         UITabBar.appearance().isHidden = true

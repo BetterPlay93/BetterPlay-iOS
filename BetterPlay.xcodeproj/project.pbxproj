@@ -19,6 +19,7 @@
 		3308E6BE299BFBB200E2113D /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308E6BD299BFBB200E2113D /* FriendProfileView.swift */; };
 		3308E6C0299BFC2400E2113D /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308E6BF299BFC2400E2113D /* UserCard.swift */; };
 		33262E6A299A8FEA009C89A8 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33262E69299A8FEA009C89A8 /* CustomProgressView.swift */; };
+		333F62C929A54C0A0064D45C /* SportCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333F62C829A54C0A0064D45C /* SportCard.swift */; };
 		3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */; };
 		3359FA5729883F4C00641FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5629883F4C00641FD7 /* Assets.xcassets */; };
 		3359FA5A29883F4C00641FD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */; };
@@ -48,9 +49,6 @@
 		33F6A64C29954FAD00FFAB37 /* AuthenticationPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A64B29954FAD00FFAB37 /* AuthenticationPresentationModel.swift */; };
 		33F6A662299555C300FFAB37 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A661299555C300FFAB37 /* EditProfileView.swift */; };
 		33F6A664299555EE00FFAB37 /* EditProfileView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A663299555EE00FFAB37 /* EditProfileView-ViewModel.swift */; };
-		33F6A66D2995588C00FFAB37 /* SoccerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A66C2995588C00FFAB37 /* SoccerCardView.swift */; };
-		33F6A66F2995589700FFAB37 /* BasketballCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A66E2995589700FFAB37 /* BasketballCardView.swift */; };
-		33F6A6712995589E00FFAB37 /* TennisCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6702995589E00FFAB37 /* TennisCardView.swift */; };
 		33F6A673299558AC00FFAB37 /* BetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A672299558AC00FFAB37 /* BetsView.swift */; };
 		33F6A675299558B700FFAB37 /* BetsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */; };
 		33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A67829955C5800FFAB37 /* BetDetailView.swift */; };
@@ -80,6 +78,7 @@
 		3308E6BD299BFBB200E2113D /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		3308E6BF299BFC2400E2113D /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
 		33262E69299A8FEA009C89A8 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		333F62C829A54C0A0064D45C /* SportCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCard.swift; sourceTree = "<group>"; };
 		3359FA4F29883F4B00641FD7 /* BetterPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterPlayApp.swift; sourceTree = "<group>"; };
 		3359FA5629883F4C00641FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,9 +109,6 @@
 		33F6A64B29954FAD00FFAB37 /* AuthenticationPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresentationModel.swift; sourceTree = "<group>"; };
 		33F6A661299555C300FFAB37 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		33F6A663299555EE00FFAB37 /* EditProfileView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditProfileView-ViewModel.swift"; sourceTree = "<group>"; };
-		33F6A66C2995588C00FFAB37 /* SoccerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerCardView.swift; sourceTree = "<group>"; };
-		33F6A66E2995589700FFAB37 /* BasketballCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballCardView.swift; sourceTree = "<group>"; };
-		33F6A6702995589E00FFAB37 /* TennisCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisCardView.swift; sourceTree = "<group>"; };
 		33F6A672299558AC00FFAB37 /* BetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsView.swift; sourceTree = "<group>"; };
 		33F6A674299558B700FFAB37 /* BetsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BetsView-ViewModel.swift"; sourceTree = "<group>"; };
 		33F6A67829955C5800FFAB37 /* BetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetDetailView.swift; sourceTree = "<group>"; };
@@ -249,6 +245,7 @@
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A62F2995457C00FFAB37 /* ContentView.swift */,
 				33A92E6729A3E7E800F9D885 /* OtherUserProfile */,
 				339305032996C7550070C1CE /* UserSearcher */,
 				3393050A2996D0E40070C1CE /* Notifications */,
@@ -257,7 +254,6 @@
 				33F6A69B29956A9800FFAB37 /* Authentication */,
 				33F6A6602995559D00FFAB37 /* EditProfile */,
 				33F6A6652995575500FFAB37 /* Profile */,
-				33F6A67629955C4400FFAB37 /* BetDetail */,
 				33F6A6242995439200FFAB37 /* Components */,
 			);
 			path = Presentation;
@@ -309,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				33F6A62A299544E700FFAB37 /* CustomTabBar.swift */,
-				33F6A62F2995457C00FFAB37 /* ContentView.swift */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
@@ -346,8 +341,6 @@
 			children = (
 				33F6A69929956A8700FFAB37 /* ProfileView-ViewModel.swift */,
 				33F6A69729956A7D00FFAB37 /* ProfileView.swift */,
-				33F6A6662995578600FFAB37 /* ProfileView.swift */,
-				33F6A6682995579100FFAB37 /* ProfileView-ViewModel.swift */,
 				3308E6BD299BFBB200E2113D /* FriendProfileView.swift */,
 			);
 			path = Profile;
@@ -363,14 +356,12 @@
 			path = BetsView;
 			sourceTree = "<group>";
 		};
-		33F6A66B2995588000FFAB37 /* Cards */ = {
+		33F6A66B2995588000FFAB37 /* SportCard */ = {
 			isa = PBXGroup;
 			children = (
-				33F6A66C2995588C00FFAB37 /* SoccerCardView.swift */,
-				33F6A66E2995589700FFAB37 /* BasketballCardView.swift */,
-				33F6A6702995589E00FFAB37 /* TennisCardView.swift */,
+				333F62C829A54C0A0064D45C /* SportCard.swift */,
 			);
-			path = Cards;
+			path = SportCard;
 			sourceTree = "<group>";
 		};
 		33F6A67629955C4400FFAB37 /* BetDetail */ = {
@@ -380,7 +371,8 @@
 				33F6A67829955C5800FFAB37 /* BetDetailView.swift */,
 				33F6A67C29955C7400FFAB37 /* BetDetailView-ViewModel.swift */,
 			);
-			path = BetDetail;
+			name = BetDetail;
+			path = ../BetDetail;
 			sourceTree = "<group>";
 		};
 		33F6A67729955C4D00FFAB37 /* Model */ = {
@@ -440,9 +432,10 @@
 		33F6A69C29956AB100FFAB37 /* Bets */ = {
 			isa = PBXGroup;
 			children = (
+				33F6A67629955C4400FFAB37 /* BetDetail */,
 				106A518F29A37C5E00208BF7 /* ParticipateInBet */,
 				33F6A66A2995587A00FFAB37 /* BetsView */,
-				33F6A66B2995588000FFAB37 /* Cards */,
+				33F6A66B2995588000FFAB37 /* SportCard */,
 			);
 			path = Bets;
 			sourceTree = "<group>";
@@ -527,10 +520,10 @@
 				33F6A68C2995641700FFAB37 /* RecoverPasswordCodeView.swift in Sources */,
 				339305072996C7720070C1CE /* UserSearcherView-ViewModel.swift in Sources */,
 				3393050C2996D0FE0070C1CE /* NotificationsView.swift in Sources */,
-				33F6A6712995589E00FFAB37 /* TennisCardView.swift in Sources */,
 				104FEEFE29A2BBA30091EAFC /* NotificationListResponseModel.swift in Sources */,
 				33A92E6929A3E83200F9D885 /* OtherUserProfileView.swift in Sources */,
 				106A519329A3806800208BF7 /* ParticipateInBetView-ViewModel.swift in Sources */,
+				333F62C929A54C0A0064D45C /* SportCard.swift in Sources */,
 				33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */,
 				33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */,
 				33686370299E7E74008140E2 /* BetResponseModel.swift in Sources */,
@@ -541,7 +534,6 @@
 				104FEEF929A285670091EAFC /* UserSearcherResponseModel.swift in Sources */,
 				3308E6BE299BFBB200E2113D /* FriendProfileView.swift in Sources */,
 				33262E6A299A8FEA009C89A8 /* CustomProgressView.swift in Sources */,
-				33F6A6672995578600FFAB37 /* ProfileView.swift in Sources */,
 				33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */,
 				339305092996C7F80070C1CE /* UserCard.swift in Sources */,
 				33F6A69829956A7E00FFAB37 /* ProfileView.swift in Sources */,
@@ -552,7 +544,6 @@
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
 				104FEEFC29A2885D0091EAFC /* UserPresentationModel.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
-				33F6A66D2995588C00FFAB37 /* SoccerCardView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
 				33F6A64C29954FAD00FFAB37 /* AuthenticationPresentationModel.swift in Sources */,
@@ -569,7 +560,6 @@
 				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
 				104FEEF729A285400091EAFC /* UserResponseModel.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
-				33F6A66F2995589700FFAB37 /* BasketballCardView.swift in Sources */,
 				33A92E6D29A409D900F9D885 /* BetPresentationModel.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
 				33F6A682299560A500FFAB37 /* LoginView.swift in Sources */,

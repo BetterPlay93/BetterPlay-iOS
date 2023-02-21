@@ -12,7 +12,7 @@ struct SoccerCardView: View {
     
     var body: some View {
         HStack(spacing: 10){
-            Image("SoccerCard")
+            Image("\(bet.sport.rawValue)Card")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 107, height: 107)
@@ -100,9 +100,7 @@ struct SoccerCardView: View {
                 .foregroundColor(Color("Gray"))
                 .bold()
             
-            Button {
-                   
-            } label: {
+            NavigationLink(destination: BetDetailView(betDetail: BetDetailPresentationModel(bet: bet, color: "")), label: {
                 Text("Jugar")
                     .font(.system(size: 14))
                     .foregroundColor(.white)
@@ -110,9 +108,9 @@ struct SoccerCardView: View {
                     .frame(width: 67, height: 24)
                     .background(Color("Green"))
                     .cornerRadius(20)
-            }.padding(.leading, 10)
+            }).padding(.leading, 10)
         }.padding(.bottom, 5)
-        
+                           
     }
 }
 
