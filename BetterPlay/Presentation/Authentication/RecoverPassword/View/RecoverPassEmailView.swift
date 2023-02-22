@@ -8,58 +8,81 @@
 import SwiftUI
 
 struct RecoverPassEmailView: View {
+    @Binding var show: Bool
+    @Binding var showNext: Bool
+    
     @State private var email = ""
-            
+    @ObservedObject var viewmodel : ViewModel = ViewModel()
+    
     var body: some View {
-        ZStack() {
-            VStack(spacing: 10) {
-                Image("Logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 125, height: 80)
-                
-                VStack(spacing: 2){
-                    Text("Email")
-                        .frame(maxWidth: 234, alignment: .leading)
-                    TextField("",text: $email)
-                        .padding().frame(width: 234, height: 27)
-                        .background(Color(.white))
-                        .cornerRadius(10)
-                    
-                    Button {
-                         
-                    } label: {
-                        Text("Continuar")
-                            .foregroundColor(.white)
-                            .frame(width: 89, height: 32)
-                            .background(Color("DarkGray"))
-                            .cornerRadius(10)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            .padding()
-                    }
-                    
-                    HStack {
-                        Circle()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(Color("DarkGray"))
-                        Circle()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(Color("Gray"))
-                        Circle()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(Color("Gray"))
-                    }
-                }
+        ZStack(alignment: .center, content: {
+            Color.black.opacity(0.3).ignoresSafeArea()
+            VStack(spacing: 25) {
+                logo
+                emailTextField
+                checkEmailButton
+                dots
+            }.padding(.vertical, 25)
+                .padding(.horizontal, 30)
+                .background(Color("Background"))
+                .cornerRadius(25)
+                .frame(width: 327, height: 275)
+        })
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
+        
+    }
+    
+    var checkEmailButton: some View{
+        Button {
+            viewmodel.sendEmail(email: email)
+            if viewmodel.shouldShowCode {
+                show.toggle()
+                showNext.toggle()
             }
-            .frame(width: 327, height: 275)
-            .background(Color("Background"))
-            .cornerRadius(10)
+            
+        } label: {
+            Text("Continuar")
+                .foregroundColor(.white)
+                .frame(width: 89, height: 32)
+                .background(Color("DarkGray"))
+                .cornerRadius(10)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding()
+        }
+    }
+    var emailTextField: some View {
+        VStack(spacing:2){
+            Text("Email")
+                .frame(maxWidth: 234, alignment: .leading)
+            TextField("",text: $email)
+                .padding().frame(width: 234, height: 27)
+                .background(Color(.white))
+                .cornerRadius(10)
+        }
+    }
+    var logo: some View{
+        Image("Logo")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 125, height: 80)
+    }
+    var dots: some View{
+        HStack {
+            Circle()
+                .frame(width: 20, height: 20)
+                .foregroundColor(Color("DarkGray"))
+            Circle()
+                .frame(width: 20, height: 20)
+                .foregroundColor(Color("Gray"))
+            Circle()
+                .frame(width: 20, height: 20)
+                .foregroundColor(Color("Gray"))
         }
     }
 }
 
 struct RecoverPassEmailView_Previews: PreviewProvider {
     static var previews: some View {
-        RecoverPassEmailView()
+        RecoverPassEmailView(show: .constant(true), showNext: .constant(true))
     }
 }
