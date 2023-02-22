@@ -15,6 +15,7 @@
 		104FEF0329A2BE3F0091EAFC /* NotificationPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */; };
 		106A519329A3806800208BF7 /* ParticipateInBetView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106A519229A3806800208BF7 /* ParticipateInBetView-ViewModel.swift */; };
 		106A519529A3808E00208BF7 /* ParticipateInBetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106A519429A3808E00208BF7 /* ParticipateInBetView.swift */; };
+		3308B32929A66E5400FD84D7 /* ParticipateInBetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308B32829A66E5400FD84D7 /* ParticipateInBetModel.swift */; };
 		3308E6BC299BF1A000E2113D /* ProfileNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308E6BB299BF1A000E2113D /* ProfileNavBar.swift */; };
 		3308E6BE299BFBB200E2113D /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308E6BD299BFBB200E2113D /* FriendProfileView.swift */; };
 		3308E6C0299BFC2400E2113D /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308E6BF299BFC2400E2113D /* UserCard.swift */; };
@@ -74,6 +75,7 @@
 		104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresentationModel.swift; sourceTree = "<group>"; };
 		106A519229A3806800208BF7 /* ParticipateInBetView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParticipateInBetView-ViewModel.swift"; sourceTree = "<group>"; };
 		106A519429A3808E00208BF7 /* ParticipateInBetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateInBetView.swift; sourceTree = "<group>"; };
+		3308B32829A66E5400FD84D7 /* ParticipateInBetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateInBetModel.swift; sourceTree = "<group>"; };
 		3308E6BB299BF1A000E2113D /* ProfileNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavBar.swift; sourceTree = "<group>"; };
 		3308E6BD299BFBB200E2113D /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		3308E6BF299BFC2400E2113D /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
@@ -155,10 +157,19 @@
 		106A518F29A37C5E00208BF7 /* ParticipateInBet */ = {
 			isa = PBXGroup;
 			children = (
+				3308B32A29A66E5A00FD84D7 /* Model */,
 				106A519229A3806800208BF7 /* ParticipateInBetView-ViewModel.swift */,
 				106A519429A3808E00208BF7 /* ParticipateInBetView.swift */,
 			);
 			path = ParticipateInBet;
+			sourceTree = "<group>";
+		};
+		3308B32A29A66E5A00FD84D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3308B32829A66E5400FD84D7 /* ParticipateInBetModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3359FA4629883F4B00641FD7 = {
@@ -553,6 +564,7 @@
 				33769FCB29A3C19300169FC5 /* DailyStreakView-ViewModel.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* BetListResponseModel.swift in Sources */,
 				33F6A69A29956A8700FFAB37 /* ProfileView-ViewModel.swift in Sources */,
+				3308B32929A66E5400FD84D7 /* ParticipateInBetModel.swift in Sources */,
 				33F6A690299564C300FFAB37 /* RecoverPassEmailView.swift in Sources */,
 				104FEF0329A2BE3F0091EAFC /* NotificationPresentationModel.swift in Sources */,
 				33F6A6922995650800FFAB37 /* RecoverPassViewModel.swift in Sources */,

@@ -9,32 +9,51 @@ import SwiftUI
 
 struct ParticipateInBetView: View {
     
-    var bet: BetPresentationModel
+    var betData: ParticipateInBetModel
     //Se obtiene del user defaults, gracias a los valores del usuario
     var userCoins: Int
     @State var sliderValue: Double = 0
+    @Binding var isShowing: Bool
     @ObservedObject var viewModel: ViewModel = ViewModel()
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 17){
-            Text(bet.home_team.name)
-                .foregroundColor(Color("LightGreen"))
-                .bold()
-                .font(.system(size: 20))
-            
-            quantityOfMoney
-            
-            quote
-            
-            revenueMoney
-            
-            slider
-          
-            participateButton
-            
+        if isShowing {
+            withAnimation {
+                ZStack(alignment: .bottom) {
+                    Color.black
+                        .opacity(0.3)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            isShowing = false
+                        }
+                    
+                    VStack(alignment: .leading, spacing: 17){
+                        Text(betData.team)
+                            .foregroundColor(Color("LightGreen"))
+                            .bold()
+                            .font(.system(size: 20))
+                        
+                        quantityOfMoney
+                        
+                        quote
+                        
+                        revenueMoney
+                        
+                        slider
+                      
+                        participateButton
+                        
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: UIScreen.main.bounds.height/2.9)
+                    .padding(25)
+                    .background(.white)
+                    .cornerRadius(10)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .ignoresSafeArea()
+            }
         }
-        .frame(width: UIScreen.main.bounds.width/1.2, height: UIScreen.main.bounds.height/2.9)
-        .background(.white)
     }
     
     var quantityOfMoney: some View {
@@ -54,7 +73,7 @@ struct ParticipateInBetView: View {
             
             Spacer()
             
-            Text("\(String(format: "%.2f", bet.home_odd))")
+            Text("\(String(format: "%.2f", betData.odd))")
                 .bold()
         }
     }
@@ -65,7 +84,7 @@ struct ParticipateInBetView: View {
             
             Spacer()
             
-            Text("\(getRevenueMoney(money: sliderValue, quote: bet.home_odd))")
+            Text("+\(getRevenueMoney(money: sliderValue, quote: betData.odd))")
                 .foregroundColor(Color("LightGreen"))
                 .bold()
         }
@@ -89,7 +108,7 @@ struct ParticipateInBetView: View {
         HStack {
             Button {
                 //El eventId se obtiene con la petición de todos los eventos y gracias al detalle y el winner se obtiene también del detalle
-                viewModel.participateInBet(eventId: 1, money: Int(sliderValue), winner: bet.home_team.name)
+                viewModel.participateInBet(eventId: betData.betId, money: Int(sliderValue), winner: betData.team)
             }label: {
                 Text("Jugar")
                     .foregroundColor(.white)
@@ -100,7 +119,7 @@ struct ParticipateInBetView: View {
             .background(Color("Green"))
             .cornerRadius(10)
         }.frame(maxWidth: UIScreen.main.bounds.width)
-        .padding()
+        .padding(10)
     }
     
     var minSliderValueButton: some View {
@@ -132,7 +151,7 @@ struct ParticipateInBetView: View {
 
 struct ParticipateInBetView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipateInBetView(bet: BetPresentationModel(home_result: 0, away_result: 0, home_odd: 1.0, away_odd: 3.0, tie_odd: 1.5, date: 1676658884, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: "https://media-1.api-sports.io/football/teams/529.png"), away_team: TeamPresentationModel(name: "Real Madrid", logo: "https://media-2.api-sports.io/football/teams/541.png")), userCoins: 4000)
+        ParticipateInBetView(betData: ParticipateInBetModel(team: "FC. Barcelona", odd: 1.0, betId: 1), userCoins: 4000, isShowing: .constant(true))
     }
 }
 

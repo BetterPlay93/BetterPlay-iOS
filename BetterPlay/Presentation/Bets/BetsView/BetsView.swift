@@ -9,44 +9,52 @@ import SwiftUI
 
 struct BetsView: View {
     @ObservedObject private var viewModel = ViewModel()
+    @State var showDailyStreak: Bool = false
     @State var text: String = ""
     @State var sportSelected: Sport = .all
     
     var body: some View {
-        VStack(spacing: 0) {
-            VStack(spacing: 20) {
-                logo
-                
-                Searcher(text: $text)
-                
-                filterButtons
-                
-                Rectangle().fill(Color("Gray")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
-                
-                
-            }
-            .padding(.top, 50)
-            .background(Color("Background"))
-               
-            VStack {
-                ScrollView {
-                    LazyVStack {
-                        ForEach(viewModel.filteredBets(by: text, and: sportSelected)) { bet in
-                            
-                            SportCard(bet: bet)
-                            
+        ZStack {
+            VStack(spacing: 0) {
+                VStack(spacing: 20) {
+                    logo
+                    
+                    Searcher(text: $text)
+                    
+                    filterButtons
+                    
+                    Rectangle().fill(Color("Gray")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
+                    
+                    
+                }
+                .padding(.top, 50)
+                .background(Color("Background"))
+                   
+                VStack {
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(viewModel.filteredBets(by: text, and: sportSelected)) { bet in
+                                
+                                SportCard(bet: bet)
+                                
+                            }
                         }
                     }
                 }
+                .padding(.top, 20)
+                .background(Color("Background2"))
+                
+                CustomTabBar(selectedTab: .constant(.Bet))
             }
-            .padding(.top, 20)
-            .background(Color("Background2"))
+            .ignoresSafeArea()
+            .onAppear() {
+                //viewModel.getAllBets()
+                //Esto dependerá de si la fecha del userDefaults de inicio a la app es un día más
+                showDailyStreak = true
+            }
             
-            CustomTabBar(selectedTab: .constant(.Bet))
-        }
-        .ignoresSafeArea()
-        .onAppear() {
-            //viewModel.getAllBets()
+            
+            DailyStreakView(isShowing: $showDailyStreak)
         }
     }
     
