@@ -38,12 +38,45 @@ class NetworkHelper {
         
         var request = URLRequest(url: urlNotNil)
         
+        request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        
+        if containsImage {
+            let boundary = UUID().uuidString
+            request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        }
+        
         request.httpMethod = type.rawValue
         request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
         
         if(token != nil) {
             request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
         }
+        
+        if let dictionary = params {
+            let data = try! JSONSerialization.data(withJSONObject: dictionary, options: [])
+            request.httpBody = data
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        requestApi(request: request) { data, response, error in
+            DispatchQueue.main.async {
+                completion(data, response, error)
+            }
+        }
+    }
+    
+    func requestUploadImage(url: String, token: String? = nil, type: RequestType = .POST, params: [String: Any]? = nil, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void){
+        let url = URL(string: url)
+        
+        guard let urlNotNil = url else { return }
+        
+        var request = URLRequest(url: urlNotNil)
+        
+        request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        
+        request.httpMethod = type.rawValue
+        
         
         if let dictionary = params {
             let data = try! JSONSerialization.data(withJSONObject: dictionary, options: [])

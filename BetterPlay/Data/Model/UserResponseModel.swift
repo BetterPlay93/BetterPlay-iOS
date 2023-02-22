@@ -1,8 +1,8 @@
 //
-//  UserResponseModel.swift
+//  UserModel.swift
 //  BetterPlay
 //
-//  Created by Ismael Cordón Domínguez on 19/2/23.
+//  Created by Apps2T on 16/2/23.
 //
 
 import Foundation
@@ -25,4 +25,3 @@ class UserResponseModel: Decodable{
         self.photo = photo
     }
 }
-
