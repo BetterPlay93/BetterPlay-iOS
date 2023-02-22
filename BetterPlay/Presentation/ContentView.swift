@@ -24,10 +24,10 @@ struct ContentView: View {
                     NotificationsView()
                         .tag(Tab.Notification)
                     
-                    Color.black
+                    Color.black.navigationBarHidden(true)
                         .tag(Tab.Pool)
                     
-                    ProfileNavBar(username: "Juan Ramón")
+                    ProfileNavBar(username: "Juan Ramón").navigationBarHidden(true)
                         .tag(Tab.Profile)
                 }
             }

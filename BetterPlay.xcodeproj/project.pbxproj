@@ -172,6 +172,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3308B32B29A67E4100FD84D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3308E6BB299BF1A000E2113D /* ProfileNavBar.swift */,
+				33F6A69729956A7D00FFAB37 /* ProfileView.swift */,
+				3308E6BD299BFBB200E2113D /* FriendProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3359FA4629883F4B00641FD7 = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +316,6 @@
 				33F6A695299566FB00FFAB37 /* CustomProgressView.swift */,
 				339305082996C7F80070C1CE /* UserCard.swift */,
 				33262E69299A8FEA009C89A8 /* CustomProgressView.swift */,
-				3308E6BB299BF1A000E2113D /* ProfileNavBar.swift */,
 				3308E6BF299BFC2400E2113D /* UserCard.swift */,
 			);
 			path = Components;
@@ -350,9 +359,8 @@
 		33F6A6652995575500FFAB37 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				3308B32B29A67E4100FD84D7 /* View */,
 				33F6A69929956A8700FFAB37 /* ProfileView-ViewModel.swift */,
-				33F6A69729956A7D00FFAB37 /* ProfileView.swift */,
-				3308E6BD299BFBB200E2113D /* FriendProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
