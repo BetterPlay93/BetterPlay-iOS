@@ -28,6 +28,7 @@ struct NotificationsView: View {
         }
         .background(Color("Background"))
         .ignoresSafeArea()
+        .navigationBarHidden(true)
         .onAppear{
             viewModel.getNotifications()
         }
@@ -42,8 +43,10 @@ struct NotificationsView: View {
             Text("Notificaciones")
                 .foregroundColor(Color.white)
                 .font(.system(size: 25))
-                .bold()
-        }.padding(.top, 40)
+            .bold()
+            
+            
+        }.padding(.top, 45)
     }
     
     func notification(type: NotificationType, message: String) -> some View{

@@ -24,10 +24,10 @@ struct ContentView: View {
                     NotificationsView()
                         .tag(Tab.Notification)
                     
-                    Color.black.navigationBarHidden(true)
+                    NotificationsView()
                         .tag(Tab.Pool)
                     
-                    ProfileNavBar(username: "Juan Ramón").navigationBarHidden(true)
+                    ProfileNavBar()
                         .tag(Tab.Profile)
                 }
             }
@@ -37,6 +37,8 @@ struct ContentView: View {
                 CustomTabBar(selectedTab: $selectedTab)
             }
         }.ignoresSafeArea()
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -21,7 +21,9 @@ struct EditProfileView: View {
     // MARK: - Body
     var body: some View {
         VStack {
-            CustomBackButton(buttonColor: "DarkGray")
+            
+            CustomBackButton(buttonColor: "DarkGray").padding(.top)
+            
             imageSelection
             CustomTextField(imageName: "person", placeholderText: "Username", isSecureField: false,  text: $username)
                 .padding()

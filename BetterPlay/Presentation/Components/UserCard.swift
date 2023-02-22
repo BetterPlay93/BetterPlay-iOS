@@ -29,8 +29,8 @@ struct UserCard: View {
             
             Spacer()
             
-            Button {
-                
+            NavigationLink {
+                OtherUserProfileView(user: UserPresentationModel(username: "emilia", email: "emilia@gmail.com", coins: 4000, followers: 200, code: "", photo: "https://picsum.photos/200/300")).navigationBarHidden(true)
             }label: {
                 Text("Perfil")
                     .foregroundColor(.white)

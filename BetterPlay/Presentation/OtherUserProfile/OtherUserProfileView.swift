@@ -28,6 +28,9 @@ struct OtherUserProfileView: View {
                 poolsStats
                 
                 Spacer()
+                
+                CustomTabBar(selectedTab: .constant(.Profile
+                                                   ))
             }
         }.background(Color("Background2"))
     }
@@ -53,16 +56,11 @@ struct OtherUserProfileView: View {
                 
                 Text(user.username)
                     .foregroundColor(Color.white)
-                    .font(.system(size: 18))
+                    .font(.system(size: 24))
                     .bold()
                     .padding(.leading, 20)
                 Spacer()
                 
-                Image("SearchUser")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 35, height: 35, alignment: .leading)
-                    .padding(.trailing, 10)
                 
                 Button {
                     isFriend.toggle()
@@ -134,7 +132,7 @@ struct OtherUserProfileView: View {
                     .lineLimit(2)
                     .frame(maxWidth: 105)
                 
-                Text("\(user.coins - 500000)")
+                Text("\(2000)")
                     .font(.system(size: 20))
                     .bold()
                     .padding(.leading, 30)
@@ -249,6 +247,6 @@ struct OtherUserProfileView: View {
 
 struct OtherUserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        OtherUserProfileView(user: UserPresentationModel(username: "pepitoeldelospalotes", email: "pepitogrillo@gmail.com", coins: 1000000, followers: 2000, code: "", photo: ""))
+        OtherUserProfileView(user: UserPresentationModel(username: "pepitoeldelospalotes", email: "pepitogrillo@gmail.com", coins: 4000, followers: 2000, code: "", photo: ""))
     }
 }

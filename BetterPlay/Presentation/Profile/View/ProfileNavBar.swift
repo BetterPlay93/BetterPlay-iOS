@@ -9,25 +9,27 @@ import SwiftUI
 
 struct ProfileNavBar: View {
     
-    var username: String
+    var username: String = "Juan Ramón"
     @State var selection: Int = 0
     var isCurrentUser: Bool = false
     
     var body: some View {
-        VStack{
-            navBar
-            
-            filter
+        ZStack {
+            VStack{
+                navBar
+                
+                filter
+            }
         }
         .background(Color("Background2"))
     }
     
     // MARK: - Accesory View
     var navBar: some View {
-        ZStack(){
+        ZStack{
             Rectangle()
                 .fill(Color("Gray")).frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 50)
-            HStack{
+            HStack() {
                 Text(username)
                     .foregroundColor(Color.white)
                     .font(.system(size: 25))
@@ -35,18 +37,27 @@ struct ProfileNavBar: View {
                     .padding(.leading, 20)
                 Spacer()
                 
-                Image("SearchUser")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 35, height: 35, alignment: .leading)
-                    .padding(.trailing, 10)
+                NavigationLink {
+                    UserSearcherView().navigationBarHidden(true)
+                }label: {
+                    Image("SearchUser")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 35, height: 35, alignment: .leading)
+                        .padding(.trailing, 10)
+                }
                 
-                Image(systemName: "gearshape.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 35, height: 35, alignment: .leading)
-                    .foregroundColor(Color.white)
-                    .padding(.trailing, 20)
+                NavigationLink {
+                    EditProfileView().navigationBarHidden(true)
+                }label: {
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 35, height: 35, alignment: .leading)
+                        .foregroundColor(Color.white)
+                        .padding(.trailing, 20)
+                }
+                
             }
         }
     }

@@ -35,7 +35,7 @@ struct BetDetailView: View {
                 
             }
             
-            ParticipateInBetView(betData: participationData, userCoins: 4000, isShowing: $showParticipationView)
+            ParticipateInBetView(betData: participationData, userCoins: 4000,isShowing: $showParticipationView)
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -172,6 +172,7 @@ struct BetDetailView: View {
             Button {
                 participationData.team = team
                 participationData.odd = odd
+                participationData.color = betDetail.color
                 showParticipationView = true
             } label: {
                 Text(String(odd))

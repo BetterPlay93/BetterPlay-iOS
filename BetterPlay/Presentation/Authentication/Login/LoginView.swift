@@ -32,7 +32,7 @@ struct LoginView: View {
                 
                 navigateToRegister
                 
-                NavigationLink(destination: EmptyView(), isActive: $viewModel.shouldNavigateToHome) {
+                NavigationLink(destination: ContentView(), isActive: $viewModel.shouldNavigateToHome) {
                     EmptyView()
                 }
             }

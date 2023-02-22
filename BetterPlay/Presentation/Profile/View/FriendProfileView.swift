@@ -15,14 +15,13 @@ struct FriendProfileView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(0...10, id: \.self) {   _ in
-//                            UserCard(user: <#UserPresentationModel#>, imagePhoto: "Women", username: "Saraaa_cd").padding(10)
+//                            UserCard()
                         } 
                     }
                 }
                 
-            }.background(Color("Background2"))
-            
-            
+            }
+            .background(Color("Background2"))
         }
         
     }

@@ -29,7 +29,7 @@ struct ParticipateInBetView: View {
                     
                     VStack(alignment: .leading, spacing: 17){
                         Text(betData.team)
-                            .foregroundColor(Color("LightGreen"))
+                            .foregroundColor(Color("Light\(betData.color)"))
                             .bold()
                             .font(.system(size: 20))
                         
@@ -85,7 +85,7 @@ struct ParticipateInBetView: View {
             Spacer()
             
             Text("+\(getRevenueMoney(money: sliderValue, quote: betData.odd))")
-                .foregroundColor(Color("LightGreen"))
+                .foregroundColor(Color("Light\(betData.color)"))
                 .bold()
         }
     }
@@ -98,7 +98,7 @@ struct ParticipateInBetView: View {
             Slider(value: $sliderValue,
                 in: 0...Double(userCoins),
                 step: 100.0)
-            .accentColor(Color("LightGreen"))
+            .accentColor(Color("Light\(betData.color)"))
             
             maxSliderValueButton
         }
@@ -116,7 +116,7 @@ struct ParticipateInBetView: View {
             }
             .frame(maxWidth: UIScreen.main.bounds.width/1.5)
             .padding(.vertical, 10)
-            .background(Color("Green"))
+            .background(Color("\(betData.color)"))
             .cornerRadius(10)
         }.frame(maxWidth: UIScreen.main.bounds.width)
         .padding(10)
@@ -127,11 +127,11 @@ struct ParticipateInBetView: View {
             sliderValue = 0.0
         }label: {
             Text("Min")
-                .foregroundColor(Color("LightGreen"))
+                .foregroundColor(Color("Light\(betData.color)"))
                 .bold()
                 .padding(.horizontal)
                 .padding(.vertical, 5)
-                .border(Color("LightGreen"), width: 1)
+                .border(Color("Light\(betData.color)"), width: 1)
         }
     }
     
@@ -140,18 +140,18 @@ struct ParticipateInBetView: View {
             sliderValue = Double(userCoins)
         }label: {
             Text("All-in")
-                .foregroundColor(Color("LightGreen"))
+                .foregroundColor(Color("Light\(betData.color)"))
                 .bold()
                 .padding(.horizontal)
                 .padding(.vertical, 5)
-                .border(Color("LightGreen"), width: 1)
+                .border(Color("Light\(betData.color)"), width: 1)
         }
     }
 }
 
 struct ParticipateInBetView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipateInBetView(betData: ParticipateInBetModel(team: "FC. Barcelona", odd: 1.0, betId: 1), userCoins: 4000, isShowing: .constant(true))
+        ParticipateInBetView(betData: ParticipateInBetModel(team: "FC. Barcelona", odd: 1.0, betId: 1,sport: .soccer, color: "Green"), userCoins: 4000, isShowing: .constant(true))
     }
 }
 
