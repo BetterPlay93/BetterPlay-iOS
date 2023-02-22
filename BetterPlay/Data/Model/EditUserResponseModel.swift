@@ -12,8 +12,3 @@ class EditUserResponseModel: BaseResponseModel {
 }
 
 
-class BaseResponseModel: Decodable {
-    var status: String?
-    var code: Int?
-    var message: [String]?
-}

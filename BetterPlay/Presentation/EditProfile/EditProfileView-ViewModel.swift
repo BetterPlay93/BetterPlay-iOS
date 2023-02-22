@@ -18,7 +18,7 @@ extension EditProfileView {
             let url = "https://betterplay-backend-production.up.railway.app/api/users/getCurrentUserPhoto"
             let logedToken =  "t3xGMM0zVtLJFPjSdI3pIF8sgQZpVMXB9xI6uGLn"
             
-            NetworkHelper.shared.requestProvider(url: url, token: logedToken, type: .GET) { data, response, error in
+            NetworkHelper.shared.requestProvider(url: url, type: .GET, token: logedToken) { data, response, error in
                 if let error = error {
                     self.onErrorImage(error: [error.localizedDescription])
                 } else if let data = data, let response = response as? HTTPURLResponse {
@@ -59,7 +59,7 @@ extension EditProfileView {
                 "photo" : photo
             ]
             
-            NetworkHelper.shared.requestProvider(url: url, token: logedToken, type: .POST, params: dictionary) { data, response, error in
+            NetworkHelper.shared.requestProvider(url: url, type: .POST, params: dictionary, token: logedToken) { data, response, error in
                 if let error = error {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data, let response = response as? HTTPURLResponse{

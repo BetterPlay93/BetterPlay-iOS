@@ -15,7 +15,7 @@ struct FriendProfileView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(0...10, id: \.self) {   _ in
-                            UserCard(imagePhoto: "Women", username: "Saraaa_cd").padding(10)
+                            
                         } 
                     }
                 }
