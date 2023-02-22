@@ -43,6 +43,7 @@ extension RecoverPasswordCodeView{
     class ViewModel:ObservableObject{
         @Published var shouldShowNewPass: Bool = false
         @Published var shouldShowAlert: Bool = false
+        
         func checkCorrectSecretCode(code: String){
             let url = "https://betterplay-backend-production.up.railway.app/api/users/checkCorrectSecretCode"
             let params: [String: String] = ["code": code]

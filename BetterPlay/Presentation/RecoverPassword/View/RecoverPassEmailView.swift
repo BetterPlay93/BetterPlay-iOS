@@ -8,27 +8,38 @@
 import SwiftUI
 
 struct RecoverPassEmailView: View {
+    @Binding var show: Bool
+    @Binding var showNext: Bool
+    
     @State private var email = ""
     @ObservedObject var viewmodel : ViewModel = ViewModel()
     
     var body: some View {
-        ZStack() {
-            VStack(spacing: 10) {
+        ZStack(alignment: .center, content: {
+            Color.black.opacity(0.3).ignoresSafeArea()
+            VStack(spacing: 25) {
                 logo
-                VStack(spacing: 2){
-                    emailTextField
-                    checkEmailButton(email: email)
-                    dots
-                }
-            }
-            .frame(width: 327, height: 275)
-            .background(Color("Background"))
-            .cornerRadius(10)
-        }
+                emailTextField
+                checkEmailButton
+                dots
+            }.padding(.vertical, 25)
+                .padding(.horizontal, 30)
+                .background(Color("Background"))
+                .cornerRadius(25)
+                .frame(width: 327, height: 275)
+        })
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
+        
     }
-    func checkEmailButton(email: String)-> some View{
+    
+    var checkEmailButton: some View{
         Button {
             viewmodel.sendEmail(email: email)
+            if viewmodel.shouldShowCode {
+                show.toggle()
+                showNext.toggle()
+            }
+            
         } label: {
             Text("Continuar")
                 .foregroundColor(.white)
@@ -37,11 +48,7 @@ struct RecoverPassEmailView: View {
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding()
-        }.background(
-            NavigationLink(destination: RecoverPasswordCodeView(), isActive: $viewmodel.shouldShowCode) {
-                EmptyView()
-            }
-        )
+        }
     }
     var emailTextField: some View {
         VStack(spacing:2){
@@ -76,6 +83,6 @@ struct RecoverPassEmailView: View {
 
 struct RecoverPassEmailView_Previews: PreviewProvider {
     static var previews: some View {
-        RecoverPassEmailView()
+        RecoverPassEmailView(show: .constant(true), showNext: .constant(true))
     }
 }
