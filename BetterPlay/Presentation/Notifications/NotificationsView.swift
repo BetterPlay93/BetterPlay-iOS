@@ -29,6 +29,7 @@ struct NotificationsView: View {
         .background(Color("Background"))
         .ignoresSafeArea()
         .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear{
             viewModel.getNotifications()
         }

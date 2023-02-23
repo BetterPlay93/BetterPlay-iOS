@@ -14,22 +14,23 @@ struct ProfileNavBar: View {
     var isCurrentUser: Bool = false
     
     var body: some View {
-        ZStack {
-            VStack{
+        ZStack(alignment: .top) {
+            VStack(spacing: 0) {
                 navBar
-                
                 filter
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarHidden(true)
         .background(Color("Background2"))
     }
     
     // MARK: - Accesory View
     var navBar: some View {
-        ZStack{
+        ZStack {
             Rectangle()
                 .fill(Color("Gray")).frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 50)
-            HStack() {
+            HStack {
                 Text(username)
                     .foregroundColor(Color.white)
                     .font(.system(size: 25))
