@@ -13,9 +13,6 @@ struct LoginView: View {
     @State var recoverPass: Bool = false
     @State private var username = ""
     @State private var password = ""
-    @State var recoverEmail: Bool = false
-    @State var recoverCode: Bool = false
-    @State var recoverPass: Bool = false
     
     @ObservedObject var viewModel: ViewModel = ViewModel()
 

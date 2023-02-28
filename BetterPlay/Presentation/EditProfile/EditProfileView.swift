@@ -42,6 +42,7 @@ struct EditProfileView: View {
             CustomTabBar(selectedTab: .constant(.Profile))
         }
         .ignoresSafeArea()
+        .background(Color("Background2"))
         .sheet(isPresented: $isPickerPresented) {
             ImagePicker(selectedImage: $profileUIImage)
         }
@@ -114,7 +115,7 @@ struct EditProfileView: View {
                 .cornerRadius(10)
                 .padding(40)
             //navegar a perfil
-        }.background()
+        }
     }
 }
 
