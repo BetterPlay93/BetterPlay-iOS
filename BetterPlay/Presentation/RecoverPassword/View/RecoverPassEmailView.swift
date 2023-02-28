@@ -34,11 +34,11 @@ struct RecoverPassEmailView: View {
     
     var checkEmailButton: some View{
         Button {
-            viewmodel.sendEmail(email: email)
-            if viewmodel.shouldShowCode {
+            viewmodel.sendEmail(email: email) { showCode in
                 show.toggle()
                 showNext.toggle()
             }
+            
             
         } label: {
             Text("Continuar")
@@ -48,6 +48,16 @@ struct RecoverPassEmailView: View {
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding()
+        }.alert("Error en la petición de recuperar contraseña", isPresented: $viewmodel.shouldShowAlert, actions: {
+            Button {
+                
+            } label: {
+                Text("Ok")
+            }
+        }) {
+            ForEach(viewmodel.response.message, id:\.self){ message in
+                Text("\(message)")
+            }
         }
     }
     var emailTextField: some View {
