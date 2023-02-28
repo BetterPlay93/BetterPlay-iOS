@@ -19,7 +19,7 @@ struct NotificationsView: View {
             ScrollView {
                 LazyVStack {
                     ForEach(viewModel.notifications) { notifications in
-                        notification(type: NotificationType(rawValue: notifications.type) ?? .friendRequest, message: notifications.text)
+                        notification(type: NotificationType(rawValue: notifications.type) ?? .friendRequest , message: notifications.text)
                     }
                 }
             }
@@ -87,7 +87,7 @@ struct NotificationsView_Previews: PreviewProvider {
 
 enum NotificationType: String {
     case friendRequest = "Women"
-    case victory = "Victory"
-    case participation = "Participate"
-    case lose = "Lost"
+    case victory = "victory"
+    case participation = "participation"
+    case lose = "lose"
 }

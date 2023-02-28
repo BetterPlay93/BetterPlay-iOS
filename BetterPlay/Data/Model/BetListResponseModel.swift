@@ -12,6 +12,6 @@ class BetListResponseModel: Decodable {
     var status: String?
     var code: Int?
     var message: String?
-    var data: [BetResponseModel]?
+    var data: [BetResponseModel?]?
     
 }

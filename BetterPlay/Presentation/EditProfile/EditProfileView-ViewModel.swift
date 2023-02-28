@@ -16,7 +16,7 @@ extension EditProfileView {
         
         func getUserImage(completion: @escaping (_ image: String?) -> ()) {
             let url = "https://betterplay-backend-production.up.railway.app/api/users/getCurrentUserPhoto"
-            let logedToken =  "t3xGMM0zVtLJFPjSdI3pIF8sgQZpVMXB9xI6uGLn"
+            let logedToken =  "p1TywO8o9xCMLlbN0zV9STr3RPX7ONznWE1oODOm"
             
             NetworkHelper.shared.requestProvider(url: url, type: .GET, token: logedToken) { data, response, error in
                 if let error = error {
@@ -52,7 +52,7 @@ extension EditProfileView {
             //Falta obtener el token del userdeafaults lo hacemos mientras natao a mano
             
             let url = "https://betterplay-backend-production.up.railway.app/api/users/edit"
-            let logedToken =  "t3xGMM0zVtLJFPjSdI3pIF8sgQZpVMXB9xI6uGLn"
+            let logedToken =  "p1TywO8o9xCMLlbN0zV9STr3RPX7ONznWE1oODOm"
             let dictionary: [String: Any] = [
                 "username" : username,
                 "password" : password,

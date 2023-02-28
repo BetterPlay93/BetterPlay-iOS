@@ -48,7 +48,7 @@ struct BetsView: View {
             }
             .ignoresSafeArea()
             .onAppear() {
-                //viewModel.getAllBets()
+                viewModel.getAllBets()
                 //Esto dependerá de si la fecha del userDefaults de inicio a la app es un día más
                 showDailyStreak = true
             }

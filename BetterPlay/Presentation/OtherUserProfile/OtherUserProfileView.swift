@@ -29,8 +29,7 @@ struct OtherUserProfileView: View {
                 
                 Spacer()
                 
-                CustomTabBar(selectedTab: .constant(.Profile
-                                                   ))
+                CustomTabBar(selectedTab: .constant(.Profile))
             }
         }.background(Color("Background2"))
     }
@@ -65,7 +64,7 @@ struct OtherUserProfileView: View {
                 Button {
                     isFriend.toggle()
                 }label: {
-                    Image(isFriend ? "AddFriend" : "Friend")
+                    Image(isFriend ? "Friend" : "AddFriend")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 25, height: 25, alignment: .leading)

@@ -16,15 +16,16 @@ extension UserSearcherView {
             
             let url = "https://betterplay-backend-production.up.railway.app/api/users/list"
             
-            NetworkHelper.shared.requestProvider(url: url, type: .GET, token: "t3xGMM0zVtLJFPjSdI3pIF8sgQZpVMXB9xI6uGLn") { data, response, error in
-                if let error = error {
-                    self.onError(error: error.localizedDescription)
-                } else if let data = data, let response = response as? HTTPURLResponse {
-                    print(response.statusCode)
-                    self.onSuccess(data: data)
+            if let token = UserDefaults.standard.string(forKey: "token") {
+                NetworkHelper.shared.requestProvider(url: url, type: .GET, token: token) { data, response, error in
+                    if let error = error {
+                        self.onError(error: error.localizedDescription)
+                    } else if let data = data, let response = response as? HTTPURLResponse {
+                        print(response.statusCode)
+                        self.onSuccess(data: data)
+                    }
                 }
             }
-            
         }
         
         func onSuccess(data: Data) {

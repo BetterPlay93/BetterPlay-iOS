@@ -17,6 +17,7 @@ struct EditProfileView: View {
     @State var profileUIImage: UIImage?
     @State var isPickerPresented: Bool = false
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var viewmodel : ViewModel = ViewModel()
     // MARK: - Body
     var body: some View {
@@ -25,8 +26,10 @@ struct EditProfileView: View {
             CustomBackButton(buttonColor: "DarkGray").padding(.top)
             
             imageSelection
+            
             CustomTextField(imageName: "person", placeholderText: "Username", isSecureField: false,  text: $username)
                 .padding()
+            
             if showChangePassword {
                 changePasswordTexfields
             } else {
@@ -48,6 +51,11 @@ struct EditProfileView: View {
                 if let imageBase64 = image {
                     profileUIImage = imageBase64.imageFromBase64
                 }
+            }
+        }
+        .onReceive(viewmodel.$goToProfile) { newValue in
+            if newValue {
+                presentationMode.wrappedValue.dismiss()
             }
         }
     }
@@ -106,11 +114,7 @@ struct EditProfileView: View {
                 .cornerRadius(10)
                 .padding(40)
             //navegar a perfil
-        }.background(
-            NavigationLink(destination: EmptyView(), isActive: $viewmodel.goToProfile) {
-                EmptyView()
-            }
-        )
+        }.background()
     }
 }
 
