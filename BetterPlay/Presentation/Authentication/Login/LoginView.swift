@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State var recoverEmail: Bool = false
+    @State var recoverCode: Bool = false
+    @State var recoverPass: Bool = false
     @State private var username = ""
     @State private var password = ""
     @State var recoverEmail: Bool = false
@@ -32,8 +35,7 @@ struct LoginView: View {
                 
                 navigateToRegister
                 
-                
-                NavigationLink(destination: EmptyView(), isActive: $viewModel.shouldNavigateToHome) {
+                NavigationLink(destination: ContentView(), isActive: $viewModel.shouldNavigateToHome) {
                     EmptyView()
                 }
             }

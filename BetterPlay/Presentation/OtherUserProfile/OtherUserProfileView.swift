@@ -28,6 +28,8 @@ struct OtherUserProfileView: View {
                 poolsStats
                 
                 Spacer()
+                
+                CustomTabBar(selectedTab: .constant(.Profile))
             }
         }.background(Color("Background2"))
     }
@@ -53,21 +55,16 @@ struct OtherUserProfileView: View {
                 
                 Text(user.username)
                     .foregroundColor(Color.white)
-                    .font(.system(size: 18))
+                    .font(.system(size: 24))
                     .bold()
                     .padding(.leading, 20)
                 Spacer()
                 
-                Image("SearchUser")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 35, height: 35, alignment: .leading)
-                    .padding(.trailing, 10)
                 
                 Button {
                     isFriend.toggle()
                 }label: {
-                    Image(isFriend ? "AddFriend" : "Friend")
+                    Image(isFriend ? "Friend" : "AddFriend")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 25, height: 25, alignment: .leading)
@@ -134,7 +131,7 @@ struct OtherUserProfileView: View {
                     .lineLimit(2)
                     .frame(maxWidth: 105)
                 
-                Text("\(user.coins - 500000)")
+                Text("\(2000)")
                     .font(.system(size: 20))
                     .bold()
                     .padding(.leading, 30)
@@ -160,7 +157,7 @@ struct OtherUserProfileView: View {
             
             //Soccer
             HStack(){
-                Image("Soccer")
+                Image("soccer")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .leading)
@@ -173,7 +170,7 @@ struct OtherUserProfileView: View {
             
             //Basketball
             HStack(){
-                Image("Basketball")
+                Image("basketball")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .leading)
@@ -186,7 +183,7 @@ struct OtherUserProfileView: View {
             
             //Tennis
             HStack(){
-                Image("Tennis")
+                Image("tennis")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .leading)
@@ -249,6 +246,6 @@ struct OtherUserProfileView: View {
 
 struct OtherUserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        OtherUserProfileView(user: UserPresentationModel(username: "pepitoeldelospalotes", email: "pepitogrillo@gmail.com", coins: 1000000, followers: 2000, code: "", photo: ""))
+        OtherUserProfileView(user: UserPresentationModel(username: "pepitoeldelospalotes", email: "pepitogrillo@gmail.com", coins: 4000, followers: 2000, code: "", photo: ""))
     }
 }

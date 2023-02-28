@@ -7,18 +7,7 @@
 
 import Foundation
 
-class TeamPresentationModel {
-    
-    var name: String = ""
-    var logo: String = ""
-    
-    init(name: String, logo: String){
-        self.name = name
-        self.logo = logo
-    }
-    
-    init(){}
-}
+
 
 class BetDetailPresentationModel: Identifiable{
     var bet: BetPresentationModel

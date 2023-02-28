@@ -12,8 +12,8 @@ struct BetterPlayApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                LoginView()
-            }
+                ContentView()
+            }.navigationBarHidden(true)
         }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: Tab = .Profile
+    @State private var selectedTab: Tab = .Bet
             
     init() {
         UITabBar.appearance().isHidden = true
@@ -24,10 +24,10 @@ struct ContentView: View {
                     NotificationsView()
                         .tag(Tab.Notification)
                     
-                    Color.black
+                    NotificationsView()
                         .tag(Tab.Pool)
                     
-                    ProfileNavBar(username: "Juan Ramón")
+                    ProfileNavBar()
                         .tag(Tab.Profile)
                 }
             }
@@ -37,6 +37,7 @@ struct ContentView: View {
                 CustomTabBar(selectedTab: $selectedTab)
             }
         }.ignoresSafeArea()
+        .navigationBarHidden(true)
     }
 }
 

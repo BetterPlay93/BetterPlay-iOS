@@ -19,7 +19,7 @@ struct NotificationsView: View {
             ScrollView {
                 LazyVStack {
                     ForEach(viewModel.notifications) { notifications in
-                        notification(type: NotificationType(rawValue: notifications.type) ?? .friendRequest, message: notifications.text)
+                        notification(type: NotificationType(rawValue: notifications.type) ?? .friendRequest , message: notifications.text)
                     }
                 }
             }
@@ -28,6 +28,8 @@ struct NotificationsView: View {
         }
         .background(Color("Background"))
         .ignoresSafeArea()
+        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear{
             viewModel.getNotifications()
         }
@@ -42,8 +44,10 @@ struct NotificationsView: View {
             Text("Notificaciones")
                 .foregroundColor(Color.white)
                 .font(.system(size: 25))
-                .bold()
-        }.padding(.top, 40)
+            .bold()
+            
+            
+        }.padding(.top, 45)
     }
     
     func notification(type: NotificationType, message: String) -> some View{
@@ -83,7 +87,7 @@ struct NotificationsView_Previews: PreviewProvider {
 
 enum NotificationType: String {
     case friendRequest = "Women"
-    case victory = "Victory"
-    case participation = "Participate"
-    case lose = "Lost"
+    case victory = "victory"
+    case participation = "participation"
+    case lose = "lose"
 }

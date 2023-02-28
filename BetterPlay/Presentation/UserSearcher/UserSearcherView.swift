@@ -16,8 +16,8 @@ struct UserSearcherView: View {
     
     var body: some View {
         ZStack(){
-            VStack {
-                header
+            VStack() {
+                header.padding(.top, 45)
                 
                 Searcher(text: $searcherText)
                     .padding()
@@ -27,14 +27,17 @@ struct UserSearcherView: View {
                         ForEach(viewModel.users.filter({ user in
                             searcherText.isEmpty ? true : user.username.contains(searcherText)
                         })) { user in
-                            UserCard(user: user).padding(10)
+                            UserCard(user: UserPresentationModel(username: user.username, email: user.email, coins: user.coins, followers: user.followers, code: user.code , photo: "https://picsum.photos/200/300")).padding(10)
                         }
                         
                     }
                 }
+                
+                CustomTabBar(selectedTab: .constant(.Profile))
             }
             
-        }.background(Color("Background"))
+        }.background(Color("Background2"))
+        .ignoresSafeArea()
         .onAppear {
             viewModel.getAllUsers()
         }

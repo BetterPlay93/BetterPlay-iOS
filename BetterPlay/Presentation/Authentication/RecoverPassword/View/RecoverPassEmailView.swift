@@ -17,8 +17,22 @@ struct RecoverPassEmailView: View {
     var body: some View {
         ZStack(alignment: .center, content: {
             Color.black.opacity(0.3).ignoresSafeArea()
+            
             VStack(spacing: 25) {
-                logo
+                HStack(alignment: .center, spacing: 0){
+                    logo.padding(.trailing, 40)
+                    
+                    Button {
+                        withAnimation {
+                            show.toggle()
+                        }
+                    }label: {
+                        Image(systemName: "xmark.circle")
+                            .font(.system(size: 28, weight: .bold))
+                            .foregroundColor(.black)
+                    }.padding(.bottom, 50)
+                }.frame(maxWidth: .infinity, alignment: .trailing)
+                
                 emailTextField
                 checkEmailButton
                 dots
@@ -47,7 +61,6 @@ struct RecoverPassEmailView: View {
                 .background(Color("DarkGray"))
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding()
         }
     }
     var emailTextField: some View {
@@ -66,6 +79,7 @@ struct RecoverPassEmailView: View {
             .scaledToFit()
             .frame(width: 125, height: 80)
     }
+    
     var dots: some View{
         HStack {
             Circle()

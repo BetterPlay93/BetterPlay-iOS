@@ -50,7 +50,8 @@ extension LoginView {
         }
         
         func onError(error: [String]) {
-            shouldShowAlert = true
+            shouldNavigateToHome = true
+            //shouldShowAlert = true
             print(error)
         }
         

@@ -111,7 +111,7 @@ struct ProfileView: View {
             
             //Soccer
             HStack(){
-                Image("Soccer")
+                Image("soccer")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .leading)
@@ -124,7 +124,7 @@ struct ProfileView: View {
             
             //Basketball
             HStack(){
-                Image("Basketball")
+                Image("basketball")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .leading)
@@ -137,7 +137,7 @@ struct ProfileView: View {
             
             //Tennis
             HStack(){
-                Image("Tennis")
+                Image("tennis")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .leading)

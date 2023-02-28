@@ -8,21 +8,47 @@
 import SwiftUI
 
 struct DailyStreakView: View {
+    
+    @Binding var isShowing: Bool
     //Falta recibir la racha de la petición del login y pasarsela a la función showStreak
     @ObservedObject var viewModel: ViewModel = ViewModel()
     var body: some View {
-        ZStack(){
-            Rectangle()
-                .foregroundColor(Color.white)
-                .frame(width: .infinity, height: 230)
-                .cornerRadius(20)
-            VStack(spacing: 20){
-                Rectangles
-                progressBarView(percentage: viewModel.percentage)
-                dayTexts
+        if isShowing {
+            ZStack(alignment: .center){
+                Color.black
+                    .opacity(0.3)
+                    .ignoresSafeArea()
+                Rectangle()
+                    .foregroundColor(Color.white)
+                    .frame(width: UIScreen.main.bounds.width - 15, height: 230)
+                    .cornerRadius(20)
+                VStack(spacing: 20){
+                    Rectangles
+                    progressBarView(percentage: viewModel.percentage)
+                    dayTexts
+                    
+                    Button {
+                        withAnimation {
+                            isShowing.toggle()
+                        }
+                    }label: {
+                        Text("Pick Up")
+                            .foregroundColor(.white)
+                            .bold()
+                            .font(.system(size: 20))
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 10)
+                            .background(Color("DarkGray"))
+                            .cornerRadius(10)
+                    }
+                }
+                
+                
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .ignoresSafeArea()
+            .onAppear{
+                viewModel.showStreak(streak: 2)
             }
-        }.onAppear{
-            viewModel.showStreak(streak: 4)
         }
     }
     var Rectangles: some View{
@@ -122,7 +148,6 @@ struct DailyStreakView: View {
 
 struct DailyStreakView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyStreakView()
-            .previewLayout(.sizeThatFits)
+        DailyStreakView(isShowing: .constant(true))
     }
 }

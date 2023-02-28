@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct BetDetailView: View {
+    
     var betDetail: BetDetailPresentationModel
+    @State var participationData : ParticipateInBetModel = .init()
+    @State private var showParticipationView: Bool = false
         
     var body: some View {
         ZStack {
             VStack(spacing: -40) {
                 
                 VStack {
-                    CustomNavBar(color: "DarkGreen")
+                    CustomNavBar(color: "Dark\(betDetail.color)")
                     
-                    Rectangle().fill(Color(betDetail.color)).frame(width: UIScreen.main.bounds.width, height: 3, alignment: .center)
+                    Rectangle().fill(Color("Dark\(betDetail.color)")).frame(width: UIScreen.main.bounds.width, height: 3, alignment: .center)
                 }.padding(.bottom, 40)
                 
                 
@@ -29,10 +32,15 @@ struct BetDetailView: View {
                 
                 Spacer()
                 
-                CustomTabBar(selectedTab: .constant(.Bet))
+                
             }
             
-        }.background(Color("Background"))
+            ParticipateInBetView(betData: participationData, userCoins: 4000,isShowing: $showParticipationView)
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .statusBar(hidden: true)
+        .background(Color("Background"))
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .ignoresSafeArea()
@@ -59,11 +67,11 @@ struct BetDetailView: View {
                     .padding(.trailing, 38)
             }
             
-            odd(homeTeam: betDetail.bet.home_team.name, odd: "\(betDetail.bet.home_odd)")
+            odd(team: betDetail.bet.home_team.name, odd: betDetail.bet.home_odd)
             if(betDetail.bet.sport == .soccer){
-                odd(homeTeam: "Empate", odd: "\(betDetail.bet.tie_odd)")
+                odd(team: "Empate", odd: betDetail.bet.tie_odd)
             }
-            odd(homeTeam: betDetail.bet.away_team.name, odd: "\(betDetail.bet.away_odd)")
+            odd(team: betDetail.bet.away_team.name, odd: betDetail.bet.away_odd)
             
         }
         .frame(width: 365, height: betDetail.bet.sport == .soccer ? 193 : 154)
@@ -151,9 +159,9 @@ struct BetDetailView: View {
             .background(Color("Light\(betDetail.color)"))
     }
     
-    func odd(homeTeam: String, odd: String) -> some View {
+    func odd(team: String, odd: Float) -> some View {
         HStack(){
-            Text(homeTeam)
+            Text(team)
                 .font(.system(size: 14))
                 .foregroundColor(.black)
                 .bold()
@@ -162,9 +170,12 @@ struct BetDetailView: View {
             Spacer()
             
             Button {
-                //Mostrar participar en apuesta
+                participationData.team = team
+                participationData.odd = odd
+                participationData.color = betDetail.color
+                showParticipationView = true
             } label: {
-                Text(odd)
+                Text(String(odd))
                     .font(.system(size: 14))
                     .foregroundColor(.white)
                     .bold()
@@ -173,6 +184,7 @@ struct BetDetailView: View {
                     .cornerRadius(5)
                     .padding(.trailing, 30)
             }
+            
         }
     }
     
@@ -227,5 +239,8 @@ func convertTimestampToHour(date: Int) -> String {
     let strDate = dateFormatter.string(from: date)
     return strDate
 }
+
+
+    
 
 

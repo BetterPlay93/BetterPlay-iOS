@@ -13,14 +13,16 @@ extension NotificationsView {
         @Published var notifications: [NotificationPresentationModel] = []
         
         func getNotifications(){
-            let url = "http://127.0.0.1:8000/api/notification/getNotificationsByUser"
+            let url = "https://betterplay-backend-production.up.railway.app/api/notifications/getNotificationsByUser"
             
-            NetworkHelper.shared.requestProvider(url: url, type: .GET, token: "ejdolIXN3ejPvy3Kom9znWH0Ipoq2qg4ZsSl8J5j") { data, response, error in
-                if let error = error {
-                    self.onError(error: error.localizedDescription)
-                } else if let data = data, let response = response as? HTTPURLResponse {
-                    print(response.statusCode)
-                    self.onSuccess(data: data)
+            if let token = UserDefaults.standard.string(forKey: "token") {
+                NetworkHelper.shared.requestProvider(url: url, type: .GET, token: token) { data, response, error in
+                    if let error = error {
+                        self.onError(error: error.localizedDescription)
+                    } else if let data = data, let response = response as? HTTPURLResponse {
+                        print(response.statusCode)
+                        self.onSuccess(data: data)
+                    }
                 }
             }
         }
