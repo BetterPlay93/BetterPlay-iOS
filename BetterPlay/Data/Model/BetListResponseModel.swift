@@ -7,11 +7,8 @@
 
 import Foundation
 
-class BetListResponseModel: Decodable{
+class BetListResponseModel: BaseResponseModel{
     
-    var status: String?
-    var code: Int?
-    var message: String?
     var data: [BetResponseModel?]?
     
 }

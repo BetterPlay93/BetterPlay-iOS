@@ -9,12 +9,12 @@ import Foundation
 
 class UserResponseModel: Decodable{
     
-    var username: String?
-    var email: String?
-    var coins: Int?
-    var followers: Int?
-    var code: String?
-    var photo: String?
+    var username: String? = ""
+    var email: String? = ""
+    var coins: Int? = 0
+    var followers: Int? = 0
+    var code: String? = ""
+    var photo: String? = ""
     
     init(username: String, email: String, coins: Int, followers: Int, code: String, photo: String){
         self.username = username
@@ -24,4 +24,6 @@ class UserResponseModel: Decodable{
         self.code = code
         self.photo = photo
     }
+    
+    init(){}
 }

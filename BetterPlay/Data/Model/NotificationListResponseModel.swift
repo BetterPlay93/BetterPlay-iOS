@@ -8,10 +8,8 @@
 import Foundation
 
 
-class NotificationListResponseModel: Decodable {
-    var status: String?
-    var code: Int?
-    var message: String?
+class NotificationListResponseModel: BaseResponseModel {
+    
     var data: [NotificationResponseModel]?
     
 }
