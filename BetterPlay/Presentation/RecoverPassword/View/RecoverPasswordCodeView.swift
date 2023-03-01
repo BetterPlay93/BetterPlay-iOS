@@ -33,13 +33,10 @@ struct RecoverPasswordCodeView: View {
     }
     var continueButton: some View{
         Button {
-            viewmodel.checkCorrectSecretCode(code: secretCode)
-            if viewmodel.shouldShowNewPass{
+            viewmodel.checkCorrectSecretCode(code: secretCode) { showNewPass in
                 show.toggle()
-                showNext.toggle()
+                showNext = showNewPass
             }
-            
-            
         } label: {
             Text("Continuar")
                 .foregroundColor(.white)
@@ -48,6 +45,16 @@ struct RecoverPasswordCodeView: View {
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding()
+        }.alert("Error al comprobar el código secreto", isPresented: $viewmodel.shouldShowAlert, actions: {
+            Button {
+                
+            } label: {
+                Text("Ok")
+            }
+        }) {
+            ForEach(viewmodel.response.message, id:\.self){ message in
+                Text("\(message)")
+            }
         }
     }
     var dots: some View{

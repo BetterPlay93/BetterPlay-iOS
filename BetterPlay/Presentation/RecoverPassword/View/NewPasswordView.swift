@@ -58,14 +58,12 @@ struct NewPasswordView: View {
     var confirmButton: some View{
        Button {
            if password == repeatPassword{
-               viewmodel.changePassword(password: password)
-               if viewmodel.shouldShowLogin{
+               viewmodel.changePassword(password: password) { _ in
                    withAnimation{
                        show.toggle()
                    }
                }
            }
-           
        } label: {
            Text("Confirmar")
                .foregroundColor(.white)
@@ -74,11 +72,17 @@ struct NewPasswordView: View {
                .cornerRadius(10)
                .frame(maxWidth: .infinity, alignment: .trailing)
                .padding()
-       }.background(
-        NavigationLink(destination: EmptyView(), isActive: $viewmodel.shouldShowLogin) {
-            EmptyView()
-        }
-    )
+       }.alert("Error al actualizar la nueva contraseña", isPresented: $viewmodel.shouldShowAlert, actions: {
+           Button {
+               
+           } label: {
+               Text("Ok")
+           }
+       }) {
+           ForEach(viewmodel.response.message, id:\.self){ message in
+               Text("\(message)")
+           }
+       }
     }
 
     var dots: some View {

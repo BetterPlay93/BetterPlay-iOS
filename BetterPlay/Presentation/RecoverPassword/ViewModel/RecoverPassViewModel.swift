@@ -61,35 +61,40 @@ extension RecoverPasswordCodeView{
         @Published var shouldShowNewPass: Bool = false
         @Published var shouldShowAlert: Bool = false
         
-        func checkCorrectSecretCode(code: String){
-            let url = "https://betterplay-backend-production.up.railway.app/api/users/checkCorrectSecretCode"
-            //if let userId = UserDefaults.standard.integer(forKey: "idUserCodeEmail") {
-                //let params: [String: Any] = ["id": userId ,"code": code]
+        func checkCorrectSecretCode(code: String, completion: @escaping (Bool) -> ()){
+            
+            if let userId = UserDefaults.standard.value(forKey: "idUserCodeEmail"){
                 
-                
+                let url = "https://betterplay-backend-production.up.railway.app/api/users/checkCorrectSecretCode"
+                let params: [String: Any] = ["id": userId ,"code": code]
+
+
                 NetworkHelper.shared.requestProvider(url: url, type: .POST, params: params) { data, response, error in
                     if let error = error {
                         self.onError(error: [error.localizedDescription])
                     } else if let data = data, let response = response as? HTTPURLResponse{
                         print(response.statusCode)
-                        self.onSuccess(data: data)
+                        self.onSuccess(data: data) { showNewPass in
+                            completion(showNewPass)
+                        }
                     }
                 }
-            //}
+            }
             
         }
-        func onSuccess(data: Data) {
+        func onSuccess(data: Data, completion: (Bool) -> ()) {
             do{
                 let data = try JSONDecoder().decode(RecoverPassResponseModel?.self, from: data)
                                
                 self.response = RecoverPassPresentationModel(status: data?.status ?? "", code: data?.code ?? 0, message: data?.message ?? [""], data: data?.data ?? 0)
                 
-                print(self.response)
+                print(self.response.code)
                
                 if(self.response.code != 200){
                     self.onError(error: self.response.message)
                 }else{
                     shouldShowNewPass = true
+                    completion(shouldShowNewPass)
                 }
             } catch {
                 self.onError(error: [error.localizedDescription])
@@ -103,31 +108,47 @@ extension RecoverPasswordCodeView{
 }
 extension NewPasswordView{
     class ViewModel:ObservableObject{
+        @Published var response: RecoverPassPresentationModel = .init()
         @Published var shouldShowLogin: Bool = false
         @Published var shouldShowAlert: Bool = false
-        func changePassword(password: String){
-            let url = "https://betterplay-backend-production.up.railway.app/api/users/changePassword"
-            let params: [String: String] = ["password": password]
-            
-            NetworkHelper.shared.requestProvider(url: url, type: .POST, params: params) { data, response, error in
-                if let error = error {
-                    self.onError(error: [error.localizedDescription])
-                } else if let data = data, let response = response as? HTTPURLResponse{
-                    print(response.statusCode)
-                    self.onSuccess(data: data, response: response)
+        
+        func changePassword(password: String, completion: @escaping (Bool) -> ()){
+            if let userId = UserDefaults.standard.value(forKey: "idUserCodeEmail"){
+                
+                let url = "https://betterplay-backend-production.up.railway.app/api/users/changePassword"
+                let params: [String: Any] = ["id": userId ,"password": password]
+                
+                NetworkHelper.shared.requestProvider(url: url, type: .POST, params: params) { data, response, error in
+                    if let error = error {
+                        self.onError(error: [error.localizedDescription])
+                    } else if let data = data, let response = response as? HTTPURLResponse{
+                        print(response.statusCode)
+                        self.onSuccess(data: data) { showLogin in
+                            completion(showLogin)
+                        }
+                    }
                 }
             }
         }
-        func onSuccess(data: Data, response: HTTPURLResponse) {
+        func onSuccess(data: Data, completion: @escaping (Bool) -> ()) {
             do{
-                if response.statusCode != 200 {
+                let data = try JSONDecoder().decode(RecoverPassResponseModel?.self, from: data)
+                               
+                self.response = RecoverPassPresentationModel(status: data?.status ?? "", code: data?.code ?? 0, message: data?.message ?? [""], data: data?.data ?? 0)
+                
+                print(self.response.code)
+               
+                if(self.response.code != 200){
+                    self.onError(error: self.response.message)
                 }else{
                     shouldShowLogin = true
+                    completion(shouldShowLogin)
                 }
             } catch {
                 self.onError(error: [error.localizedDescription])
             }
         }
+        
         func onError(error: [String]) {
             shouldShowAlert = true
             print(error)

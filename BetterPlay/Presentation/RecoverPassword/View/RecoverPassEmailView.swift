@@ -68,6 +68,7 @@ struct RecoverPassEmailView: View {
                 .padding().frame(width: 234, height: 27)
                 .background(Color(.white))
                 .cornerRadius(10)
+                .autocapitalization(.none)
         }
     }
     var logo: some View{
