@@ -1,5 +1,5 @@
 //
-//  RecoverPasswordCodeView.swift
+//  RecoverPassEmailView.swift
 //  BetterPlay
 //
 //  Created by Apps2T on 9/2/23.
@@ -7,36 +7,39 @@
 
 import SwiftUI
 
-struct RecoverPasswordCodeView: View {
+struct RecoverPassEmailView: View {
     @Binding var show: Bool
     @Binding var showNext: Bool
     
-    @State var secretCode = ""
+    @State private var email = ""
     @ObservedObject var viewmodel : ViewModel = ViewModel()
-           
+    
     var body: some View {
         ZStack(alignment: .center, content: {
             Color.black.opacity(0.3).ignoresSafeArea()
             VStack(spacing: 25) {
                 logo
-                secretCodeTexts
-                continueButton
+                emailTextField
+                checkEmailButton
                 dots
-            }
-            .padding(.vertical, 25)
-            .padding(.horizontal, 30)
-            .background(Color("Background"))
-            .cornerRadius(25)
-            .frame(width: 327, height: 275)
+            }.padding(.vertical, 25)
+                .padding(.horizontal, 30)
+                .background(Color("Background"))
+                .cornerRadius(25)
+                .frame(width: 327, height: 275)
         })
         .frame(maxWidth: .infinity,maxHeight: .infinity)
+        
     }
-    var continueButton: some View{
+    
+    var checkEmailButton: some View{
         Button {
-            viewmodel.checkCorrectSecretCode(code: secretCode) { showNewPass in
+            viewmodel.sendEmail(email: email) { showCode in
                 show.toggle()
-                showNext = showNewPass
+                showNext.toggle()
             }
+            
+            
         } label: {
             Text("Continuar")
                 .foregroundColor(.white)
@@ -45,7 +48,7 @@ struct RecoverPasswordCodeView: View {
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding()
-        }.alert("Error al comprobar el código secreto", isPresented: $viewmodel.shouldShowAlert, actions: {
+        }.alert("Error en la petición de recuperar contraseña", isPresented: $viewmodel.shouldShowAlert, actions: {
             Button {
                 
             } label: {
@@ -57,39 +60,40 @@ struct RecoverPasswordCodeView: View {
             }
         }
     }
+    var emailTextField: some View {
+        VStack(spacing:2){
+            Text("Email")
+                .frame(maxWidth: 234, alignment: .leading)
+            TextField("",text: $email)
+                .padding().frame(width: 234, height: 27)
+                .background(Color(.white))
+                .cornerRadius(10)
+                .autocapitalization(.none)
+        }
+    }
+    var logo: some View{
+        Image("Logo")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 125, height: 80)
+    }
     var dots: some View{
         HStack {
-            Circle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(Color("Gray"))
             Circle()
                 .frame(width: 20, height: 20)
                 .foregroundColor(Color("DarkGray"))
             Circle()
                 .frame(width: 20, height: 20)
                 .foregroundColor(Color("Gray"))
+            Circle()
+                .frame(width: 20, height: 20)
+                .foregroundColor(Color("Gray"))
         }
-    }
-    var secretCodeTexts: some View {
-        VStack(spacing: 2){
-            Text("Secret Code")
-                .frame(maxWidth: 234, alignment: .leading)
-            TextField("",text: $secretCode)
-                .padding().frame(width: 234, height: 27)
-                .background(Color(.white))
-                .cornerRadius(10)
-        }
-    }
-    var logo: some View {
-        Image("Logo")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 125, height: 80)
     }
 }
 
-struct RecoverPasswordCodeView_Previews: PreviewProvider {
+struct RecoverPassEmailView_Previews: PreviewProvider {
     static var previews: some View {
-        RecoverPasswordCodeView(show: .constant(true), showNext: .constant(true))
+        RecoverPassEmailView(show: .constant(true), showNext: .constant(true))
     }
 }

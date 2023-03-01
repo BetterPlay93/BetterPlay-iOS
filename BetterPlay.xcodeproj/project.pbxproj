@@ -47,6 +47,10 @@
 		33F3F4F9299E7B190056BB77 /* EditPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3F4F8299E7B190056BB77 /* EditPresentationModel.swift */; };
 		33F3F4FB299E7BF20056BB77 /* UserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3F4FA299E7BF20056BB77 /* UserResponseModel.swift */; };
 		33F3F4FD299E7DC40056BB77 /* EditUserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3F4FC299E7DC40056BB77 /* EditUserResponseModel.swift */; };
+		33A02C6229A66ED200982F21 /* LoginTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A02C6129A66ED200982F21 /* LoginTestView.swift */; };
+		33B8158329AE7E5B003125DA /* RecoverPassResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B8158229AE7E5B003125DA /* RecoverPassResponseModel.swift */; };
+		33B8158629AE7F42003125DA /* RecoverPassPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B8158529AE7F42003125DA /* RecoverPassPresentationModel.swift */; };
+		33F6A6232995438B00FFAB37 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A6222995438B00FFAB37 /* ResponseModel.swift */; };
 		33F6A627299543DC00FFAB37 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A626299543DC00FFAB37 /* CustomTextField.swift */; };
 		33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A62A299544E700FFAB37 /* CustomTabBar.swift */; };
 		33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A62F2995457C00FFAB37 /* ContentView.swift */; };
@@ -116,6 +120,10 @@
 		33F3F4F8299E7B190056BB77 /* EditPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPresentationModel.swift; sourceTree = "<group>"; };
 		33F3F4FA299E7BF20056BB77 /* UserResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseModel.swift; sourceTree = "<group>"; };
 		33F3F4FC299E7DC40056BB77 /* EditUserResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserResponseModel.swift; sourceTree = "<group>"; };
+		33A02C6129A66ED200982F21 /* LoginTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestView.swift; sourceTree = "<group>"; };
+		33B8158229AE7E5B003125DA /* RecoverPassResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPassResponseModel.swift; sourceTree = "<group>"; };
+		33B8158529AE7F42003125DA /* RecoverPassPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPassPresentationModel.swift; sourceTree = "<group>"; };
+		33F6A6222995438B00FFAB37 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		33F6A626299543DC00FFAB37 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		33F6A62A299544E700FFAB37 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		33F6A62F2995457C00FFAB37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -304,6 +312,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		33B8158429AE7F34003125DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33B8158529AE7F42003125DA /* RecoverPassPresentationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +362,8 @@
 				33F3F4FC299E7DC40056BB77 /* EditUserResponseModel.swift */,
 				331842FF29A5536F003DB051 /* ImageResponseModel.swift */,
 				3308B32C29A6830400FD84D7 /* BetListResponseModel.swift */,
+				33F6A6222995438B00FFAB37 /* ResponseModel.swift */,
+				33B8158229AE7E5B003125DA /* RecoverPassResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -462,6 +480,7 @@
 		33F6A688299563E200FFAB37 /* RecoverPassword */ = {
 			isa = PBXGroup;
 			children = (
+				33B8158429AE7F34003125DA /* Model */,
 				33F6A68A299563F400FFAB37 /* ViewModel */,
 				33F6A689299563EB00FFAB37 /* View */,
 			);
@@ -595,6 +614,7 @@
 				33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */,
 				33686370299E7E74008140E2 /* BetResponseModel.swift in Sources */,
 				33A92E7029A40AF600F9D885 /* AuthenticationResponseModel.swift in Sources */,
+				33B8158629AE7F42003125DA /* RecoverPassPresentationModel.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				33A92E6029A3CCC000F9D885 /* BaseResponseModel.swift in Sources */,
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
@@ -615,6 +635,7 @@
 				104FEEFC29A2885D0091EAFC /* UserPresentationModel.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				3308B32F29A687A000FD84D7 /* BetListResponseModel.swift in Sources */,
+				33B8158329AE7E5B003125DA /* RecoverPassResponseModel.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
 				33F6A64C29954FAD00FFAB37 /* AuthenticationPresentationModel.swift in Sources */,
 				339305052996C7650070C1CE /* UserSearcherView.swift in Sources */,
