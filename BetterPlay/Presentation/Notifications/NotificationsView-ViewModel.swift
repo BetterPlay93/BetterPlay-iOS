@@ -32,7 +32,7 @@ extension NotificationsView {
                 let notificationsResponse = try JSONDecoder().decode(NotificationListResponseModel?.self, from: data)
                 
                 self.notifications = notificationsResponse?.data?.compactMap({ notification in
-                    return NotificationPresentationModel(user_id: notification.user_id ?? 0, text: notification.text ?? "", image: notification.image ?? "", type: notification.type ?? "")
+                    return NotificationPresentationModel(user_id: notification.user_id ?? 0, text: notification.text ?? "", type: notification.type ?? "")
                 }) as? [NotificationPresentationModel] ?? []
                 
             } catch {

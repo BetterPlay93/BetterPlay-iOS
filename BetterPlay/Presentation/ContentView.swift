@@ -18,16 +18,17 @@ struct ContentView: View {
         ZStack {
             VStack {
                 TabView(selection: $selectedTab) {
-                    BetsView()
+                    BetsView().navigationBarBackButtonHidden(true)
                         .tag(Tab.Bet)
                     
-                    NotificationsView()
+                    NotificationsView().navigationBarBackButtonHidden(true)
                         .tag(Tab.Notification)
                     
-                    NotificationsView()
+                    NotificationsView().navigationBarBackButtonHidden(true)
                         .tag(Tab.Pool)
                     
-                    ProfileNavBar()
+                    ProfileNavBar().navigationBarBackButtonHidden(true)
+                        .navigationBarHidden(true)
                         .tag(Tab.Profile)
                 }
             }

@@ -2,11 +2,10 @@
 //  RecoverPassPresentationModel.swift
 //  BetterPlay
 //
-//  Created by Apps2T on 28/2/23.
+//  Created by Apps2T on 1/3/23.
 //
 
 import Foundation
-
 
 class RecoverPassPresentationModel: Decodable{
     var status: String = "KO"

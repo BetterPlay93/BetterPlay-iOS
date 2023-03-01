@@ -17,22 +17,8 @@ struct RecoverPassEmailView: View {
     var body: some View {
         ZStack(alignment: .center, content: {
             Color.black.opacity(0.3).ignoresSafeArea()
-            
             VStack(spacing: 25) {
-                HStack(alignment: .center, spacing: 0){
-                    logo.padding(.trailing, 40)
-                    
-                    Button {
-                        withAnimation {
-                            show.toggle()
-                        }
-                    }label: {
-                        Image(systemName: "xmark.circle")
-                            .font(.system(size: 28, weight: .bold))
-                            .foregroundColor(.black)
-                    }.padding(.bottom, 50)
-                }.frame(maxWidth: .infinity, alignment: .trailing)
-                
+                logo
                 emailTextField
                 checkEmailButton
                 dots
@@ -48,11 +34,11 @@ struct RecoverPassEmailView: View {
     
     var checkEmailButton: some View{
         Button {
-            viewmodel.sendEmail(email: email)
-            if viewmodel.shouldShowCode {
+            viewmodel.sendEmail(email: email) { showCode in
                 show.toggle()
                 showNext.toggle()
             }
+            
             
         } label: {
             Text("Continuar")
@@ -61,6 +47,17 @@ struct RecoverPassEmailView: View {
                 .background(Color("DarkGray"))
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding()
+        }.alert("Error en la petición de recuperar contraseña", isPresented: $viewmodel.shouldShowAlert, actions: {
+            Button {
+                
+            } label: {
+                Text("Ok")
+            }
+        }) {
+            ForEach(viewmodel.response.message, id:\.self){ message in
+                Text("\(message)")
+            }
         }
     }
     var emailTextField: some View {
@@ -71,6 +68,7 @@ struct RecoverPassEmailView: View {
                 .padding().frame(width: 234, height: 27)
                 .background(Color(.white))
                 .cornerRadius(10)
+                .autocapitalization(.none)
         }
     }
     var logo: some View{
@@ -79,7 +77,6 @@ struct RecoverPassEmailView: View {
             .scaledToFit()
             .frame(width: 125, height: 80)
     }
-    
     var dots: some View{
         HStack {
             Circle()
