@@ -25,6 +25,7 @@ struct EditProfileView: View {
             imageSelection
             CustomTextField(imageName: "person", placeholderText: "Username", isSecureField: false,  text: $username)
                 .padding()
+            
             if showChangePassword {
                 changePasswordTexfields
             } else {
@@ -41,12 +42,7 @@ struct EditProfileView: View {
             ImagePicker(selectedImage: $profileUIImage)
         }
         .onAppear(){
-            UserDefaults.standard.set(username, forKey: "username")
-            viewmodel.getUserImage { image in
-                if let imageBase64 = image {
-                    profileUIImage = imageBase64.imageFromBase64
-                }
-            }
+            username = "Andres"
         }
     }
     
@@ -71,6 +67,7 @@ struct EditProfileView: View {
                 }
         }
     }
+    
     // MARK: - Change Password Items
     var changePasswordTexfields: some View {
         VStack{
@@ -80,6 +77,7 @@ struct EditProfileView: View {
                 .padding()
         }
     }
+    
     var changePasswordButton: some View {
         Button {
             showChangePassword.toggle()
@@ -87,11 +85,13 @@ struct EditProfileView: View {
             Text("Cambiar contraseña")
         }.padding()
     }
+    
 // MARK: - Save Changes Button
     var saveChangesButton: some View{
         Button {
             if(password == confirmPassword){
-                viewmodel.edit(username: username, password: password, photo: profileUIImage?.base64 ?? "")
+                viewmodel.putAndGetOfFirebaseImage(username: username,password: password,photo: profileUIImage ?? UIImage())
+                //viewmodel.edit(username: username, password: password, photo: profileUIImage?.base64 ?? "")
             }else{
                 viewmodel.shouldShowAlert = true
             }
@@ -104,11 +104,7 @@ struct EditProfileView: View {
                 .cornerRadius(10)
                 .padding(40)
             //navegar a perfil
-        }.background(
-            NavigationLink(destination: EmptyView(), isActive: $viewmodel.goToProfile) {
-                EmptyView()
-            }
-        )
+        }
     }
 }
 
