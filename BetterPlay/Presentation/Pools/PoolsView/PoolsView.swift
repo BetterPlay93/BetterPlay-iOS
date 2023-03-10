@@ -1,15 +1,15 @@
 //
-//  BetsView.swift
+//  PoolsView.swift
 //  BetterPlay
 //
-//  Created by Apps2T on 9/2/23.
+//  Created by Ismael Cordón Domínguez on 10/3/23.
 //
 
 import SwiftUI
 
-struct BetsView: View {
+struct PoolsView: View {
+    
     @ObservedObject private var viewModel = ViewModel()
-    @State var showDailyStreak: Bool = false
     @State var text: String = ""
     @State var sportSelected: Sport = .all
     
@@ -17,6 +17,7 @@ struct BetsView: View {
         ZStack {
             VStack(spacing: 0) {
                 VStack(spacing: 20) {
+                    
                     Logo()
                     
                     Searcher(text: $text)
@@ -33,11 +34,9 @@ struct BetsView: View {
                 VStack {
                     ScrollView {
                         LazyVStack {
-                            ForEach(viewModel.filteredBets(by: text, and: sportSelected)) { bet in
-                                
-                                SportCard(bet: bet)
-                                
-                            }
+                            PoolCard(sport: .soccer, color: "Green")
+                            PoolCard(sport: .soccer, color: "Green")
+                            PoolCard(sport: .basketball, color: "Orange")
                         }
                     }
                 }
@@ -48,17 +47,11 @@ struct BetsView: View {
             }
             .ignoresSafeArea()
             .onAppear() {
-                viewModel.getAllBets()
-                //Esto dependerá de si la fecha del userDefaults de inicio a la app es un día más
-                showDailyStreak = true
+                viewModel.getAllPools()
             }
             
-            
-            DailyStreakView(isShowing: $showDailyStreak)
         }
     }
-    
-    
     
     var filterButtons: some View {
         HStack {
@@ -97,24 +90,12 @@ struct BetsView: View {
             .padding(.horizontal, 5)
             .background(sportSelected == .basketball ? Color("Orange") : Color("OrangeButton"))
             .cornerRadius(35)
-            
-            Button {
-                sportSelected = .tennis
-            }label: {
-                Text("Tenis")
-                    .foregroundColor(.white)
-                    .font(.system(size: 14))
-            }
-            .padding(5)
-            .padding(.horizontal, 5)
-            .background(sportSelected == .tennis ? Color("Yellow") : Color("YellowButton"))
-            .cornerRadius(35)
         }
     }
 }
 
-struct BetsView_Previews: PreviewProvider {
+struct PoolsView_Previews: PreviewProvider {
     static var previews: some View {
-        BetsView()
+        PoolsView()
     }
 }
