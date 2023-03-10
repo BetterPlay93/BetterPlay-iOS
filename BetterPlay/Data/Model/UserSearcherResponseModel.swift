@@ -7,8 +7,11 @@
 
 import Foundation
 
-class UserSearcherResponseModel: BaseResponseModel {
+class UserSearcherResponseModel: Decodable{
     
+    var status: String?
+    var code: Int?
+    var message: [String]?
     var data: [UserResponseModel]?
         
 }

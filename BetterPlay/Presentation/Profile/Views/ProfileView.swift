@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State var userImage: String = "Men"
-    @State var userName: String = "Jose Ramón"
-    @State var userEmail: String = "joseramon@gmail.com"
-    @State var totalCoins: Int = 4000000
-    @State var inGameCoins: Int = 1200
-    @State var totalFriends: Int = 150
-    @State var soccerProgres: Int = 50
+    @State var user: UserPresentationModel
     
     var body: some View {
         ZStack(){
@@ -36,20 +30,23 @@ struct ProfileView: View {
     // MARK: - Accesory View
     var keyUserData: some View {
         HStack{
-            Image(userImage)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 70, height: 70)
-                .cornerRadius(50)
-                .padding(.leading,50)
+            AsyncImage(url: URL(string: user.username)) {image in
+                image.resizable()
+            }placeholder: {
+                ProgressView()
+            }
+            .frame(width: 70, height: 70)
+            .cornerRadius(50)
+            .padding(.leading, 50)
+            
             Spacer()
             VStack(alignment: .leading){
-                Text(userEmail)
+                Text(user.email)
                     .font(.system(size: 15))
                     .bold()
                     .frame(maxWidth: 250, alignment: .leading)
                 HStack(){
-                    Text("\(totalFriends)")
+                    Text("\(user.followers)")
                         .font(.system(size: 20))
                         .bold()
                     Image(systemName: "person.2.circle.fill")
@@ -67,7 +64,7 @@ struct ProfileView: View {
                 Text("BetterCoins")
                     .font(.system(size: 20))
                     .frame(maxWidth: 105, alignment: .leading)
-                Text("\(totalCoins)")
+                Text("\(user.coins)")
                     .font(.system(size: 20))
                     .bold()
                     .padding(.leading, 30)
@@ -79,23 +76,23 @@ struct ProfileView: View {
             }.frame(maxWidth: UIScreen.main.bounds.width)
             
             
-            HStack(){
-                Text("BetterCoins en juego")
-                    .font(.system(size: 20))
-                    .lineLimit(2)
-                    .frame(maxWidth: 105)
-                
-                Text("\(inGameCoins)")
-                    .font(.system(size: 20))
-                    .bold()
-                    .padding(.leading, 30)
-                
-                Image("Coins")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30, height: 30, alignment: .leading)
-                Spacer()
-            }.frame(maxWidth: UIScreen.main.bounds.width)
+//            HStack(){
+//                Text("BetterCoins en juego")
+//                    .font(.system(size: 20))
+//                    .lineLimit(2)
+//                    .frame(maxWidth: 105)
+//
+//                Text("\(inGameCoins)")
+//                    .font(.system(size: 20))
+//                    .bold()
+//                    .padding(.leading, 30)
+//
+//                Image("Coins")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 30, height: 30, alignment: .leading)
+//                Spacer()
+//            }.frame(maxWidth: UIScreen.main.bounds.width)
             
             
             HStack(){
@@ -116,8 +113,8 @@ struct ProfileView: View {
                     .scaledToFit()
                     .frame(width: 40, height: 40, alignment: .leading)
                     .padding(.leading,2)
-                CustomProgressView(progressColor: "Green",progressBackgroundColor: "White", value: soccerProgres)
-                Text("\(soccerProgres)%")
+                CustomProgressView(progressColor: "Green",progressBackgroundColor: "White", value: 10)
+                Text("\(10)%")
                     .font(.system(size: 25))
                     .bold()
             }.padding(.trailing, 30)
@@ -198,8 +195,8 @@ struct ProfileView: View {
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
-}
+//struct ProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileView()
+//    }
+//}

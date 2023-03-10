@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ProfileNavBar: View {
     
-    var username: String = "Juan Ramón"
     @State var selection: Int = 0
     var isCurrentUser: Bool = false
+    
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -23,6 +24,9 @@ struct ProfileNavBar: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarHidden(true)
         .background(Color("Background2"))
+        .onAppear {
+            viewModel.getUserData()
+        }
     }
     
     // MARK: - Accesory View
@@ -31,7 +35,7 @@ struct ProfileNavBar: View {
             Rectangle()
                 .fill(Color("Gray")).frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 50)
             HStack {
-                Text(username)
+                Text(viewModel.user.username)
                     .foregroundColor(Color.white)
                     .font(.system(size: 25))
                     .bold()
@@ -74,7 +78,7 @@ struct ProfileNavBar: View {
             }
             
             if selection == 0 {
-                ProfileView()
+                ProfileView(user: viewModel.user)
             }else{
                 FriendProfileView()
             }
@@ -84,6 +88,6 @@ struct ProfileNavBar: View {
 
 struct ProfileNavBar_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileNavBar(username: "Jose Ramón")
+        ProfileNavBar()
     }
 }

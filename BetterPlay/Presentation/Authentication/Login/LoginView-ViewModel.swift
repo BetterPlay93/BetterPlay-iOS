@@ -38,6 +38,11 @@ extension LoginView {
                     self.onError(error: response.message)
                 }else{
                     UserDefaults.standard.set(response.data.token, forKey: "token")
+                    
+                    let user = UserPresentationModel(dataModel: data)
+                    if let data = try? JSONEncoder().encode(user) {
+                        UserDefaults.standard.set(data, forKey: "user")
+                    }
                     //Peticion de la racha
                     shouldNavigateToHome = true
                     print(response.data)
