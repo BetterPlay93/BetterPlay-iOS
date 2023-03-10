@@ -43,6 +43,7 @@
 		3390E59729BBB42500D063B4 /* PoolNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E59629BBB42500D063B4 /* PoolNavBar.swift */; };
 		3390E59C29BBB62500D063B4 /* PoolMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E59B29BBB62500D063B4 /* PoolMatch.swift */; };
 		3390E59E29BBB62F00D063B4 /* SpecialPoolMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E59D29BBB62F00D063B4 /* SpecialPoolMatch.swift */; };
+		3390E5A229BBC33A00D063B4 /* SelectExactResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E5A129BBC33A00D063B4 /* SelectExactResult.swift */; };
 		339305052996C7650070C1CE /* UserSearcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305042996C7650070C1CE /* UserSearcherView.swift */; };
 		339305072996C7720070C1CE /* UserSearcherView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305062996C7720070C1CE /* UserSearcherView-ViewModel.swift */; };
 		339305092996C7F80070C1CE /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305082996C7F80070C1CE /* UserCard.swift */; };
@@ -126,6 +127,7 @@
 		3390E59629BBB42500D063B4 /* PoolNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolNavBar.swift; sourceTree = "<group>"; };
 		3390E59B29BBB62500D063B4 /* PoolMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolMatch.swift; sourceTree = "<group>"; };
 		3390E59D29BBB62F00D063B4 /* SpecialPoolMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialPoolMatch.swift; sourceTree = "<group>"; };
+		3390E5A129BBC33A00D063B4 /* SelectExactResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExactResult.swift; sourceTree = "<group>"; };
 		339305042996C7650070C1CE /* UserSearcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearcherView.swift; sourceTree = "<group>"; };
 		339305062996C7720070C1CE /* UserSearcherView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSearcherView-ViewModel.swift"; sourceTree = "<group>"; };
 		339305082996C7F80070C1CE /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			children = (
 				3390E59B29BBB62500D063B4 /* PoolMatch.swift */,
 				3390E59D29BBB62F00D063B4 /* SpecialPoolMatch.swift */,
+				3390E5A129BBC33A00D063B4 /* SelectExactResult.swift */,
 			);
 			path = PoolMatch;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */,
 				33A92E5E29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift in Sources */,
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
+				3390E5A229BBC33A00D063B4 /* SelectExactResult.swift in Sources */,
 				104FEEFC29A2885D0091EAFC /* UserPresentationModel.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				1061675C29BB35BA00EFBF08 /* PoolResponseModel.swift in Sources */,
