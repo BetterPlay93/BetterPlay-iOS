@@ -13,6 +13,12 @@
 		104FEEFE29A2BBA30091EAFC /* NotificationListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEEFD29A2BBA30091EAFC /* NotificationListResponseModel.swift */; };
 		104FEF0029A2BBAE0091EAFC /* NotificationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEEFF29A2BBAE0091EAFC /* NotificationResponseModel.swift */; };
 		104FEF0329A2BE3F0091EAFC /* NotificationPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */; };
+		1061675829BB356800EFBF08 /* PoolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061675729BB356800EFBF08 /* PoolsView.swift */; };
+		1061675A29BB358600EFBF08 /* PoolsListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061675929BB358600EFBF08 /* PoolsListResponseModel.swift */; };
+		1061675C29BB35BA00EFBF08 /* PoolResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061675B29BB35BA00EFBF08 /* PoolResponseModel.swift */; };
+		1061675E29BB376300EFBF08 /* PoolsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061675D29BB376300EFBF08 /* PoolsView-ViewModel.swift */; };
+		1061676029BB37AA00EFBF08 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061675F29BB37AA00EFBF08 /* Logo.swift */; };
+		1061676329BB3A4800EFBF08 /* PoolCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061676229BB3A4800EFBF08 /* PoolCard.swift */; };
 		106A519329A3806800208BF7 /* ParticipateInBetView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106A519229A3806800208BF7 /* ParticipateInBetView-ViewModel.swift */; };
 		106A519529A3808E00208BF7 /* ParticipateInBetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106A519429A3808E00208BF7 /* ParticipateInBetView.swift */; };
 		3308B32929A66E5400FD84D7 /* ParticipateInBetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308B32829A66E5400FD84D7 /* ParticipateInBetModel.swift */; };
@@ -83,6 +89,12 @@
 		104FEEFD29A2BBA30091EAFC /* NotificationListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListResponseModel.swift; sourceTree = "<group>"; };
 		104FEEFF29A2BBAE0091EAFC /* NotificationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResponseModel.swift; sourceTree = "<group>"; };
 		104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresentationModel.swift; sourceTree = "<group>"; };
+		1061675729BB356800EFBF08 /* PoolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolsView.swift; sourceTree = "<group>"; };
+		1061675929BB358600EFBF08 /* PoolsListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolsListResponseModel.swift; sourceTree = "<group>"; };
+		1061675B29BB35BA00EFBF08 /* PoolResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolResponseModel.swift; sourceTree = "<group>"; };
+		1061675D29BB376300EFBF08 /* PoolsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PoolsView-ViewModel.swift"; sourceTree = "<group>"; };
+		1061675F29BB37AA00EFBF08 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		1061676229BB3A4800EFBF08 /* PoolCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolCard.swift; sourceTree = "<group>"; };
 		106A519229A3806800208BF7 /* ParticipateInBetView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParticipateInBetView-ViewModel.swift"; sourceTree = "<group>"; };
 		106A519429A3808E00208BF7 /* ParticipateInBetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateInBetView.swift; sourceTree = "<group>"; };
 		3308B32829A66E5400FD84D7 /* ParticipateInBetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateInBetModel.swift; sourceTree = "<group>"; };
@@ -172,6 +184,32 @@
 				104FEF0229A2BE3F0091EAFC /* NotificationPresentationModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1061675529BB354700EFBF08 /* Pools */ = {
+			isa = PBXGroup;
+			children = (
+				1061676129BB396500EFBF08 /* PoolsCards */,
+				1061675629BB355B00EFBF08 /* PoolsView */,
+			);
+			path = Pools;
+			sourceTree = "<group>";
+		};
+		1061675629BB355B00EFBF08 /* PoolsView */ = {
+			isa = PBXGroup;
+			children = (
+				1061675729BB356800EFBF08 /* PoolsView.swift */,
+				1061675D29BB376300EFBF08 /* PoolsView-ViewModel.swift */,
+			);
+			path = PoolsView;
+			sourceTree = "<group>";
+		};
+		1061676129BB396500EFBF08 /* PoolsCards */ = {
+			isa = PBXGroup;
+			children = (
+				1061676229BB3A4800EFBF08 /* PoolCard.swift */,
+			);
+			path = PoolsCards;
 			sourceTree = "<group>";
 		};
 		106A518F29A37C5E00208BF7 /* ParticipateInBet */ = {
@@ -319,6 +357,7 @@
 		33F6A61F2995437200FFAB37 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				1061675529BB354700EFBF08 /* Pools */,
 				33F6A62F2995457C00FFAB37 /* ContentView.swift */,
 				33A92E6729A3E7E800F9D885 /* OtherUserProfile */,
 				339305032996C7550070C1CE /* UserSearcher */,
@@ -359,6 +398,8 @@
 				331842FF29A5536F003DB051 /* ImageResponseModel.swift */,
 				3308B32C29A6830400FD84D7 /* BetListResponseModel.swift */,
 				33B8158229AE7E5B003125DA /* RecoverPassResponseModel.swift */,
+				1061675929BB358600EFBF08 /* PoolsListResponseModel.swift */,
+				1061675B29BB35BA00EFBF08 /* PoolResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,6 +417,7 @@
 				33262E69299A8FEA009C89A8 /* CustomProgressView.swift */,
 				3308E6BF299BFC2400E2113D /* UserCard.swift */,
 				33F26BFD299A8F7100119263 /* CustomBackButton.swift */,
+				1061675F29BB37AA00EFBF08 /* Logo.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -604,6 +646,7 @@
 				3393050C2996D0FE0070C1CE /* NotificationsView.swift in Sources */,
 				104FEEFE29A2BBA30091EAFC /* NotificationListResponseModel.swift in Sources */,
 				33A92E6929A3E83200F9D885 /* OtherUserProfileView.swift in Sources */,
+				1061675E29BB376300EFBF08 /* PoolsView-ViewModel.swift in Sources */,
 				106A519329A3806800208BF7 /* ParticipateInBetView-ViewModel.swift in Sources */,
 				333F62C929A54C0A0064D45C /* SportCard.swift in Sources */,
 				33F6A67F29955CEA00FFAB37 /* BetDetailPresentationModel.swift in Sources */,
@@ -615,7 +658,10 @@
 				33F6A64729954F6100FFAB37 /* RegisterView-ViewModel.swift in Sources */,
 				104FEEF929A285670091EAFC /* UserSearcherResponseModel.swift in Sources */,
 				3308E6BE299BFBB200E2113D /* FriendProfileView.swift in Sources */,
+				1061675A29BB358600EFBF08 /* PoolsListResponseModel.swift in Sources */,
+				1061675829BB356800EFBF08 /* PoolsView.swift in Sources */,
 				33262E6A299A8FEA009C89A8 /* CustomProgressView.swift in Sources */,
+				1061676029BB37AA00EFBF08 /* Logo.swift in Sources */,
 				33B8158129AE77B8003125DA /* ProfileView.swift in Sources */,
 				331842FE29A552FD003DB051 /* ImagePresentationModel.swift in Sources */,
 				3318430029A5536F003DB051 /* ImageResponseModel.swift in Sources */,
@@ -629,8 +675,10 @@
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
 				104FEEFC29A2885D0091EAFC /* UserPresentationModel.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
+				1061675C29BB35BA00EFBF08 /* PoolResponseModel.swift in Sources */,
 				3308B32F29A687A000FD84D7 /* BetListResponseModel.swift in Sources */,
 				33B8158329AE7E5B003125DA /* RecoverPassResponseModel.swift in Sources */,
+				1061676329BB3A4800EFBF08 /* PoolCard.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
 				33F6A64C29954FAD00FFAB37 /* AuthenticationPresentationModel.swift in Sources */,
 				339305052996C7650070C1CE /* UserSearcherView.swift in Sources */,
