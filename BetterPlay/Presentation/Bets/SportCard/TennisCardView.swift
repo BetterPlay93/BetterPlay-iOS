@@ -1,5 +1,5 @@
 //
-//  BasketballCardView.swift
+//  TennisCardView.swift
 //  BetterPlay
 //
 //  Created by Apps2T on 9/2/23.
@@ -7,25 +7,27 @@
 
 import SwiftUI
 
-struct BasketballCardView: View {
-    @State private var homeTeam = "Golden State Warriors"
-    @State private var awayTeam = "Portland Trail Blazers"
+struct TennisCardView: View {
+    
+    var bet: BetPresentationModel
    
     var body: some View {
         HStack(spacing: 10){
-            Image("BasketballCard")
+            Image("TennisCard")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 107, height: 107)
                
             VStack(alignment: .leading, spacing: 8){
+               
                 players
                 
                 teams
-                   
+                
                 dateAndPlayButton
+                
             }
-               
+            
         }
         .frame(width: 359, height: 107)
         .background(.white)
@@ -38,7 +40,7 @@ struct BasketballCardView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 15, height: 15)
-                .foregroundColor(Color("Orange"))
+                .foregroundColor(Color("Yellow"))
                 
             
             Text("203")
@@ -53,38 +55,38 @@ struct BasketballCardView: View {
     var teams: some View {
         HStack(spacing: 8){
             VStack(alignment: .leading){
-                Image("HomeBasketball")
+                Image("HomeTennis")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 13, height: 15)
+                    .frame(width: 15, height: 15)
                 
-                Image("AwayBasketball")
+                Image("HomeTennis")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 17.6, height: 15)
+                    .frame(width: 15, height: 15)
                 
             }
             
             VStack(alignment: .leading){
-                Text("\(homeTeam)")
-                    .foregroundColor(Color("Orange"))
+                Text("\(bet.home_team.name)")
+                    .foregroundColor(Color("Yellow"))
                     .bold()
                 
-                Text("\(awayTeam)")
-                    .foregroundColor(Color("Orange"))
+                Text("\(bet.away_team.name)")
+                    .foregroundColor(Color("Yellow"))
                     .bold()
             }
         }
     }
     
-    var dateAndPlayButton: some View {
+    var dateAndPlayButton: some View{
         HStack {
-            Image("CalendarBasketball")
+            Image("CalendarTennis")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 18, height: 18)
                
-            Text("17-2-23")
+            Text(convertTimestampToDate(date: bet.date))
                 .font(.system(size: 13))
                 .foregroundColor(Color("Gray"))
                 .bold()
@@ -92,10 +94,10 @@ struct BasketballCardView: View {
             Image(systemName: "clock")
                 .resizable()
                 .scaledToFit()
-                .foregroundColor(Color("Orange"))
+                .foregroundColor(Color("Yellow"))
                 .frame(width: 18, height: 18)
                
-            Text("20:00")
+            Text(convertTimestampToHour(date: bet.date))
                 .font(.system(size: 13))
                 .foregroundColor(Color("Gray"))
                 .bold()
@@ -109,15 +111,15 @@ struct BasketballCardView: View {
                     .foregroundColor(.white)
                     .bold()
                     .frame(width: 67, height: 24)
-                    .background(Color("Orange"))
+                    .background(Color("Yellow"))
                     .cornerRadius(20)
             }.padding(.leading, 10)
         }.padding(.bottom, 5)
     }
 }
 
-struct BasketballCardView_Previews: PreviewProvider {
+struct TennisCardView_Previews: PreviewProvider {
     static var previews: some View {
-        BasketballCardView()
+        TennisCardView(bet: BetPresentationModel(home_result: 0, away_result: 0, home_odd: 0.0, away_odd: 0.0, tie_odd: 0.0, date: 0, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: ""), away_team: TeamPresentationModel(name: "Real Madrid", logo: "")))
     }
 }

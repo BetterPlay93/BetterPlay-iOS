@@ -39,6 +39,6 @@ struct CustomTextField: View {
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(imageName: "envelope", placeholderText: "Email", text: .constant(""))
+        CustomTextField(imageName: "envelope", placeholderText: "Email",isSecureField: false, text: .constant(""))
     }
 }

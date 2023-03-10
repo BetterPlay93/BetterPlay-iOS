@@ -11,7 +11,7 @@ extension LoginView {
     class ViewModel: ObservableObject {
         @Published var shouldShowAlert: Bool = false
         @Published var shouldNavigateToHome: Bool = false
-        @Published var response: AuthenticationPresentationModel = AuthenticationPresentationModel()
+        @Published var response: LoginPresentationModel = LoginPresentationModel()
         
         func login(username: String, password: String){
             
@@ -30,20 +30,18 @@ extension LoginView {
         
         func onSucess(data: Data){
             do {
-                let data = try JSONDecoder().decode(AuthenticationResponseModel?.self, from: data)
+                let data = try JSONDecoder().decode(LoginResponseModel?.self, from: data)
                
-                response = AuthenticationPresentationModel(status: data?.status ?? "", code: data?.code ?? 0, message: data?.message ?? [""] , data: data?.data ?? "")
+                response = LoginPresentationModel(status: data?.status ?? "", code: data?.code ?? 0, message: data?.message ?? [""], data: data?.data ?? UserWithTokenResponse(token: "", user: UserResponseModel(username: "", email: "", coins: 0, followers: 0, code: "", photo: "")))
                 
                 if response.code != 200 {
                     self.onError(error: response.message)
                 }else{
-                    UserDefaults.standard.set(response.data, forKey: "token")
+                    UserDefaults.standard.set(response.data.token, forKey: "token")
+                    //Peticion de la racha
                     shouldNavigateToHome = true
                     print(response.data)
-//                    if let token = UserDefaults.standard.string(forKey: "token") as String?
-//                    {
-//                        print(token)
-//                    }
+
                 }
                 
             } catch {
@@ -52,8 +50,10 @@ extension LoginView {
         }
         
         func onError(error: [String]) {
-            shouldShowAlert = true
+            shouldNavigateToHome = true
+            //shouldShowAlert = true
             print(error)
         }
+        
     }
 }

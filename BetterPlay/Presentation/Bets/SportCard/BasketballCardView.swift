@@ -1,5 +1,5 @@
 //
-//  SoccerCardView.swift
+//  BasketballCardView.swift
 //  BetterPlay
 //
 //  Created by Apps2T on 9/2/23.
@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-struct SoccerCardView: View {
-    @State private var homeTeam = "FC.Barcelona"
-    @State private var awayTeam = "Real Madrid"
+struct BasketballCardView: View {
+    var bet: BetPresentationModel
    
     var body: some View {
         HStack(spacing: 10){
-            Image("SoccerCard")
+            Image("BasketballCard")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 107, height: 107)
@@ -23,7 +22,7 @@ struct SoccerCardView: View {
                 
                 teams
                    
-                dateAndPlay
+                dateAndPlayButton
             }
                
         }
@@ -38,7 +37,7 @@ struct SoccerCardView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 15, height: 15)
-                .foregroundColor(Color("DarkGreen"))
+                .foregroundColor(Color("Orange"))
                 
             
             Text("203")
@@ -53,39 +52,38 @@ struct SoccerCardView: View {
     var teams: some View {
         HStack(spacing: 8){
             VStack(alignment: .leading){
-                Image("HomeSoccer")
+                Image("HomeBasketball")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 13, height: 15)
                 
-                Image("AwaySoccer")
+                Image("AwayBasketball")
                     .resizable()
                     .scaledToFit()
-                    .foregroundColor(Color("DarkGreen"))
                     .frame(width: 17.6, height: 15)
                 
             }
             
             VStack(alignment: .leading){
-                Text("\(homeTeam)")
-                    .foregroundColor(Color("Green"))
+                Text("\(bet.home_team.name)")
+                    .foregroundColor(Color("Orange"))
                     .bold()
                 
-                Text("\(awayTeam)")
-                    .foregroundColor(Color("Green"))
+                Text("\(bet.away_team.name)")
+                    .foregroundColor(Color("Orange"))
                     .bold()
             }
         }
     }
     
-    var dateAndPlay: some View {
+    var dateAndPlayButton: some View {
         HStack {
-            Image("CalendarSoccer")
+            Image("CalendarBasketball")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 18, height: 18)
                
-            Text("17-2-23")
+            Text(convertTimestampToDate(date: bet.date))
                 .font(.system(size: 13))
                 .foregroundColor(Color("Gray"))
                 .bold()
@@ -93,14 +91,15 @@ struct SoccerCardView: View {
             Image(systemName: "clock")
                 .resizable()
                 .scaledToFit()
-                .foregroundColor(Color("DarkGreen"))
+                .foregroundColor(Color("Orange"))
                 .frame(width: 18, height: 18)
                
-            Text("20:00")
+            Text(convertTimestampToHour(date: bet.date))
                 .font(.system(size: 13))
                 .foregroundColor(Color("Gray"))
                 .bold()
             
+               
             Button {
                    
             } label: {
@@ -109,16 +108,15 @@ struct SoccerCardView: View {
                     .foregroundColor(.white)
                     .bold()
                     .frame(width: 67, height: 24)
-                    .background(Color("Green"))
+                    .background(Color("Orange"))
                     .cornerRadius(20)
             }.padding(.leading, 10)
         }.padding(.bottom, 5)
-        
     }
 }
 
-struct SoccerCardView_Previews: PreviewProvider {
+struct BasketballCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SoccerCardView()
+        BasketballCardView(bet: BetPresentationModel(home_result: 0, away_result: 0, home_odd: 0.0, away_odd: 0.0, tie_odd: 0.0, date: 0, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: ""), away_team: TeamPresentationModel(name: "Real Madrid", logo: "")))
     }
 }

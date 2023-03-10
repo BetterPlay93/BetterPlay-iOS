@@ -11,7 +11,9 @@ import SwiftUI
 struct BetterPlayApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            NavigationView {
+                LoginView()
+            }.navigationBarHidden(true)
         }
     }
 }

@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State var recoverEmail: Bool = false
+    @State var recoverCode: Bool = false
+    @State var recoverPass: Bool = false
     @State private var username = ""
     @State private var password = ""
     
     @ObservedObject var viewModel: ViewModel = ViewModel()
 
     var body: some View {
-        NavigationView {
+        ZStack {
             VStack {
                 
                 logo
@@ -29,13 +32,23 @@ struct LoginView: View {
                 
                 navigateToRegister
                 
-                NavigationLink(destination: ContentView().navigationBarHidden(true).navigationBarBackButtonHidden(true), isActive: $viewModel.shouldNavigateToHome) {
+                NavigationLink(destination: ContentView(), isActive: $viewModel.shouldNavigateToHome) {
                     EmptyView()
                 }
                 
             }
             .ignoresSafeArea()
             .background(Color("Background"))
+            
+            if recoverEmail {
+                RecoverPassEmailView(show: $recoverEmail, showNext: $recoverCode)
+            }
+            if recoverCode{
+                RecoverPasswordCodeView(show: $recoverCode, showNext: $recoverPass)
+            }
+            if recoverPass{
+                NewPasswordView(show: $recoverPass)
+            }
         }
             
     }
@@ -64,8 +77,10 @@ struct LoginView: View {
     var forgotPassword: some View {
         HStack {
             Spacer()
-            NavigationLink {
-                
+            Button {
+                withAnimation{
+                    recoverEmail.toggle()
+                }
             } label: {
                 Text("Forgot Password?")
                     .font(.caption)

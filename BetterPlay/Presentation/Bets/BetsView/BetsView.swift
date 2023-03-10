@@ -8,43 +8,54 @@
 import SwiftUI
 
 struct BetsView: View {
+    @ObservedObject private var viewModel = ViewModel()
+    @State var showDailyStreak: Bool = false
+    @State var text: String = ""
+    @State var sportSelected: Sport = .all
+    
     var body: some View {
-        VStack(spacing: 0){
-            VStack(spacing: 20) {
-                logo
-                
-                Searcher()
-                
-                filterButtons
-                
-                Rectangle().fill(Color("Gray")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
-                
-                
-            }
-            .padding(.top, 50)
-            .background(Color("Background"))
-               
-            VStack {
-                ScrollView {
-                    LazyVStack {
-                        SoccerCardView()
-                        
-                        BasketballCardView()
-                        
-                        TennisCardView()
-                        
-                        SoccerCardView()
-                        
-                        BasketballCardView()
+        ZStack {
+            VStack(spacing: 0) {
+                VStack(spacing: 20) {
+                    logo
+                    
+                    Searcher(text: $text)
+                    
+                    filterButtons
+                    
+                    Rectangle().fill(Color("Gray")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
+                    
+                    
+                }
+                .padding(.top, 50)
+                .background(Color("Background"))
+                   
+                VStack {
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(viewModel.filteredBets(by: text, and: sportSelected)) { bet in
+                                
+                                SportCard(bet: bet)
+                                
+                            }
+                        }
                     }
                 }
+                .padding(.top, 20)
+                .background(Color("Background2"))
+                
+                CustomTabBar(selectedTab: .constant(.Bet))
             }
-            .padding(.top, 20)
-            .background(Color("Background2"))
+            .ignoresSafeArea()
+            .onAppear() {
+                viewModel.getAllBets()
+                //Esto dependerá de si la fecha del userDefaults de inicio a la app es un día más
+                showDailyStreak = true
+            }
             
             
+            DailyStreakView(isShowing: $showDailyStreak)
         }
-        .ignoresSafeArea()
     }
     
     
@@ -58,7 +69,7 @@ struct BetsView: View {
     var filterButtons: some View {
         HStack {
             Button {
-                //Petición web
+                sportSelected = .all
             }label: {
                 Text("Todo")
                     .foregroundColor(.white)
@@ -66,11 +77,11 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("Gray"))
+            .background(sportSelected == .all ? Color("Gray") : Color("LightGray"))
             .cornerRadius(35)
             
             Button {
-                //Partidos de fútbol
+                sportSelected = .soccer
             }label: {
                 Text("Fútbol")
                     .foregroundColor(.white)
@@ -78,11 +89,11 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("GreenButton"))
+            .background(sportSelected == .soccer ? Color("Green") : Color("GreenButton"))
             .cornerRadius(35)
             
             Button {
-                //Partidos de baloncesto
+                sportSelected = .basketball
             }label: {
                 Text("Baloncesto")
                     .foregroundColor(.white)
@@ -90,11 +101,11 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("OrangeButton"))
+            .background(sportSelected == .basketball ? Color("Orange") : Color("OrangeButton"))
             .cornerRadius(35)
             
             Button {
-                //partidos de tenis
+                sportSelected = .tennis
             }label: {
                 Text("Tenis")
                     .foregroundColor(.white)
@@ -102,7 +113,7 @@ struct BetsView: View {
             }
             .padding(5)
             .padding(.horizontal, 5)
-            .background(Color("YellowButton"))
+            .background(sportSelected == .tennis ? Color("Yellow") : Color("YellowButton"))
             .cornerRadius(35)
         }
     }
