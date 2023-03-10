@@ -8,29 +8,26 @@
 import SwiftUI
 
 struct PoolCard: View {
-    var sport = "Soccer"
+    var sport: Sport
     @State var color: String = "Green"
     
     var body: some View {
         HStack(spacing: 10){
-            Image("\(sport)Card")
+            Image("\(sport.rawValue)Card")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 107, height: 107)
                
             VStack(alignment: .leading, spacing: 8){
-                players
                 
-                //Aquí navegaríamos al detalle de la quiniela
-                NavigationLink(destination: EmptyView(), label: {
-                    Text("Jugar")
-                        .font(.system(size: 14))
-                        .foregroundColor(.white)
-                        .bold()
-                        .frame(width: 67, height: 24)
-                        .background(Color(color))
-                        .cornerRadius(20)
-                }).padding(.leading, 10)
+                participations
+                
+                Text("Jornada la Liga 1")
+                    .font(.system(size: 18))
+                    .foregroundColor(Color("\(color)"))
+                    .bold()
+                
+                navigateButton
             }
                
         }
@@ -39,7 +36,7 @@ struct PoolCard: View {
         .cornerRadius(10)
     }
     
-    var players: some View {
+    var participations: some View {
         HStack(){
             Image(systemName: "person.2.circle.fill")
                 .resizable()
@@ -56,10 +53,25 @@ struct PoolCard: View {
         .frame(maxWidth: .infinity, alignment: .trailing)
         .padding(.trailing, 10)
     }
+    
+    var navigateButton: some View {
+        //Aquí navegaríamos al detalle de la quiniela
+        NavigationLink(destination: EmptyView(), label: {
+            Text("Jugar")
+                .font(.system(size: 14))
+                .foregroundColor(.white)
+                .bold()
+                .frame(width: 67, height: 24)
+                .background(Color(color))
+                .cornerRadius(20)
+        })
+        .padding(.trailing, 10)
+        .frame(maxWidth: UIScreen.main.bounds.width, alignment: .trailing)
+    }
 }
 
 struct PoolCard_Previews: PreviewProvider {
     static var previews: some View {
-        PoolCard()
+        PoolCard(sport: .soccer).previewLayout(.sizeThatFits)
     }
 }
