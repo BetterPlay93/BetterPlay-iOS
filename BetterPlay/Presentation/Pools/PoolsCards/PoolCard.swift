@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PoolCard: View {
+    
     var sport: Sport
     @State var color: String = "Green"
     
