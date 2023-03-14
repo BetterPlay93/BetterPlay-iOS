@@ -11,7 +11,8 @@ class PoolResponseModel: Decodable {
     
     var id: Int?
     var name: String?
-    var participations: Int?
+    var matches: String?
+    var finalDate: Int?
     var sport: String?
     
 }

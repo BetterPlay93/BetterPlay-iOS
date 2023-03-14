@@ -24,9 +24,8 @@ extension PoolsView {
         
         func getAllPools() {
             if let token = UserDefaults.standard.string(forKey: "token") {
-                let url = "https://betterplay-backend-production.up.railway.app/api/pools/list"
                 
-                NetworkHelper.shared.requestProvider(url: url, type: .GET, token: token) { data, response, error in
+                NetworkHelper.shared.requestProvider(endpoint: .pools, type: .GET, token: token) { data, response, error in
                     if let error = error {
                         self.onError(error: error.localizedDescription)
                     } else if let data = data, let response = response as? HTTPURLResponse {
@@ -43,7 +42,7 @@ extension PoolsView {
                 let poolsResponse = try JSONDecoder().decode(PoolsListResponseModel?.self, from: data)
                 
                 self.pools = poolsResponse?.data?.compactMap({ pool in
-                    return PoolPresentationModel(id: pool?.id ?? 0, name: pool?.name ?? "", participations: pool?.participations ?? 0, sport: pool?.sport ?? "")
+                    return PoolPresentationModel(id: pool?.id ?? 0, name: pool?.name ?? "", matches: pool?.matches ?? "", finalDate: pool?.finalDate ?? 0, sport: pool?.sport ?? "soccer")
                 }) as? [PoolPresentationModel] ?? []
                 
             } catch {

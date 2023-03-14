@@ -49,7 +49,7 @@ class NetworkHelper {
     //MARK: - Public Methods
     func requestProvider(endpoint: Endpoint, type: RequestType = .POST, params: [String: Any]? = nil, token: String? = nil, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> Void {
         
-        let url = URL(string: "https://betterplaybackend-production.up.railway.app/api\(endpoint)")
+        let url = URL(string: "https://betterplaybackend-production.up.railway.app/api\(endpoint.rawValue)")
                 
         guard let urlNotNil = url else { return }
         

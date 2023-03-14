@@ -9,12 +9,12 @@ import SwiftUI
 
 struct PoolCard: View {
     
-    var sport: Sport
-    @State var color: String = "Green"
+    var pool: PoolPresentationModel
+    var color: String
     
     var body: some View {
         HStack(spacing: 10){
-            Image("\(sport.rawValue)Card")
+            Image("\(pool.sport.rawValue)Card")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 107, height: 107)
@@ -23,10 +23,11 @@ struct PoolCard: View {
                 
                 participations
                 
-                Text("Jornada la Liga 1")
-                    .font(.system(size: 18))
+                Text("\(pool.name)")
+                    .font(.system(size: 20))
                     .foregroundColor(Color("\(color)"))
                     .bold()
+                    .padding(.leading, 10)
                 
                 navigateButton
             }
@@ -73,6 +74,6 @@ struct PoolCard: View {
 
 struct PoolCard_Previews: PreviewProvider {
     static var previews: some View {
-        PoolCard(sport: .soccer).previewLayout(.sizeThatFits)
+        PoolCard(pool:PoolPresentationModel(id: 0, name: "Jornada 1", matches: "", finalDate: 0, sport: "Green"), color:"Green").previewLayout(.sizeThatFits)
     }
 }

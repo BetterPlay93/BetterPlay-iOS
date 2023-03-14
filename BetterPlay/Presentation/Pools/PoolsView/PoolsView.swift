@@ -34,9 +34,11 @@ struct PoolsView: View {
                 VStack {
                     ScrollView {
                         LazyVStack {
-                            PoolCard(sport: .soccer, color: "Green")
-                            PoolCard(sport: .soccer, color: "Green")
-                            PoolCard(sport: .basketball, color: "Orange")
+                            ForEach(viewModel.filteredPools(by: text, and: sportSelected)) { pool in
+                                
+                                PoolCard(pool: pool, color: "Green")
+                                
+                            }
                         }
                     }
                 }
