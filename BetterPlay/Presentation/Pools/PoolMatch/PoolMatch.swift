@@ -9,28 +9,29 @@ import SwiftUI
 
 struct PoolMatch: View {
     @State var resultSelected: Result = .home
-    var id: Int
+    var poolMatch: PoolMatchPresentationModel
     
     var body: some View {
         HStack (spacing: 10){
             //Aquí se escribirá la id del partido
-            Text("\(id)")
+            Text("\(poolMatch.id ?? 0)")
                 .font(.system(size: 20))
                 .bold()
             
             //Aquí se escribirá el partido a realizar
-            Text("FC. Barcelona - Real Madrid")
+            Text("\(poolMatch.homeTeam.name) - \(poolMatch.awayTeam.name)")
                 .font(.system(size: 14))
                 .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             VStack {
                 //Aquí se añadirá el día del evento
-                Text("SAB")
+                Text("\(convertTimestampToDay(date:poolMatch.date))")
                     .font(.system(size: 12))
                     .bold()
                 
                 //Aquí se añadirá la fecha del evento
-                Text("17:00")
+                Text("\(convertTimestampToHour(date:poolMatch.date))")
                     .font(.system(size: 12))
                     .bold()
             }
@@ -87,7 +88,7 @@ struct PoolMatch: View {
 
 struct PoolMatch_Previews: PreviewProvider {
     static var previews: some View {
-        PoolMatch(id: 0).previewLayout(.sizeThatFits)
+        PoolMatch(poolMatch: PoolMatchPresentationModel(id: 15, homeTeam: TeamPresentationModel(name: "FC.Barcelona", logo: ""), awayTeam: TeamPresentationModel(name: "Real Madrid", logo: ""), date: 0)).previewLayout(.sizeThatFits)
     }
 }
 

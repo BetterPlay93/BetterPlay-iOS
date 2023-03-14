@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct PoolDetailView: View {
+    var pool: PoolPresentationModel
+    @ObservedObject var viewModel: ViewModel = ViewModel()
+    
     var body: some View {
         ZStack {
             VStack(spacing: 0){
                 VStack {
-                    PoolNavBar(color: "Green")
+                    PoolNavBar(color: "Green", title: pool.name)
                     
                     Rectangle().fill(Color("Green")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
                     
@@ -20,12 +23,15 @@ struct PoolDetailView: View {
                 
                 VStack {
                     ScrollView {
-                        LazyVStack(spacing: 10) {
-                            ForEach(1...14, id: \.self) { i in
-                                PoolMatch(id: i)
+                        LazyVStack(alignment: .leading, spacing: 10) {
+                            ForEach(Array(viewModel.poolMatches.enumerated()), id: \.offset) { index, pool in
+                                if (viewModel.poolMatches.count - 1) == index {
+                                    SpecialPoolMatch(specialPoolMatch: pool)
+                                } else {
+                                    PoolMatch(poolMatch: pool)
+                                }
                             }
-                            SpecialPoolMatch()
-                        }
+                        }.padding(.leading, 10)
                     }
                 }
                 .padding(.top, 10)
@@ -49,11 +55,14 @@ struct PoolDetailView: View {
                 .padding(.top, 30)
             }
         }
+        .onAppear {
+            viewModel.getPoolMatches(matches: pool.matches)
+        }
     }
 }
 
 struct PoolDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PoolDetailView()
+        PoolDetailView(pool: PoolPresentationModel(id: 1, name: "Jornada 1", matches: "", finalDate: 0, sport: "soccer"))
     }
 }

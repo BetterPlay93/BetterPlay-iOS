@@ -11,6 +11,7 @@ struct SpecialPoolMatch: View {
     
     @State var homeExactResultSelected: ExactResultSelected = .Cero
     @State var awayExactResultSelected: ExactResultSelected = .Cero
+    var specialPoolMatch: PoolMatchPresentationModel
     
     var body: some View {
         HStack (spacing: 10){
@@ -18,29 +19,30 @@ struct SpecialPoolMatch: View {
             Text("15")
                 .font(.system(size: 20))
                 .bold()
-                .padding(.leading, 12)
             
             //Aquí se escribirá el partido a realizar
             VStack (alignment: .leading) {
-                Text("FC. Barcelona")
+                Text("\(specialPoolMatch.homeTeam.name)")
                     .font(.system(size: 14))
                     .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("Real Madrid")
+                Text("\(specialPoolMatch.awayTeam.name)")
                     .font(.system(size: 14))
                     .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             Spacer()
             
             VStack {
                 //Aquí se añadirá el día del evento
-                Text("SAB")
+                Text("\(convertTimestampToDay(date:specialPoolMatch.date))")
                     .font(.system(size: 12))
                     .bold()
                 
                 //Aquí se añadirá la fecha del evento
-                Text("17:00")
+                Text("\(convertTimestampToHour(date:specialPoolMatch.date))")
                     .font(.system(size: 12))
                     .bold()
             }
@@ -48,7 +50,7 @@ struct SpecialPoolMatch: View {
             VStack {
                 SelectExactResult(exactResultSelected: $homeExactResultSelected)
                 SelectExactResult(exactResultSelected: $awayExactResultSelected)
-            }.padding(.trailing, 10)
+            }
             
         }
         .frame(maxWidth: UIScreen.main.bounds.width)
@@ -56,11 +58,11 @@ struct SpecialPoolMatch: View {
     }
 }
 
-struct SpecialPoolMatch_Previews: PreviewProvider {
-    static var previews: some View {
-        SpecialPoolMatch().previewLayout(.sizeThatFits)
-    }
-}
+//struct SpecialPoolMatch_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SpecialPoolMatch().previewLayout(.sizeThatFits)
+//    }
+//}
 
 enum ExactResultSelected: String {
     case Cero = "0"

@@ -42,7 +42,7 @@ class BetPresentationModel: Identifiable{
     
 }
 
-class TeamPresentationModel {
+class TeamPresentationModel: Decodable {
     
     var name: String = ""
     var logo: String = ""

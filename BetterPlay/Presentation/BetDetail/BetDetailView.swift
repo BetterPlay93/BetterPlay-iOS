@@ -240,6 +240,14 @@ func convertTimestampToHour(date: Int) -> String {
     return strDate
 }
 
+func convertTimestampToDay(date: Int) -> String {
+    let date = Date(timeIntervalSince1970: TimeInterval(date))
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEE"
+    let strDate = dateFormatter.string(from: date)
+    return strDate
+}
+
 
     
 

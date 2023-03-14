@@ -11,13 +11,14 @@ struct PoolNavBar: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var color: String
+    var title: String
     
     var body: some View {
         
         HStack {
             btnBack
             
-            Text("La Liga - Jornada 1")
+            Text("\(title)")
                 .font(.system(size: 25))
                 .foregroundColor(.black)
                 .bold()
@@ -47,6 +48,6 @@ struct PoolNavBar: View {
 
 struct PoolNavBar_Previews: PreviewProvider {
     static var previews: some View {
-        PoolNavBar(color: "Green")
+        PoolNavBar(color: "Green", title: "Jornada 1")
     }
 }
