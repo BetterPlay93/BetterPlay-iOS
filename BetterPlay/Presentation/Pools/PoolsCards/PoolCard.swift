@@ -58,7 +58,7 @@ struct PoolCard: View {
     
     var navigateButton: some View {
         //Aquí navegaríamos al detalle de la quiniela
-        NavigationLink(destination: EmptyView(), label: {
+        NavigationLink(destination: PoolDetailView().navigationBarHidden(true), label: {
             Text("Jugar")
                 .font(.system(size: 14))
                 .foregroundColor(.white)

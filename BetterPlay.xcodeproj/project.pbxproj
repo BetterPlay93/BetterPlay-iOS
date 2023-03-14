@@ -37,6 +37,12 @@
 		33686370299E7E74008140E2 /* BetResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368636F299E7E74008140E2 /* BetResponseModel.swift */; };
 		33769FCB29A3C19300169FC5 /* DailyStreakView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33769FCA29A3C19300169FC5 /* DailyStreakView-ViewModel.swift */; };
 		3390E59029BBAD9100D063B4 /* PoolPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E58F29BBAD9100D063B4 /* PoolPresentationModel.swift */; };
+		3390E59329BBB22E00D063B4 /* PoolDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E59229BBB22E00D063B4 /* PoolDetailView.swift */; };
+		3390E59529BBB23D00D063B4 /* PoolDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E59429BBB23D00D063B4 /* PoolDetailView-ViewModel.swift */; };
+		3390E59729BBB42500D063B4 /* PoolNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E59629BBB42500D063B4 /* PoolNavBar.swift */; };
+		3390E59C29BBB62500D063B4 /* PoolMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E59B29BBB62500D063B4 /* PoolMatch.swift */; };
+		3390E59E29BBB62F00D063B4 /* SpecialPoolMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E59D29BBB62F00D063B4 /* SpecialPoolMatch.swift */; };
+		3390E5A229BBC33A00D063B4 /* SelectExactResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E5A129BBC33A00D063B4 /* SelectExactResult.swift */; };
 		339305052996C7650070C1CE /* UserSearcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305042996C7650070C1CE /* UserSearcherView.swift */; };
 		339305072996C7720070C1CE /* UserSearcherView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305062996C7720070C1CE /* UserSearcherView-ViewModel.swift */; };
 		339305092996C7F80070C1CE /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305082996C7F80070C1CE /* UserCard.swift */; };
@@ -114,6 +120,12 @@
 		3368636F299E7E74008140E2 /* BetResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetResponseModel.swift; sourceTree = "<group>"; };
 		33769FCA29A3C19300169FC5 /* DailyStreakView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyStreakView-ViewModel.swift"; sourceTree = "<group>"; };
 		3390E58F29BBAD9100D063B4 /* PoolPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolPresentationModel.swift; sourceTree = "<group>"; };
+		3390E59229BBB22E00D063B4 /* PoolDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDetailView.swift; sourceTree = "<group>"; };
+		3390E59429BBB23D00D063B4 /* PoolDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PoolDetailView-ViewModel.swift"; sourceTree = "<group>"; };
+		3390E59629BBB42500D063B4 /* PoolNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolNavBar.swift; sourceTree = "<group>"; };
+		3390E59B29BBB62500D063B4 /* PoolMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolMatch.swift; sourceTree = "<group>"; };
+		3390E59D29BBB62F00D063B4 /* SpecialPoolMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialPoolMatch.swift; sourceTree = "<group>"; };
+		3390E5A129BBC33A00D063B4 /* SelectExactResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExactResult.swift; sourceTree = "<group>"; };
 		339305042996C7650070C1CE /* UserSearcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearcherView.swift; sourceTree = "<group>"; };
 		339305062996C7720070C1CE /* UserSearcherView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSearcherView-ViewModel.swift"; sourceTree = "<group>"; };
 		339305082996C7F80070C1CE /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
@@ -189,8 +201,11 @@
 		1061675529BB354700EFBF08 /* Pools */ = {
 			isa = PBXGroup;
 			children = (
+				3390E59829BBB5FA00D063B4 /* PoolMatch */,
+				3390E59129BBB20600D063B4 /* PoolDetail */,
 				1061676129BB396500EFBF08 /* PoolsCards */,
 				1061675629BB355B00EFBF08 /* PoolsView */,
+				3390E59629BBB42500D063B4 /* PoolNavBar.swift */,
 			);
 			path = Pools;
 			sourceTree = "<group>";
@@ -291,6 +306,25 @@
 				3390E58F29BBAD9100D063B4 /* PoolPresentationModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3390E59129BBB20600D063B4 /* PoolDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3390E59229BBB22E00D063B4 /* PoolDetailView.swift */,
+				3390E59429BBB23D00D063B4 /* PoolDetailView-ViewModel.swift */,
+			);
+			path = PoolDetail;
+			sourceTree = "<group>";
+		};
+		3390E59829BBB5FA00D063B4 /* PoolMatch */ = {
+			isa = PBXGroup;
+			children = (
+				3390E59B29BBB62500D063B4 /* PoolMatch.swift */,
+				3390E59D29BBB62F00D063B4 /* SpecialPoolMatch.swift */,
+				3390E5A129BBC33A00D063B4 /* SelectExactResult.swift */,
+			);
+			path = PoolMatch;
 			sourceTree = "<group>";
 		};
 		339305032996C7550070C1CE /* UserSearcher */ = {
@@ -682,17 +716,23 @@
 				33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */,
 				33A92E5E29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift in Sources */,
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
+				3390E5A229BBC33A00D063B4 /* SelectExactResult.swift in Sources */,
 				104FEEFC29A2885D0091EAFC /* UserPresentationModel.swift in Sources */,
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				1061675C29BB35BA00EFBF08 /* PoolResponseModel.swift in Sources */,
+				3390E59529BBB23D00D063B4 /* PoolDetailView-ViewModel.swift in Sources */,
+				3390E59E29BBB62F00D063B4 /* SpecialPoolMatch.swift in Sources */,
 				3308B32F29A687A000FD84D7 /* BetListResponseModel.swift in Sources */,
 				33B8158329AE7E5B003125DA /* RecoverPassResponseModel.swift in Sources */,
 				1061676329BB3A4800EFBF08 /* PoolCard.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
 				33F6A64C29954FAD00FFAB37 /* AuthenticationPresentationModel.swift in Sources */,
 				339305052996C7650070C1CE /* UserSearcherView.swift in Sources */,
+				3390E59729BBB42500D063B4 /* PoolNavBar.swift in Sources */,
 				33F6A696299566FB00FFAB37 /* CustomProgressView.swift in Sources */,
+				3390E59329BBB22E00D063B4 /* PoolDetailView.swift in Sources */,
 				33769FCB29A3C19300169FC5 /* DailyStreakView-ViewModel.swift in Sources */,
+				3390E59C29BBB62500D063B4 /* PoolMatch.swift in Sources */,
 				33F6A69A29956A8700FFAB37 /* ProfileView-ViewModel.swift in Sources */,
 				3308B32D29A6830400FD84D7 /* BetListResponseModel.swift in Sources */,
 				3308B32929A66E5400FD84D7 /* ParticipateInBetModel.swift in Sources */,
