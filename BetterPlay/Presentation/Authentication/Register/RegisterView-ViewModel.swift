@@ -15,11 +15,10 @@ extension RegisterView {
        
        
         func register(username: String, email:String, password: String){
-            let url = "https://betterplay-backend-production.up.railway.app/api/users/register"
            
             let params: [String:String] = ["username": username, "email": email, "password": password]
            
-            NetworkHelper.shared.requestProvider(url: url, type: .PUT, params: params) { data, response, error in
+            NetworkHelper.shared.requestProvider(endpoint: .register, type: .PUT, params: params) { data, response, error in
                 if let error = error {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data, let response = response as? HTTPURLResponse {

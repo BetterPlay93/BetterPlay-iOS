@@ -30,7 +30,7 @@ extension ParticipateInBetView {
                 token = userToken
             }
             
-            NetworkHelper.shared.requestProvider(url: url, params: params, token: token) { data, response, error in
+            NetworkHelper.shared.requestProvider(endpoint: .participateInBet, params: params, token: token) { data, response, error in
                 if let error = error {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data{

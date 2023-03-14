@@ -13,11 +13,8 @@ extension UserSearcherView {
         @Published var users: [UserPresentationModel] = []
         
         func getAllUsers() {
-            
-            let url = "https://betterplay-backend-production.up.railway.app/api/users/list"
-            
             if let token = UserDefaults.standard.string(forKey: "token") {
-                NetworkHelper.shared.requestProvider(url: url, type: .GET, token: token) { data, response, error in
+                NetworkHelper.shared.requestProvider(endpoint: .userSearcher, type: .GET, token: token) { data, response, error in
                     if let error = error {
                         self.onError(error: error.localizedDescription)
                     } else if let data = data, let response = response as? HTTPURLResponse {

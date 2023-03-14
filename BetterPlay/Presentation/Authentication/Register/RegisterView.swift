@@ -97,9 +97,6 @@ struct RegisterView: View {
             //Petición web
             if password == repeatPassword {
                 viewModel.register(username: username, email: email, password: password)
-                
-
-                    presentationMode.wrappedValue.dismiss()
             }else{
                 showPasswordAlert.toggle()
             }

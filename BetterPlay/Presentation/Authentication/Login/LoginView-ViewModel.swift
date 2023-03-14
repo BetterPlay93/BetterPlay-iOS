@@ -15,11 +15,9 @@ extension LoginView {
         
         func login(username: String, password: String){
             
-            let url = "https://betterplay-backend-production.up.railway.app/api/users/login"
-            
             let params: [String: String] = ["username":username, "password": password]
             
-            NetworkHelper.shared.requestProvider(url: url, params: params) { data, response, error in
+            NetworkHelper.shared.requestProvider(endpoint: .login, params: params) { data, response, error in
                 if let error = error {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data{

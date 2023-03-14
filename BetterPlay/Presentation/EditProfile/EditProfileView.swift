@@ -46,14 +46,6 @@ struct EditProfileView: View {
         .sheet(isPresented: $isPickerPresented) {
             ImagePicker(selectedImage: $profileUIImage)
         }
-        .onAppear(){
-            UserDefaults.standard.set(username, forKey: "username")
-            viewmodel.getUserImage { image in
-                if let imageBase64 = image {
-                    profileUIImage = imageBase64.imageFromBase64
-                }
-            }
-        }
         .onReceive(viewmodel.$goToProfile) { newValue in
             if newValue {
                 presentationMode.wrappedValue.dismiss()
