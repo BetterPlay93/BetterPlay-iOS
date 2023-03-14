@@ -7,6 +7,11 @@
 
 import Foundation
 
-class PoolResponseModel {
+class PoolResponseModel: Decodable {
+    
+    var id: Int?
+    var name: String?
+    var participations: Int?
+    var sport: String?
     
 }

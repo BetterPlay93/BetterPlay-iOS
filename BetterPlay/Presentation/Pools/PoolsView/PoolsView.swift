@@ -34,11 +34,9 @@ struct PoolsView: View {
                 VStack {
                     ScrollView {
                         LazyVStack {
-                            ForEach(viewModel.filteredPools(by: text, and: sportSelected)) { bet in
-                                
-                                SportCard(bet: bet)
-                                
-                            }
+                            PoolCard(sport: .soccer, color: "Green")
+                            PoolCard(sport: .soccer, color: "Green")
+                            PoolCard(sport: .basketball, color: "Orange")
                         }
                     }
                 }

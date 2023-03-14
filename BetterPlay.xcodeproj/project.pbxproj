@@ -37,6 +37,7 @@
 		3359FA5A29883F4C00641FD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */; };
 		33686370299E7E74008140E2 /* BetResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3368636F299E7E74008140E2 /* BetResponseModel.swift */; };
 		33769FCB29A3C19300169FC5 /* DailyStreakView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33769FCA29A3C19300169FC5 /* DailyStreakView-ViewModel.swift */; };
+		3390E59029BBAD9100D063B4 /* PoolPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3390E58F29BBAD9100D063B4 /* PoolPresentationModel.swift */; };
 		339305052996C7650070C1CE /* UserSearcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305042996C7650070C1CE /* UserSearcherView.swift */; };
 		339305072996C7720070C1CE /* UserSearcherView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305062996C7720070C1CE /* UserSearcherView-ViewModel.swift */; };
 		339305092996C7F80070C1CE /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339305082996C7F80070C1CE /* UserCard.swift */; };
@@ -114,6 +115,7 @@
 		3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3368636F299E7E74008140E2 /* BetResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetResponseModel.swift; sourceTree = "<group>"; };
 		33769FCA29A3C19300169FC5 /* DailyStreakView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyStreakView-ViewModel.swift"; sourceTree = "<group>"; };
+		3390E58F29BBAD9100D063B4 /* PoolPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolPresentationModel.swift; sourceTree = "<group>"; };
 		339305042996C7650070C1CE /* UserSearcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearcherView.swift; sourceTree = "<group>"; };
 		339305062996C7720070C1CE /* UserSearcherView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSearcherView-ViewModel.swift"; sourceTree = "<group>"; };
 		339305082996C7F80070C1CE /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		1061675629BB355B00EFBF08 /* PoolsView */ = {
 			isa = PBXGroup;
 			children = (
+				3390E58E29BBAD8500D063B4 /* Model */,
 				1061675729BB356800EFBF08 /* PoolsView.swift */,
 				1061675D29BB376300EFBF08 /* PoolsView-ViewModel.swift */,
 			);
@@ -282,6 +285,14 @@
 				3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3390E58E29BBAD8500D063B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3390E58F29BBAD9100D063B4 /* PoolPresentationModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		339305032996C7550070C1CE /* UserSearcher */ = {
@@ -670,6 +681,7 @@
 				339305092996C7F80070C1CE /* UserCard.swift in Sources */,
 				33F6A664299555EE00FFAB37 /* EditProfileView-ViewModel.swift in Sources */,
 				33CE1817299FEAC500CFFD13 /* DailyStreakView.swift in Sources */,
+				3390E59029BBAD9100D063B4 /* PoolPresentationModel.swift in Sources */,
 				33F6A67929955C5800FFAB37 /* BetDetailView.swift in Sources */,
 				33A92E5E29A3CC9F00F9D885 /* ParticipateInBetResponseModel.swift in Sources */,
 				33F6A634299545C900FFAB37 /* UserCoins.swift in Sources */,
