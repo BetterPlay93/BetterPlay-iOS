@@ -11,13 +11,15 @@ class PoolPresentationModel: Identifiable {
     
     var id: Int
     var name: String
-    var participations: Int
+    var matches: String
+    var finalDate: Int
     var sport: Sport
     
-    init(id: Int, name: String, participations: Int, sport: String) {
+    init(id: Int, name: String, matches: String, finalDate: Int, sport: String) {
         self.id = id
         self.name = name
-        self.participations = participations
+        self.matches = matches
+        self.finalDate = finalDate
         self.sport = Sport(rawValue: sport) ?? .all
     }
     

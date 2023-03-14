@@ -23,49 +23,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "575479E0-ADB0-4FD2-8CE1-6080FAEB8D01"
+            uuid = "25579404-8DEC-4429-91B0-CEE45DAD37E8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BetterPlay/Presentation/Authentication/Login/LoginView-ViewModel.swift"
+            filePath = "BetterPlay/Presentation/Profile/ProfileView-ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "onSucess(data:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getUserData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BF55E519-58B8-4433-B212-7B42455601F4"
+            uuid = "14BA5C00-FADB-4A6A-B29A-A1A701A2E791"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BetterPlay/Presentation/Authentication/Login/LoginView-ViewModel.swift"
+            filePath = "BetterPlay/Presentation/Profile/ProfileView-ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "onSucess(data:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "getUserData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "86AC55DF-CEF4-4D85-869C-DCF09E882C30"
+            uuid = "8E300D91-DBE8-45E0-9F13-4245B7F348E4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BetterPlay/Presentation/Authentication/Login/LoginView-ViewModel.swift"
+            filePath = "BetterPlay/Presentation/Profile/Views/ProfileView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "onSucess(data:)"
-            landmarkType = "7">
+            landmarkName = "keyUserData"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

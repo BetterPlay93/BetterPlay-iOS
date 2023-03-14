@@ -9,10 +9,9 @@ extension RecoverPassEmailView{
         @Published var shouldShowAlert: Bool = false
         
         func sendEmail(email: String, completion: @escaping (Bool) -> ()){
-            let url = "https://betterplay-backend-production.up.railway.app/api/users/sendEmail"
             let params: [String: String] = ["email": email]
             
-            NetworkHelper.shared.requestProvider(url: url, type: .POST, params: params) { data, response, error in
+            NetworkHelper.shared.requestProvider(endpoint: .recoverPasswordEmail, type: .POST, params: params) { data, response, error in
                 if let error = error {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data, let response = response as? HTTPURLResponse{
@@ -61,11 +60,10 @@ extension RecoverPasswordCodeView{
             
             if let userId = UserDefaults.standard.value(forKey: "idUserCodeEmail"){
                 
-                let url = "https://betterplay-backend-production.up.railway.app/api/users/checkCorrectSecretCode"
                 let params: [String: Any] = ["id": userId ,"code": code]
 
 
-                NetworkHelper.shared.requestProvider(url: url, type: .POST, params: params) { data, response, error in
+                NetworkHelper.shared.requestProvider(endpoint: .recoverPasswordCode, type: .POST, params: params) { data, response, error in
                     if let error = error {
                         self.onError(error: [error.localizedDescription])
                     } else if let data = data, let response = response as? HTTPURLResponse{
@@ -111,10 +109,9 @@ extension NewPasswordView{
         func changePassword(password: String, completion: @escaping (Bool) -> ()){
             if let userId = UserDefaults.standard.value(forKey: "idUserCodeEmail"){
                 
-                let url = "https://betterplay-backend-production.up.railway.app/api/users/changePassword"
                 let params: [String: Any] = ["id": userId ,"password": password]
                 
-                NetworkHelper.shared.requestProvider(url: url, type: .POST, params: params) { data, response, error in
+                NetworkHelper.shared.requestProvider(endpoint: .recoverPassword, type: .POST, params: params) { data, response, error in
                     if let error = error {
                         self.onError(error: [error.localizedDescription])
                     } else if let data = data, let response = response as? HTTPURLResponse{

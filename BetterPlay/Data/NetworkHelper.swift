@@ -16,6 +16,23 @@ class NetworkHelper {
         case PUT
     }
     
+    enum Endpoint: String {
+        case login = "/users/login"
+        case register = "/users/register"
+        case recoverPasswordEmail = "/users/sendEmail"
+        case recoverPasswordCode = "/users/checkCorrectSecretCode"
+        case recoverPassword = "/users/changePassword"
+        case bets = "/events/list"
+        case participateInBet = "/events/participateInBet"
+        case notifications = "/notifications/getNotificationsByUser"
+        case pools = "/pools/list"
+        case participateInPool = "/pools/participateInPool"
+        case profileData = "/users/getUserData"
+        case userSearcher = "/users/list"
+        case editProfile = "/users/edit"
+        case dailyStreak = "/users/updateStreak"
+    }
+    
     // MARK: - Constants
     static let shared = NetworkHelper()
     
@@ -30,9 +47,9 @@ class NetworkHelper {
     }
     
     //MARK: - Public Methods
-    func requestProvider(url: String, type: RequestType = .POST, params: [String: Any]? = nil, token: String? = nil, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> Void {
+    func requestProvider(endpoint: Endpoint, type: RequestType = .POST, params: [String: Any]? = nil, token: String? = nil, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> Void {
         
-        let url = URL(string: url)
+        let url = URL(string: "https://betterplaybackend-production.up.railway.app/api\(endpoint.rawValue)")
                 
         guard let urlNotNil = url else { return }
         

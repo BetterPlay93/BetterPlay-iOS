@@ -27,9 +27,8 @@ extension BetsView {
         func getAllBets() {
             //Usamos un token predeterminado hasta que estén hechas todas las conexiones que ya usaremos el token del user defaults
             if let token = UserDefaults.standard.string(forKey: "token") {
-                let url = "https://betterplay-backend-production.up.railway.app/api/events/list"
                 
-                NetworkHelper.shared.requestProvider(url: url, type: .GET, token: token) { data, response, error in
+                NetworkHelper.shared.requestProvider(endpoint: .bets, type: .GET, token: token) { data, response, error in
                     if let error = error {
                         self.onError(error: error.localizedDescription)
                     } else if let data = data, let response = response as? HTTPURLResponse {
