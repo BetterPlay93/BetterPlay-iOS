@@ -1,26 +1,34 @@
 //
-//  CustomNavBar.swift
+//  PoolNavBar.swift
 //  BetterPlay
 //
-//  Created by Apps2T on 9/2/23.
+//  Created by Apps2T on 10/3/23.
 //
 
 import SwiftUI
 
-struct CustomNavBar: View {
+struct PoolNavBar: View {
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var color: String
+    var title: String
     
     var body: some View {
+        
         HStack {
             btnBack
+            
+            Text("\(title)")
+                .font(.system(size: 25))
+                .foregroundColor(.black)
+                .bold()
+                .padding(.leading, 20)
+            
             Spacer()
-            UserCoins(coins: "\(getCoinsOfTheUser())")
-        }
-        .padding()
+        }.padding()
         .frame(height: 60)
+        .frame(maxWidth: .infinity)
         .background(Color("Background"))
-        .padding(.top, 40)
     }
     
     var btnBack: some View {
@@ -38,17 +46,8 @@ struct CustomNavBar: View {
     }
 }
 
-struct CustomNavBar_Previews: PreviewProvider {
+struct PoolNavBar_Previews: PreviewProvider {
     static var previews: some View {
-        CustomNavBar(color: "Green")
+        PoolNavBar(color: "Green", title: "Jornada 1")
     }
-}
-
-func getCoinsOfTheUser() -> Int{
-    
-    guard let userData = UserDefaults.standard.object(forKey: "user") as? Data else { return 0 }
-    if let user = try? JSONDecoder().decode( UserPresentationModel.self, from: userData) {
-        return user.coins
-    }
-    return 0
 }

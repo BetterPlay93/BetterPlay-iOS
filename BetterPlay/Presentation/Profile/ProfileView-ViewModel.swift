@@ -7,8 +7,19 @@
 
 import Foundation
 
-extension ProfileView {
+extension ProfileNavBar{
     class ViewModel: ObservableObject {
         
+        @Published var user: UserPresentationModel = UserPresentationModel()
+            
+        func getUserData(){
+            
+            if let data = UserDefaults.standard.object(forKey: "user") as? Data {
+                if let user = try? JSONDecoder().decode(UserPresentationModel.self, from: data) {
+                    self.user = user
+                }
+            }
+            
+        }
     }
 }

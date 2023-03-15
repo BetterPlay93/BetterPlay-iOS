@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseStorage
 
 extension EditProfileView {
     class ViewModel: ObservableObject {
@@ -14,52 +16,45 @@ extension EditProfileView {
         @Published var shouldShowAlert: Bool = false
         @Published var userProfile: EditPresentationModel = .init()
         
-        func getUserImage(completion: @escaping (_ image: String?) -> ()) {
-            let url = "https://betterplay-backend-production.up.railway.app/api/users/getCurrentUserPhoto"
-            let logedToken =  "p1TywO8o9xCMLlbN0zV9STr3RPX7ONznWE1oODOm"
-            
-            NetworkHelper.shared.requestProvider(url: url, type: .GET, token: logedToken) { data, response, error in
+        func putAndGetOfFirebaseImage(username: String, password: String, photo: UIImage) {
+             
+            let storage = Storage.storage().reference()
+            storage.child("userImages/\(username)").putData(photo.jpegData(compressionQuality: 0.5) ?? Data(), metadata: nil) { metadata, error in
+             
                 if let error = error {
-                    self.onErrorImage(error: [error.localizedDescription])
-                } else if let data = data, let response = response as? HTTPURLResponse {
-                    print(response.statusCode)
-                    self.onSuccessImage(data: data, response: response, completion: { image in
-                        completion(image)
-                    })
+                    print(error.localizedDescription)
+                    return
                 }
-            }
-        }
-        func onSuccessImage(data: Data, response: HTTPURLResponse, completion: (_ image: String?) -> ()) {
-            do{
-                let imageResponse = try JSONDecoder().decode(ImageResponseModel?.self, from: data)
+            
+                print("success")
                 
-                if response.statusCode == 200 {
-                    completion(imageResponse?.data)
-                }else{
-                    self.onError(error: imageResponse?.message ?? [])
+                let imageRef = storage.child("userImages/\(username)")
+
+                // Fetch the download URL
+                imageRef.downloadURL { url, error in
+                  if let error = error {
+                      print(error.localizedDescription)
+                      return
+                  } else {
+                      self.edit(username: username, password: password, photo: url?.absoluteString ?? "")
+                  }
                 }
-            } catch {
-                self.onError(error: [error.localizedDescription])
             }
         }
         
-        func onErrorImage(error: [String]) {
-            shouldShowAlert = true
-            print(error)
-        }
         
         func edit(username: String, password: String, photo: String	) {
             //Falta obtener el token del userdeafaults lo hacemos mientras natao a mano
             
             let url = "https://betterplay-backend-production.up.railway.app/api/users/edit"
-            let logedToken =  "p1TywO8o9xCMLlbN0zV9STr3RPX7ONznWE1oODOm"
+            let logedToken =  "6jTcbJDLD048zQ8UW0pqAWtKfelevHRs0ZzW0OLt"
             let dictionary: [String: Any] = [
                 "username" : username,
                 "password" : password,
                 "photo" : photo
             ]
             
-            NetworkHelper.shared.requestProvider(url: url, type: .POST, params: dictionary, token: logedToken) { data, response, error in
+            NetworkHelper.shared.requestProvider(endpoint: .editProfile, type: .POST, params: dictionary, token: logedToken) { data, response, error in
                 if let error = error {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data, let response = response as? HTTPURLResponse{

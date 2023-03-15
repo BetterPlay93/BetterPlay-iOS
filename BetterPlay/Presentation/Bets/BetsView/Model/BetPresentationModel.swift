@@ -15,9 +15,7 @@ enum Sport: String {
 }
 
 class BetPresentationModel: Identifiable{
-    let id = UUID()
-    var home_result: Int = 0
-    var away_result: Int = 0
+    var id: Int = 0
     var home_odd: Float = 0.0
     var away_odd: Float = 0.0
     var tie_odd: Float = 0.0
@@ -26,10 +24,9 @@ class BetPresentationModel: Identifiable{
     var home_team: TeamPresentationModel = TeamPresentationModel()
     var away_team: TeamPresentationModel = TeamPresentationModel()
     
-    init(home_result: Int, away_result: Int, home_odd: Float, away_odd: Float, tie_odd: Float, date: Int, sport: String, home_team: TeamPresentationModel, away_team: TeamPresentationModel) {
+    init(id: Int, home_odd: Float, away_odd: Float, tie_odd: Float, date: Int, sport: String, home_team: TeamPresentationModel, away_team: TeamPresentationModel) {
         
-        self.home_result = home_result
-        self.away_result = away_result
+        self.id = id
         self.home_odd = home_odd
         self.away_odd = away_odd
         self.tie_odd = tie_odd
@@ -42,7 +39,7 @@ class BetPresentationModel: Identifiable{
     
 }
 
-class TeamPresentationModel {
+class TeamPresentationModel: Decodable {
     
     var name: String = ""
     var logo: String = ""

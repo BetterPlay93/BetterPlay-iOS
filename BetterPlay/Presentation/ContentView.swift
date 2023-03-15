@@ -24,7 +24,7 @@ struct ContentView: View {
                     NotificationsView().navigationBarBackButtonHidden(true)
                         .tag(Tab.Notification)
                     
-                    NotificationsView().navigationBarBackButtonHidden(true)
+                    PoolsView().navigationBarBackButtonHidden(true)
                         .tag(Tab.Pool)
                     
                     ProfileNavBar().navigationBarBackButtonHidden(true)

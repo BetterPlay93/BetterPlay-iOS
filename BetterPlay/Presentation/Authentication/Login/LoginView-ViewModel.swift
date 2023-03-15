@@ -15,11 +15,9 @@ extension LoginView {
         
         func login(username: String, password: String){
             
-            let url = "https://betterplay-backend-production.up.railway.app/api/users/login"
-            
             let params: [String: String] = ["username":username, "password": password]
             
-            NetworkHelper.shared.requestProvider(url: url, params: params) { data, response, error in
+            NetworkHelper.shared.requestProvider(endpoint: .login, params: params) { data, response, error in
                 if let error = error {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data{
@@ -38,6 +36,11 @@ extension LoginView {
                     self.onError(error: response.message)
                 }else{
                     UserDefaults.standard.set(response.data.token, forKey: "token")
+                    
+                    let user = UserPresentationModel(dataModel: data)
+                    if let data = try? JSONEncoder().encode(user) {
+                        UserDefaults.standard.set(data, forKey: "user")
+                    }
                     //Peticion de la racha
                     shouldNavigateToHome = true
                     print(response.data)

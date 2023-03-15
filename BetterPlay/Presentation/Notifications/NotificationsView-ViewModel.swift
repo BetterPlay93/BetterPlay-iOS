@@ -13,10 +13,9 @@ extension NotificationsView {
         @Published var notifications: [NotificationPresentationModel] = []
         
         func getNotifications(){
-            let url = "https://betterplay-backend-production.up.railway.app/api/notifications/getNotificationsByUser"
             
             if let token = UserDefaults.standard.string(forKey: "token") {
-                NetworkHelper.shared.requestProvider(url: url, type: .GET, token: token) { data, response, error in
+                NetworkHelper.shared.requestProvider(endpoint: .notifications, type: .GET, token: token) { data, response, error in
                     if let error = error {
                         self.onError(error: error.localizedDescription)
                     } else if let data = data, let response = response as? HTTPURLResponse {

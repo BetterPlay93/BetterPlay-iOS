@@ -23,11 +23,10 @@ struct CustomTextField: View {
                     .foregroundColor(Color(.darkGray))
                     
                 if isSecureField ?? false {
-                    SecureField(placeholderText, text: $text)
-                        .textInputAutocapitalization(.never)
+                    SecureField(placeholderText, text: $text).textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
                 }else{
-                    TextField(placeholderText, text: $text)
-                        .textInputAutocapitalization(.never)
+                    TextField(placeholderText, text: $text).textInputAutocapitalization(.never).disableAutocorrection(true)
                 }
             }
                 

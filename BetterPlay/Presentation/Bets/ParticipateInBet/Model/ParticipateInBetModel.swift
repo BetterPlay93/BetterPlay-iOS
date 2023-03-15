@@ -14,12 +14,14 @@ class ParticipateInBetModel {
     var team: String = ""
     var odd: Float = 0.0
     var color: String = ""
+    var result: String = ""
     
-    init(team: String, odd: Float, betId: Int, sport: Sport, color: String) {
+    init(team: String, odd: Float, betId: Int, sport: Sport, color: String, result: String) {
         self.team = team
         self.odd = odd
         self.betId = betId
         self.color = color
+        self.result = result
     }
     
     init(){}

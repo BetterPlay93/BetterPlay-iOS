@@ -35,7 +35,7 @@ struct BetDetailView: View {
                 
             }
             
-            ParticipateInBetView(betData: participationData, userCoins: 4000,isShowing: $showParticipationView)
+            ParticipateInBetView(betData: participationData, userCoins: getCoinsOfTheUser(),isShowing: $showParticipationView)
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -170,6 +170,13 @@ struct BetDetailView: View {
             Spacer()
             
             Button {
+                if(team == betDetail.bet.home_team.name) {
+                    participationData.result = "1"
+                }else if(team == betDetail.bet.away_team.name) {
+                    participationData.result = "2"
+                }else{
+                    participationData.result = "X"
+                }
                 participationData.team = team
                 participationData.odd = odd
                 participationData.color = betDetail.color
@@ -220,7 +227,7 @@ struct BetDetailView: View {
 
 struct BetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BetDetailView(betDetail: BetDetailPresentationModel(bet: BetPresentationModel(home_result: 0, away_result: 0, home_odd: 1.0, away_odd: 3.0, tie_odd: 1.5, date: 1676658884, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: "https://media-1.api-sports.io/football/teams/529.png"), away_team: TeamPresentationModel(name: "Real Madrid", logo: "https://media-2.api-sports.io/football/teams/541.png")), color: "Green"))
+        BetDetailView(betDetail: BetDetailPresentationModel(bet: BetPresentationModel(id: 0, home_odd: 1.0, away_odd: 3.0, tie_odd: 1.5, date: 1676658884, sport: "soccer", home_team: TeamPresentationModel(name: "Barcelona", logo: "https://media-1.api-sports.io/football/teams/529.png"), away_team: TeamPresentationModel(name: "Real Madrid", logo: "https://media-2.api-sports.io/football/teams/541.png")), color: "Green"))
     }
 }
 
@@ -236,6 +243,14 @@ func convertTimestampToHour(date: Int) -> String {
     let date = Date(timeIntervalSince1970: TimeInterval(date))
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "HH:mm"
+    let strDate = dateFormatter.string(from: date)
+    return strDate
+}
+
+func convertTimestampToDay(date: Int) -> String {
+    let date = Date(timeIntervalSince1970: TimeInterval(date))
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEE"
     let strDate = dateFormatter.string(from: date)
     return strDate
 }
