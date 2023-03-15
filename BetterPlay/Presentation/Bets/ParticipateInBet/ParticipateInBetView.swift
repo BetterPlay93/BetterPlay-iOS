@@ -108,7 +108,7 @@ struct ParticipateInBetView: View {
         HStack {
             Button {
                 //El eventId se obtiene con la petición de todos los eventos y gracias al detalle y el winner se obtiene también del detalle
-                viewModel.participateInBet(eventId: betData.betId, money: Int(sliderValue), winner: betData.team)
+                viewModel.participateInBet(eventId: betData.betId, money: Int(sliderValue), winner: betData.result)
             }label: {
                 Text("Jugar")
                     .foregroundColor(.white)
@@ -151,7 +151,7 @@ struct ParticipateInBetView: View {
 
 struct ParticipateInBetView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipateInBetView(betData: ParticipateInBetModel(team: "FC. Barcelona", odd: 1.0, betId: 1,sport: .soccer, color: "Green"), userCoins: 4000, isShowing: .constant(true))
+        ParticipateInBetView(betData: ParticipateInBetModel(team: "FC. Barcelona", odd: 1.0, betId: 1,sport: .soccer, color: "Green", result: "1"), userCoins: 4000, isShowing: .constant(true))
     }
 }
 

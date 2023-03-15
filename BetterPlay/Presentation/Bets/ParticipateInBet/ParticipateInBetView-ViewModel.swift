@@ -15,12 +15,10 @@ extension ParticipateInBetView {
         
         func participateInBet(eventId: Int, money: Int, winner: String) {
             
-            let url = "https://betterplay-backend-production.up.railway.app/api/events/participateInBet"
-            
             let params: [String : Any] =  [
-                "eventID": eventId,
-                "money": money,
-                "winner": winner
+                "eventId": eventId + 1,
+                "coins": money,
+                "team_selected": winner
             ]
             
             var token = ""

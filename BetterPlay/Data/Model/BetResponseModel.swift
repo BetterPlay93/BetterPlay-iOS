@@ -9,8 +9,7 @@ import Foundation
 
 class BetResponseModel: Decodable{
     
-    var home_result: Int?
-    var away_result: Int?
+    var id: Int?
     var home_odd: Float?
     var away_odd: Float?
     var tie_odd: Float?

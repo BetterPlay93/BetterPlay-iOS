@@ -15,7 +15,7 @@ struct CustomNavBar: View {
         HStack {
             btnBack
             Spacer()
-            UserCoins(coins: "4000")
+            UserCoins(coins: "\(getCoinsOfTheUser())")
         }
         .padding()
         .frame(height: 60)
@@ -42,4 +42,13 @@ struct CustomNavBar_Previews: PreviewProvider {
     static var previews: some View {
         CustomNavBar(color: "Green")
     }
+}
+
+func getCoinsOfTheUser() -> Int{
+    
+    guard let userData = UserDefaults.standard.object(forKey: "user") as? Data else { return 0 }
+    if let user = try? JSONDecoder().decode( UserPresentationModel.self, from: userData) {
+        return user.coins
+    }
+    return 0
 }

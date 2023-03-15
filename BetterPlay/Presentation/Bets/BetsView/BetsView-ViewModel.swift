@@ -47,7 +47,7 @@ extension BetsView {
                 let betsResponse = try JSONDecoder().decode(BetListResponseModel?.self, from: data)
                 
                 self.bets = betsResponse?.data?.compactMap({ bet in
-                    return BetPresentationModel(home_result: bet?.home_result ?? 0, away_result: bet?.away_result ?? 0, home_odd: bet?.home_odd ?? 0.0, away_odd: bet?.away_odd ?? 0.0, tie_odd: bet?.tie_odd ?? 0.0, date: bet?.date ?? 0, sport: bet?.sport ?? "", home_team: TeamPresentationModel(name: bet?.home_team.name ?? "", logo: bet?.home_team.logo ?? ""), away_team: TeamPresentationModel(name: bet?.away_team.name ?? "" , logo: bet?.away_team.logo ?? ""))
+                    return BetPresentationModel(id: bet?.id ?? 0, home_odd: bet?.home_odd ?? 0.0, away_odd: bet?.away_odd ?? 0.0, tie_odd: bet?.tie_odd ?? 0.0, date: bet?.date ?? 0, sport: bet?.sport ?? "", home_team: TeamPresentationModel(name: bet?.home_team.name ?? "", logo: bet?.home_team.logo ?? ""), away_team: TeamPresentationModel(name: bet?.away_team.name ?? "" , logo: bet?.away_team.logo ?? ""))
                 }) as? [BetPresentationModel] ?? []
                 
             } catch {
