@@ -11,6 +11,8 @@
 		3308E6BE299BFBB200E2113D /* FriendProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308E6BD299BFBB200E2113D /* FriendProfileView.swift */; };
 		3308E6C0299BFC2400E2113D /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308E6BF299BFC2400E2113D /* UserCard.swift */; };
 		33262E6A299A8FEA009C89A8 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33262E69299A8FEA009C89A8 /* CustomProgressView.swift */; };
+		3344762029C0E357008AE7D2 /* UserDataPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344761F29C0E357008AE7D2 /* UserDataPresentationModel.swift */; };
+		3344762229C0E41A008AE7D2 /* UserDataReponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344762129C0E41A008AE7D2 /* UserDataReponseModel.swift */; };
 		3359FA5329883F4B00641FD7 /* BetterPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */; };
 		3359FA5729883F4C00641FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5629883F4C00641FD7 /* Assets.xcassets */; };
 		3359FA5A29883F4C00641FD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3359FA5929883F4C00641FD7 /* Preview Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		3308E6BD299BFBB200E2113D /* FriendProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileView.swift; sourceTree = "<group>"; };
 		3308E6BF299BFC2400E2113D /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
 		33262E69299A8FEA009C89A8 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		3344761F29C0E357008AE7D2 /* UserDataPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataPresentationModel.swift; sourceTree = "<group>"; };
+		3344762129C0E41A008AE7D2 /* UserDataReponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataReponseModel.swift; sourceTree = "<group>"; };
 		3359FA4F29883F4B00641FD7 /* BetterPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3359FA5229883F4B00641FD7 /* BetterPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterPlayApp.swift; sourceTree = "<group>"; };
 		3359FA5629883F4C00641FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +62,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3344761C29C0E248008AE7D2 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				3344761E29C0E336008AE7D2 /* Model */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		3344761E29C0E336008AE7D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3344761F29C0E357008AE7D2 /* UserDataPresentationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3359FA4629883F4B00641FD7 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				33F6A6222995438B00FFAB37 /* ResponseModel.swift */,
+				3344762129C0E41A008AE7D2 /* UserDataReponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +168,7 @@
 		33F6A6652995575500FFAB37 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				3344761C29C0E248008AE7D2 /* New Group */,
 				33F6A6662995578600FFAB37 /* ProfileView.swift */,
 				33F6A6682995579100FFAB37 /* ProfileView-ViewModel.swift */,
 				3308E6BD299BFBB200E2113D /* FriendProfileView.swift */,
@@ -224,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3344762029C0E357008AE7D2 /* UserDataPresentationModel.swift in Sources */,
 				33F6A632299545AD00FFAB37 /* CustomNavBar.swift in Sources */,
 				33F6A64429954E1500FFAB37 /* NetworkHelper.swift in Sources */,
 				3308E6BE299BFBB200E2113D /* FriendProfileView.swift in Sources */,
@@ -235,6 +258,7 @@
 				33F6A6302995457C00FFAB37 /* ContentView.swift in Sources */,
 				33F6A62B299544E700FFAB37 /* CustomTabBar.swift in Sources */,
 				33F6A6232995438B00FFAB37 /* ResponseModel.swift in Sources */,
+				3344762229C0E41A008AE7D2 /* UserDataReponseModel.swift in Sources */,
 				33F6A6362995461700FFAB37 /* Searcher.swift in Sources */,
 				3308E6BC299BF1A000E2113D /* ProfileNavBar.swift in Sources */,
 				3308E6C0299BFC2400E2113D /* UserCard.swift in Sources */,

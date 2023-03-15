@@ -12,9 +12,11 @@ struct ProfileView: View {
     @State var userName: String = "Jose Ramón"
     @State var userEmail: String = "joseramon@gmail.com"
     @State var totalCoins: Int = 4000000
-    @State var inGameCoins: Int = 1200
     @State var totalFriends: Int = 150
     @State var soccerProgres: Int = 50
+    @State var basketProgres: Int = 50
+    @State var tennisProgres: Int = 50
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     
     var body: some View {
         ZStack(){
@@ -30,18 +32,34 @@ struct ProfileView: View {
                 
                 Spacer()
             }
-        }.background(Color("Background2"))
+        }
+        .background(Color("Background2"))
+        .onAppear(){
+            viewModel.getUserData { userData in
+                soccerProgres = userData.percentage["soccer"] ?? 0
+                basketProgres = userData.percentage["basketball"] ?? 1
+                tennisProgres = userData.percentage["tennis"] ?? 2
+            }
+        }
     }
-    
     // MARK: - Accesory View
     var keyUserData: some View {
         HStack{
-            Image(userImage)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 70, height: 70)
-                .cornerRadius(50)
-                .padding(.leading,50)
+//            if(){
+//                AsyncImage(url: URL(string: UserDefaults.standard.string(forKey: "photo") ?? ""))
+//                    .scaledToFit()
+//                    .frame(width: 70, height: 70)
+//                    .cornerRadius(50)
+//                    .padding(.leading,50)
+//            }else{
+                Image(userImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 70, height: 70)
+                    .cornerRadius(50)
+                    .padding(.leading,50)
+            //}
+            
             Spacer()
             VStack(alignment: .leading){
                 Text(userEmail)
@@ -78,30 +96,26 @@ struct ProfileView: View {
                 Spacer()
             }.frame(maxWidth: UIScreen.main.bounds.width)
             
-            
-            HStack(){
-                Text("BetterCoins en juego")
-                    .font(.system(size: 20))
-                    .lineLimit(2)
-                    .frame(maxWidth: 105)
-                
-                Text("\(inGameCoins)")
-                    .font(.system(size: 20))
-                    .bold()
-                    .padding(.leading, 30)
-                
-                Image("Coins")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30, height: 30, alignment: .leading)
-                Spacer()
-            }.frame(maxWidth: UIScreen.main.bounds.width)
-            
-            
-            HStack(){
+            HStack(spacing: 40){
                 Text("Racha")
                     .font(.system(size: 20))
-                Spacer()
+                
+                    LazyHStack(spacing: 20){
+                        ForEach(viewModel.userData.streak) { streakValue in{
+                            if(streakValue == "victory"){
+                                Image("Check")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 30, height: 30, alignment: .leading)
+                            }else if(streakValue == "lose"){
+                                Image("Failed")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 30, height: 30, alignment: .leading)
+                            }
+                        }
+                    }
+                }
             }
         }.padding(.leading, 30)
     }
