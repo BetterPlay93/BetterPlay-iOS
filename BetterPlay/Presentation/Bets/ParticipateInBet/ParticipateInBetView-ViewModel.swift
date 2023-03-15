@@ -16,7 +16,7 @@ extension ParticipateInBetView {
         func participateInBet(eventId: Int, money: Int, winner: String) {
             
             let params: [String : Any] =  [
-                "eventId": eventId + 1,
+                "eventId": eventId,
                 "coins": money,
                 "team_selected": winner
             ]

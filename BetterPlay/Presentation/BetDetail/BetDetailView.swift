@@ -170,6 +170,7 @@ struct BetDetailView: View {
             Spacer()
             
             Button {
+                participationData.betId = betDetail.bet.id
                 if(team == betDetail.bet.home_team.name) {
                     participationData.result = "1"
                 }else if(team == betDetail.bet.away_team.name) {

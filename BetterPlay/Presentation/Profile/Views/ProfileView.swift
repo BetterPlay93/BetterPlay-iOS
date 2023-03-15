@@ -25,6 +25,7 @@ struct ProfileView: View {
                 Spacer()
             }
         }.background(Color("Background2"))
+            .navigationBarTitleDisplayMode(.inline)
     }
     
     // MARK: - Accesory View

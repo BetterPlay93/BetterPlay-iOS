@@ -151,7 +151,7 @@ struct ParticipateInBetView: View {
 
 struct ParticipateInBetView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipateInBetView(betData: ParticipateInBetModel(team: "FC. Barcelona", odd: 1.0, betId: 1,sport: .soccer, color: "Green", result: "1"), userCoins: 4000, isShowing: .constant(true))
+        ParticipateInBetView(betData: ParticipateInBetModel(id: 1, team: "FC. Barcelona", odd: 1.0, betId: 1,sport: .soccer, color: "Green", result: "1"), userCoins: 4000, isShowing: .constant(true))
     }
 }
 

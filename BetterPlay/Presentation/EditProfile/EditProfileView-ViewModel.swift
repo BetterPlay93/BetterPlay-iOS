@@ -7,8 +7,8 @@
 
 import Foundation
 import UIKit
-import Firebase
-import FirebaseStorage
+//import Firebase
+//import FirebaseStorage
 
 extension EditProfileView {
     class ViewModel: ObservableObject {
@@ -18,28 +18,28 @@ extension EditProfileView {
         
         func putAndGetOfFirebaseImage(username: String, password: String, photo: UIImage) {
              
-            let storage = Storage.storage().reference()
-            storage.child("userImages/\(username)").putData(photo.jpegData(compressionQuality: 0.5) ?? Data(), metadata: nil) { metadata, error in
-             
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-            
-                print("success")
-                
-                let imageRef = storage.child("userImages/\(username)")
-
-                // Fetch the download URL
-                imageRef.downloadURL { url, error in
-                  if let error = error {
-                      print(error.localizedDescription)
-                      return
-                  } else {
-                      self.edit(username: username, password: password, photo: url?.absoluteString ?? "")
-                  }
-                }
-            }
+//            let storage = Storage.storage().reference()
+//            storage.child("userImages/\(username)").putData(photo.jpegData(compressionQuality: 0.5) ?? Data(), metadata: nil) { metadata, error in
+//
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                    return
+//                }
+//
+//                print("success")
+//
+//                let imageRef = storage.child("userImages/\(username)")
+//
+//                // Fetch the download URL
+//                imageRef.downloadURL { url, error in
+//                  if let error = error {
+//                      print(error.localizedDescription)
+//                      return
+//                  } else {
+//                      self.edit(username: username, password: password, photo: url?.absoluteString ?? "")
+//                  }
+//                }
+        //}
         }
         
         

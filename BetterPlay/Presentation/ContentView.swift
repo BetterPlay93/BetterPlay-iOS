@@ -29,6 +29,7 @@ struct ContentView: View {
                     
                     ProfileNavBar().navigationBarBackButtonHidden(true)
                         .navigationBarHidden(true)
+                        .navigationBarTitleDisplayMode(.inline)
                         .tag(Tab.Profile)
                 }
             }
