@@ -49,9 +49,7 @@ struct PoolMatch: View {
                     resultSelected = .home
                 } label: {
                     Text("1")
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .bold()
+                        .modifier(ResultPoolTextModifier())
                 }
             }.frame(width: 26, height: 26)
                 .background(resultSelected == .home ? Color("Green") : Color(.white))
@@ -61,9 +59,7 @@ struct PoolMatch: View {
                     resultSelected = .tie
                 } label: {
                     Text("X")
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .bold()
+                        .modifier(ResultPoolTextModifier())
                 }
                 
             }.frame(width: 26, height: 26)
@@ -74,15 +70,12 @@ struct PoolMatch: View {
                     resultSelected = .away
                 } label: {
                     Text("2")
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .bold()
+                        .modifier(ResultPoolTextModifier())
                 }
             }.frame(width: 26, height: 26)
             .background(resultSelected == .away ? Color("Green") : Color(.white))
             .padding(.trailing, 10)
         }
-        
     }
 }
 
@@ -91,6 +84,7 @@ struct PoolMatch_Previews: PreviewProvider {
         PoolMatch(poolMatch: PoolMatchPresentationModel(id: 15, homeTeam: TeamPresentationModel(name: "FC.Barcelona", logo: ""), awayTeam: TeamPresentationModel(name: "Real Madrid", logo: ""), date: 0)).previewLayout(.sizeThatFits)
     }
 }
+
 
 enum Result: String {
     case home = "1"
