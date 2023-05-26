@@ -41,13 +41,7 @@ struct RecoverPassEmailView: View {
             
             
         } label: {
-            Text("Continuar")
-                .foregroundColor(.white)
-                .frame(width: 89, height: 32)
-                .background(Color("DarkGray"))
-                .cornerRadius(10)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding()
+            continueButton
         }.alert("Error en la petición de recuperar contraseña", isPresented: $viewmodel.shouldShowAlert, actions: {
             Button {
                 
@@ -79,15 +73,9 @@ struct RecoverPassEmailView: View {
     }
     var dots: some View{
         HStack {
-            Circle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(Color("DarkGray"))
-            Circle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(Color("Gray"))
-            Circle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(Color("Gray"))
+            dot(color: "DarkGray")
+            dot(color: "Gray")
+            dot(color: "Gray")
         }
     }
 }

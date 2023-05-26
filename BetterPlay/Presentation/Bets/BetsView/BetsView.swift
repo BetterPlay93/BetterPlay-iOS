@@ -54,7 +54,7 @@ struct BetsView: View {
             }
             
             
-            DailyStreakView(isShowing: $showDailyStreak)
+            //DailyStreakView(isShowing: $showDailyStreak)
         }
     }
     
@@ -74,42 +74,26 @@ struct BetsView: View {
             .background(sportSelected == .all ? Color("Gray") : Color("LightGray"))
             .cornerRadius(35)
             
-            Button {
-                sportSelected = .soccer
-            }label: {
-                Text("Fútbol")
-                    .foregroundColor(.white)
-                    .font(.system(size: 14))
-            }
-            .padding(5)
-            .padding(.horizontal, 5)
-            .background(sportSelected == .soccer ? Color("Green") : Color("GreenButton"))
-            .cornerRadius(35)
+            filterButton(sport: .soccer, textSport: "Fútbol", color: "Green")
             
-            Button {
-                sportSelected = .basketball
-            }label: {
-                Text("Baloncesto")
-                    .foregroundColor(.white)
-                    .font(.system(size: 14))
-            }
-            .padding(5)
-            .padding(.horizontal, 5)
-            .background(sportSelected == .basketball ? Color("Orange") : Color("OrangeButton"))
-            .cornerRadius(35)
+            filterButton(sport: .basketball, textSport: "Baloncesto", color: "Orange")
             
-            Button {
-                sportSelected = .tennis
-            }label: {
-                Text("Tenis")
-                    .foregroundColor(.white)
-                    .font(.system(size: 14))
-            }
-            .padding(5)
-            .padding(.horizontal, 5)
-            .background(sportSelected == .tennis ? Color("Yellow") : Color("YellowButton"))
-            .cornerRadius(35)
+            filterButton(sport: .tennis, textSport: "Tenis", color: "Yellow")
         }
+    }
+    
+    func filterButton(sport: Sport, textSport: String, color: String) -> some View {
+        Button {
+            sportSelected = sport
+        }label: {
+            Text(textSport)
+                .foregroundColor(.white)
+                .font(.system(size: 14))
+        }
+        .padding(5)
+        .padding(.horizontal, 5)
+        .background(sportSelected == sport ? Color(color) : Color("\(color)Button"))
+        .cornerRadius(35)
     }
 }
 

@@ -69,30 +69,24 @@ struct PoolsView: View {
             .background(sportSelected == .all ? Color("Gray") : Color("LightGray"))
             .cornerRadius(35)
             
-            Button {
-                sportSelected = .soccer
-            }label: {
-                Text("Fútbol")
-                    .foregroundColor(.white)
-                    .font(.system(size: 14))
-            }
-            .padding(5)
-            .padding(.horizontal, 5)
-            .background(sportSelected == .soccer ? Color("Green") : Color("GreenButton"))
-            .cornerRadius(35)
+            filterButton(sport: .soccer, textSport: "Fútbol", color: "Green")
             
-            Button {
-                sportSelected = .basketball
-            }label: {
-                Text("Baloncesto")
-                    .foregroundColor(.white)
-                    .font(.system(size: 14))
-            }
-            .padding(5)
-            .padding(.horizontal, 5)
-            .background(sportSelected == .basketball ? Color("Orange") : Color("OrangeButton"))
-            .cornerRadius(35)
+            filterButton(sport: .basketball, textSport: "Baloncesto", color: "Orange")
         }
+    }
+    
+    func filterButton(sport: Sport, textSport: String, color: String) -> some View {
+        Button {
+            sportSelected = sport
+        }label: {
+            Text(textSport)
+                .foregroundColor(.white)
+                .font(.system(size: 14))
+        }
+        .padding(5)
+        .padding(.horizontal, 5)
+        .background(sportSelected == sport ? Color(color) : Color("\(color)Button"))
+        .cornerRadius(35)
     }
 }
 
@@ -101,3 +95,5 @@ struct PoolsView_Previews: PreviewProvider {
         PoolsView()
     }
 }
+
+

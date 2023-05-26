@@ -23,7 +23,7 @@ class AuthenticationPresentationModel {
     init(){}
 }
 
-class LoginPresentationModel {
+class LoginPresentationModel: Decodable {
     var status: String = ""
     var code: Int = 0
     var message: [String] = [""]

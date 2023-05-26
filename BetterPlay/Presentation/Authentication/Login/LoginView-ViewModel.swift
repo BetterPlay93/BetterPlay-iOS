@@ -40,6 +40,7 @@ extension LoginView {
                     let user = UserPresentationModel(dataModel: data)
                     if let data = try? JSONEncoder().encode(user) {
                         UserDefaults.standard.set(data, forKey: "user")
+                        UserDefaults.standard.set(user.coins, forKey: "coins")
                     }
                     //Peticion de la racha
                     shouldNavigateToHome = true
@@ -53,8 +54,8 @@ extension LoginView {
         }
         
         func onError(error: [String]) {
-            shouldNavigateToHome = true
-            //shouldShowAlert = true
+            
+            shouldShowAlert = true
             print(error)
         }
         

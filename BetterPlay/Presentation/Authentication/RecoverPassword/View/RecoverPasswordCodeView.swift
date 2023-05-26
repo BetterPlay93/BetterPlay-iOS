@@ -20,7 +20,7 @@ struct RecoverPasswordCodeView: View {
             VStack(spacing: 25) {
                 logo
                 secretCodeTexts
-                continueButton
+                nextButton
                 dots
             }
             .padding(.vertical, 25)
@@ -31,20 +31,15 @@ struct RecoverPasswordCodeView: View {
         })
         .frame(maxWidth: .infinity,maxHeight: .infinity)
     }
-    var continueButton: some View{
+    
+    var nextButton: some View{
         Button {
             viewmodel.checkCorrectSecretCode(code: secretCode) { showNewPass in
                 show.toggle()
                 showNext = showNewPass
             }
         } label: {
-            Text("Continuar")
-                .foregroundColor(.white)
-                .frame(width: 89, height: 32)
-                .background(Color("DarkGray"))
-                .cornerRadius(10)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding()
+            continueButton
         }.alert("Error al comprobar el código secreto", isPresented: $viewmodel.shouldShowAlert, actions: {
             Button {
                 
@@ -57,19 +52,15 @@ struct RecoverPasswordCodeView: View {
             }
         }
     }
+    
     var dots: some View{
         HStack {
-            Circle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(Color("Gray"))
-            Circle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(Color("DarkGray"))
-            Circle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(Color("Gray"))
+            dot(color: "Gray")
+            dot(color: "DarkGray")
+            dot(color: "Gray")
         }
     }
+    
     var secretCodeTexts: some View {
         VStack(spacing: 2){
             Text("Secret Code")
@@ -80,6 +71,7 @@ struct RecoverPasswordCodeView: View {
                 .cornerRadius(10)
         }
     }
+    
     var logo: some View {
         Image("Logo")
             .resizable()

@@ -22,29 +22,17 @@ struct SpecialPoolMatch: View {
             
             //Aquí se escribirá el partido a realizar
             VStack (alignment: .leading) {
-                Text("\(specialPoolMatch.homeTeam.name)")
-                    .font(.system(size: 14))
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                teamText(name: specialPoolMatch.homeTeam.name)
                 
-                Text("\(specialPoolMatch.awayTeam.name)")
-                    .font(.system(size: 14))
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                teamText(name: specialPoolMatch.awayTeam.name)
             }
             
             Spacer()
             
             VStack {
-                //Aquí se añadirá el día del evento
-                Text("\(convertTimestampToDay(date:specialPoolMatch.date))")
-                    .font(.system(size: 12))
-                    .bold()
+                timeText(dateValue: specialPoolMatch.date, dateFormat: "EEE")
                 
-                //Aquí se añadirá la fecha del evento
-                Text("\(convertTimestampToHour(date:specialPoolMatch.date))")
-                    .font(.system(size: 12))
-                    .bold()
+                timeText(dateValue: specialPoolMatch.date, dateFormat: "HH:mm")
             }
             
             VStack {
@@ -58,15 +46,12 @@ struct SpecialPoolMatch: View {
     }
 }
 
+
+
 //struct SpecialPoolMatch_Previews: PreviewProvider {
 //    static var previews: some View {
 //        SpecialPoolMatch().previewLayout(.sizeThatFits)
 //    }
 //}
 
-enum ExactResultSelected: String {
-    case Cero = "0"
-    case Uno = "1"
-    case Dos = "2"
-    case M = "3+"
-}
+

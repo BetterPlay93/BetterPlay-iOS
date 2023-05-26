@@ -65,13 +65,7 @@ struct NewPasswordView: View {
                }
            }
        } label: {
-           Text("Confirmar")
-               .foregroundColor(.white)
-               .frame(width: 89, height: 32)
-               .background(Color("DarkGray"))
-               .cornerRadius(10)
-               .frame(maxWidth: .infinity, alignment: .trailing)
-               .padding()
+           continueButton
        }.alert("Error al actualizar la nueva contraseña", isPresented: $viewmodel.shouldShowAlert, actions: {
            Button {
                
@@ -87,15 +81,9 @@ struct NewPasswordView: View {
 
     var dots: some View {
        HStack {
-           Circle()
-               .frame(width: 20, height: 20)
-               .foregroundColor(Color("Gray"))
-           Circle()
-               .frame(width: 20, height: 20)
-               .foregroundColor(Color("Gray"))
-           Circle()
-               .frame(width: 20, height: 20)
-               .foregroundColor(Color("DarkGray"))
+           dot(color: "Gray")
+           dot(color: "Gray")
+           dot(color: "DarkGray")
        }
     }
 }

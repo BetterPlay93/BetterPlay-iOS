@@ -53,6 +53,9 @@ struct ParticipateInBetView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 .ignoresSafeArea()
             }
+            NavigationLink(destination: ContentView(), isActive: $viewModel.shouldNavigateToHome) {
+                EmptyView()
+            }
         }
     }
     
@@ -126,12 +129,7 @@ struct ParticipateInBetView: View {
         Button {
             sliderValue = 0.0
         }label: {
-            Text("Min")
-                .foregroundColor(Color("Light\(betData.color)"))
-                .bold()
-                .padding(.horizontal)
-                .padding(.vertical, 5)
-                .border(Color("Light\(betData.color)"), width: 1)
+            buttonText(text: "Min")
         }
     }
     
@@ -139,13 +137,17 @@ struct ParticipateInBetView: View {
         Button {
             sliderValue = Double(userCoins)
         }label: {
-            Text("All-in")
-                .foregroundColor(Color("Light\(betData.color)"))
-                .bold()
-                .padding(.horizontal)
-                .padding(.vertical, 5)
-                .border(Color("Light\(betData.color)"), width: 1)
+            buttonText(text: "All-in")
         }
+    }
+    
+    func buttonText(text: String) -> some View {
+        Text(text)
+            .foregroundColor(Color("Light\(betData.color)"))
+            .bold()
+            .padding(.horizontal)
+            .padding(.vertical, 5)
+            .border(Color("Light\(betData.color)"), width: 1)
     }
 }
 

@@ -3,4 +3,102 @@
    uuid = "47D17D76-49E7-4869-8A02-11FEA9DDF6C9"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84C7AB97-84E2-449B-936B-3542EF1667F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterPlay/Presentation/Bets/BetsView/BetsView-ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "onSuccess(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70EF6BC3-1F24-42EA-8590-FD38EF7FF054"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterPlay/Presentation/Notifications/NotificationsView-ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "onSuccess(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA256F7D-383D-43B0-8C59-65967261EF4A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterPlay/Presentation/Pools/PoolsView/PoolsView-ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "onSuccess(data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CA256F7D-383D-43B0-8C59-65967261EF4A - 5977362ccd8a7e14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BetterPlay.PoolsView.ViewModel.onSuccess(data: Foundation.Data) -&gt; ()"
+                  moduleName = "BetterPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/icdominguez/Documents/GitHub/BetterPlay-iOS/BetterPlay/Presentation/Pools/PoolsView/PoolsView-ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "CA256F7D-383D-43B0-8C59-65967261EF4A - 8ece231c5189cf82"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;BetterPlay.PoolResponseModel&gt;) -&gt; Swift.Optional&lt;BetterPlay.PoolPresentationModel&gt; in BetterPlay.PoolsView.ViewModel.onSuccess(data: Foundation.Data) -&gt; ()"
+                  moduleName = "BetterPlay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/icdominguez/Documents/GitHub/BetterPlay-iOS/BetterPlay/Presentation/Pools/PoolsView/PoolsView-ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47E929F3-F783-4F0C-8229-222A7FB594A0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterPlay/Presentation/Pools/PoolsView/PoolsView-ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "onSuccess(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

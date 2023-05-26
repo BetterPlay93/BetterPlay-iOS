@@ -70,23 +70,20 @@ struct DailyStreakView: View {
     	
     var barCircles: some View{
         HStack(spacing: 55){
-                Circle()
-                    .foregroundColor(Color("DarkGray"))
-                    .frame(width: 20, height: 20)
-                Circle()
-                    .foregroundColor(Color("DarkGray"))
-                    .frame(width: 20, height: 20)
-                Circle()
-                    .foregroundColor(Color("DarkGray"))
-                    .frame(width: 20, height: 20)
-                Circle()
-                    .foregroundColor(Color("DarkGray"))
-                    .frame(width: 20, height: 20)
-                Circle()
-                    .foregroundColor(Color("DarkGray"))
-                    .frame(width: 20, height: 20)
-            }
+            customCircle
+            customCircle
+            customCircle
+            customCircle
+            customCircle
+        }
     }
+    
+    var customCircle: some View {
+        Circle()
+            .foregroundColor(Color("DarkGray"))
+            .frame(width: 20, height: 20)
+    }
+    
     func customRectangle(isCompleted: Bool, coins: Int)-> some View{
         ZStack(){
             if(isCompleted){
@@ -126,22 +123,18 @@ struct DailyStreakView: View {
     }
     var dayTexts: some View{
         HStack(spacing: 35){
-            Text("Day 1")
-                .font(.system(size: 15))
-                .bold()
-            Text("Day 2")
-                .font(.system(size: 15))
-                .bold()
-            Text("Day 3")
-                .font(.system(size: 15))
-                .bold()
-            Text("Day 4")
-                .font(.system(size: 15))
-                .bold()
-            Text("Day 5")
-                .font(.system(size: 15))
-                .bold()
+            customText(text: "Day 1")
+            customText(text: "Day 2")
+            customText(text: "Day 3")
+            customText(text: "Day 4")
+            customText(text: "Day 5")
         }.frame(alignment: .top)
+    }
+    
+    func customText(text: String) -> some View {
+        Text(text)
+            .font(.system(size: 15))
+            .bold()
     }
     
 }

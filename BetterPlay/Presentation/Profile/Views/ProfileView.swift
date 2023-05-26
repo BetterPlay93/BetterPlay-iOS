@@ -31,7 +31,7 @@ struct ProfileView: View {
     // MARK: - Accesory View
     var keyUserData: some View {
         HStack{
-            AsyncImage(url: URL(string: user.username)) {image in
+            AsyncImage(url: URL(string: "https://picsum.photos/200/300")) {image in
                 image.resizable()
             }placeholder: {
                 ProgressView()

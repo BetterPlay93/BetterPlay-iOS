@@ -132,18 +132,3 @@ struct EditProfileView_Previews: PreviewProvider {
         EditProfileView()
     }
 }
-// MARK: - Transform Image into Base64
-extension UIImage {
-    var base64: String? {
-        self.jpegData(compressionQuality: 1.0)?.base64EncodedString()
-    }
-}
-// MARK: - Transform Base64 into Image Data
-extension String {
-    var imageFromBase64: UIImage? {
-        guard let imageData = Data(base64Encoded: self, options: .ignoreUnknownCharacters) else {
-            return nil
-        }
-        return UIImage(data: imageData)
-    }
-}

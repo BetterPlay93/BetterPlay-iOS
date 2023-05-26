@@ -25,15 +25,10 @@ struct PoolMatch: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             VStack {
-                //Aquí se añadirá el día del evento
-                Text("\(convertTimestampToDay(date:poolMatch.date))")
-                    .font(.system(size: 12))
-                    .bold()
                 
-                //Aquí se añadirá la fecha del evento
-                Text("\(convertTimestampToHour(date:poolMatch.date))")
-                    .font(.system(size: 12))
-                    .bold()
+                timeText(dateValue: poolMatch.date, dateFormat: "EEE")
+                
+                timeText(dateValue: poolMatch.date, dateFormat: "HH:mm")
             }
             
             selectResultTeams
@@ -44,39 +39,27 @@ struct PoolMatch: View {
     
     var selectResultTeams: some View {
         HStack(spacing: 2) {
-            ZStack {
-                Button {
-                    resultSelected = .home
-                } label: {
-                    Text("1")
-                        .modifier(ResultPoolTextModifier())
-                }
-            }.frame(width: 26, height: 26)
-                .background(resultSelected == .home ? Color("Green") : Color(.white))
+            resultTeamSection(result: .home, value: "1")
             
-            ZStack {
-                Button {
-                    resultSelected = .tie
-                } label: {
-                    Text("X")
-                        .modifier(ResultPoolTextModifier())
-                }
-                
-            }.frame(width: 26, height: 26)
-            .background(resultSelected == .tie ? Color("Green") : Color(.white))
+            resultTeamSection(result: .tie, value: "X")
             
-            ZStack {
-                Button {
-                    resultSelected = .away
-                } label: {
-                    Text("2")
-                        .modifier(ResultPoolTextModifier())
-                }
-            }.frame(width: 26, height: 26)
-            .background(resultSelected == .away ? Color("Green") : Color(.white))
-            .padding(.trailing, 10)
+            resultTeamSection(result: .away, value: "2")
+                .padding(.trailing, 10)
         }
     }
+    
+    func resultTeamSection(result: Result, value: String) -> some View {
+        ZStack {
+            Button {
+                resultSelected = result
+            } label: {
+                Text(value)
+                    .modifier(ResultPoolTextModifier())
+            }
+        }.frame(width: 26, height: 26)
+        .background(resultSelected == result ? Color("Green") : Color(.white))
+    }
+    
 }
 
 struct PoolMatch_Previews: PreviewProvider {
@@ -90,4 +73,10 @@ enum Result: String {
     case home = "1"
     case tie = "X"
     case away = "2"
+}
+
+func timeText(dateValue: Int, dateFormat: String) -> some View {
+    Text("\(convertTimestampToDate(date: dateValue, dateFormat: "HH:mm"))")
+        .font(.system(size: 12))
+        .bold()
 }

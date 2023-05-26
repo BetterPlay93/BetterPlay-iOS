@@ -17,7 +17,7 @@ struct PoolDetailView: View {
                 VStack {
                     PoolNavBar(color: "Green", title: pool.name)
                     
-                    Rectangle().fill(Color("Green")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
+                    Rectangle().fill(Color("Green")).frame(width: .infinity, height: 2, alignment: .center)
                     
                 }.background(Color("Background"))
                 
@@ -36,7 +36,7 @@ struct PoolDetailView: View {
                 }
                 .padding(.top, 10)
                 .background(Color("LightGreen"))
-                .frame(maxHeight: UIScreen.main.bounds.height)
+                .frame(maxHeight: .infinity)
                 
                 Rectangle().fill(Color("Green")).frame(width: UIScreen.main.bounds.width, height: 2, alignment: .center)
                 

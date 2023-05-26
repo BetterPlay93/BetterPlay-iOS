@@ -32,19 +32,22 @@ extension ParticipateInBetView {
                 if let error = error {
                     self.onError(error: [error.localizedDescription])
                 } else if let data = data{
-                    self.onSucess(data: data)
+                    self.onSucess(data: data, coins: money)
                 }
             }
         }
         
-        func onSucess(data: Data){
+        func onSucess(data: Data, coins: Int){
             do {
                 let response = try JSONDecoder().decode(ParticipateInBetResponseModel?.self, from: data)
                
                 if response?.code != 200 {
                     self.onError(error: response?.message ?? [""])
                 }else{
+                    substractCoins(coins: coins)
                     shouldNavigateToHome = true
+                    
+                    
                 }
                 
             } catch {
@@ -55,6 +58,10 @@ extension ParticipateInBetView {
         func onError(error: [String]) {
             shouldShowAlert = true
             print(error)
+        }
+        
+        func substractCoins(coins: Int) {
+            UserDefaults.standard.set(Utils().getCoinsOfTheUser() - coins, forKey: "coins")
         }
     }
 }

@@ -12,62 +12,38 @@ struct SelectExactResult: View {
     
     var body: some View {
         HStack(spacing: 2) {
-            ZStack {
-                Button {
-                    exactResultSelected = .Cero
-                } label: {
-                    Text("0")
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .bold()
-                }
-            }.frame(width: 26, height: 26)
-                .background(exactResultSelected == .Cero ? Color("Green") : Color(.white))
-            
-            ZStack {
-                Button {
-                    exactResultSelected = .Uno
-                } label: {
-                    Text("1")
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .bold()
-                }
-                
-            }.frame(width: 26, height: 26)
-            .background(exactResultSelected == .Uno ? Color("Green") : Color(.white))
-            
-            ZStack {
-                Button {
-                    exactResultSelected = .Dos
-                } label: {
-                    Text("2")
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .bold()
-                }
-                
-            }.frame(width: 26, height: 26)
-            .background(exactResultSelected == .Dos ? Color("Green") : Color(.white))
-            
-            ZStack {
-                Button {
-                    exactResultSelected = .M
-                } label: {
-                    Text("M")
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .bold()
-                }
-            }.frame(width: 26, height: 26)
-            .background(exactResultSelected == .M ? Color("Green") : Color(.white))
-            .padding(.trailing, 10)
+            resultExactTeamSection(resultSelected: .Cero, selection: "0")
+            resultExactTeamSection(resultSelected: .Uno, selection: "1")
+            resultExactTeamSection(resultSelected: .Dos, selection: "2")
+            resultExactTeamSection(resultSelected: .M, selection: "M")
         }
     }
+    
+    func resultExactTeamSection(resultSelected: ExactResultSelected, selection: String) -> some View {
+        ZStack {
+            Button {
+                exactResultSelected = resultSelected
+            } label: {
+                Text(selection)
+                    .foregroundColor(.black)
+                    .font(.system(size: 20))
+                    .bold()
+            }
+        }.frame(width: 26, height: 26)
+        .background(exactResultSelected == resultSelected ? Color("Green") : Color(.white))
+    }
+    
 }
 
 struct SelectExactResult_Previews: PreviewProvider {
     static var previews: some View {
         SelectExactResult(exactResultSelected: .constant(.Cero))
     }
+}
+
+enum ExactResultSelected: String {
+    case Cero = "0"
+    case Uno = "1"
+    case Dos = "2"
+    case M = "3+"
 }

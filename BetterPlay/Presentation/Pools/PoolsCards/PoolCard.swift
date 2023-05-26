@@ -68,12 +68,12 @@ struct PoolCard: View {
                 .cornerRadius(20)
         })
         .padding(.trailing, 10)
-        .frame(maxWidth: UIScreen.main.bounds.width, alignment: .trailing)
+        .frame(maxWidth: .infinity, alignment: .trailing)
     }
 }
 
 struct PoolCard_Previews: PreviewProvider {
     static var previews: some View {
-        PoolCard(pool:PoolPresentationModel(id: 0, name: "Jornada 1", matches: "", finalDate: 0, sport: "Green"), color:"Green").previewLayout(.sizeThatFits)
+        PoolCard(pool:PoolPresentationModel(id: 0, name: "Jornada 1", matches: "", finalDate: 0, sport: "soccer"), color:"Green").previewLayout(.sizeThatFits)
     }
 }

@@ -26,6 +26,7 @@ struct ProfileNavBar: View {
         .background(Color("Background2"))
         .onAppear {
             viewModel.getUserData()
+            selection = 0
         }
     }
     
